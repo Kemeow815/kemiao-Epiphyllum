@@ -10,5 +10,8 @@
   .Link{
     @apply hover:bg-sky-300 rounded-lg p-1
   }
+  .card-base {
+    @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition;
+}
 }
 

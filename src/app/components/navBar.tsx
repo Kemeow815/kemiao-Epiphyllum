@@ -6,15 +6,16 @@ interface linkItem{
     url : string
 }
 const linkList : linkItem[] = [
-    {name : "主页", url : "/"},
+    {name : "首页", url : "/"},
     {name : "归档", url : "/archive"},
     {name : "标签", url : "/tag"},
+    {name : "友链", url : "/friends"},
     {name : "关于", url : "/about"},
 ];
 export default function NavBar() {
   return (
-    <div className="absolute top-0 left-0 w-full bg-white z-10 text-lg font-bold text-white">
-      <div className="bg-sky-500 h-16 flex items-center justify-between px-0 md:px-4 mx-auto container rounded-[var(--rounded-large)] !rounded-t-[0px]">
+    <div className="absolute top-0 left-0 w-full z-20 text-lg font-bold text-white">
+      <div className="bg-sky-500 h-[4.5rem] flex items-center justify-between px-0 md:px-4 mx-auto container rounded-[var(--rounded-large)] !rounded-t-[0px]">
         <Link href="/" className="Link">
             <div>
                 Epipyhllum
