@@ -28,7 +28,7 @@ export default function NavBar() {
                     </div>
                 </Link>
             ))}
-            <a href="https://github.com/Masttf" className="Link">
+            <a href="https://github.com/Masttf" target="_blank" className="Link">
                 Github
             </a>
         </div>
