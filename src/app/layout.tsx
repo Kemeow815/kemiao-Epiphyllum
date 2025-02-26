@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./styles/globals.css";
 import NavBar from "./components/navBar";
 import Banner from "./components/Banner";
+import Image from "next/image";
 import SideBar from "./components/sideBar";
 
 const geistSans = Geist({
@@ -31,7 +32,14 @@ export default function RootLayout({
       <meta charSet="UTF-8" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen transition`}>
+          
           <NavBar></NavBar>
+          <Banner></Banner>
+          <div className="mt-80 flex justify-center items-center flex-col md:flex-row">
+            <SideBar></SideBar>
+          </div>
+          
+          
           {children}
           <div id="page-height-extend" className="hidden h-[300vh]"></div>
       </body>
