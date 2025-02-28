@@ -14,30 +14,28 @@ const linkList : linkItem[] = [
 ];
 export default function NavBar() {
   return (
-    <div className="absolute top-0 left-0 w-full z-20 text-lg font-bold text-white">
+    <div className="fixed inset-0 w-full z-20 text-lg font-bold text-white leading-6 h-64">
       <div className="bg-sky-500 h-[4.5rem] flex items-center justify-between px-0 md:px-4 mx-auto container rounded-[var(--rounded-large)] !rounded-t-[0px]">
         <Link href="/" className="Link">
             <div>
                 Epipyhllum
             </div>
         </Link>
-        <div className="flex space-x-1">
+        <div className="flex items-center">
             {linkList.map((item, index) => (
                 <Link key={index} href={item.url} className="Link">
-                    <div className="px-4">
-                        {item.name}
-                    </div>
+                    {item.name}
                 </Link>
             ))}
             <a href="https://github.com/Masttf" target="_blank" className="Link">
                 Github
             </a>
         </div>
-        <div className="flex items-center space-x-4">
-            <div>搜索</div>
-            <div>主题</div>
-            <div>RSS</div>
-            <div>管理后台</div>
+        <div className="flex">
+            <div className="Link">搜索</div>
+            <div className="Link">主题</div>
+            <div className="Link">RSS</div>
+            <div className="Link">管理后台</div>
         </div>
       </div>
     </div>
