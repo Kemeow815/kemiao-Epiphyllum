@@ -1,15 +1,18 @@
-import React from 'react'
+import React from "react";
 
 interface Props {
-    className?: string,
-    style? :{
+    className?: string;
+    style?: {
         [key: string]: string | number;
-    }
+    };
 }
-export default function categories(props : Props) {
-  return (
-    <div className='card-base font-bold text-xl px-4 h-24'>
-      分类
-    </div>
-  )
+export default function categories(props: Props) {
+    return (
+        <div className="card-base font-bold p-4">
+            <div className="text-lg flex items-center gap-2">
+                <div className="font-bold w-1 h-5 rounded-md bg-sky-500"></div>
+                <div>分类</div>
+            </div>
+        </div>
+    );
 }

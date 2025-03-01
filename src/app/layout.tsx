@@ -2,17 +2,8 @@ import "@/styles/globals.css";
 import NavBar from "../components/navBar";
 import Banner from "../components/Banner";
 import SideBar from "../components/sideBar";
-import { siteConfig } from "@/config";
-import {
-    BANNER_HEIGHT,
-    BANNER_HEIGHT_EXTEND,
-    MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
-} from "@/constants/constants";
-import MyImage from "@/components/myImage";
 import Footer from "@/components/footer";
-const mainPanelTop = siteConfig.banner.enable
-    ? `calc(${BANNER_HEIGHT}vh - ${MAIN_PANEL_OVERLAPS_BANNER_HEIGHT}rem)`
-    : "5.5rem";
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -29,7 +20,7 @@ export default function RootLayout({
                 <NavBar></NavBar>
                 {/* <Banner></Banner> */}
                 <div
-                    className="container mx-auto grid grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-0 md:px-4 mt-96"
+                    className="container mx-auto grid grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-0 md:px-4 mt-24"
                 >
                     <main className="col-span-2 lg:col-span-1 overflow-hidden">
                         <div>
