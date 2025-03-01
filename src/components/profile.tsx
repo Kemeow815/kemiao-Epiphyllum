@@ -19,7 +19,7 @@ export default function Profile() {
                 <Link
                     href="/about"
                     className="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
-                    max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95"
+                    max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95 shadow-md"
                 >
                     <MyImage
                         src="/avatar.jpg"

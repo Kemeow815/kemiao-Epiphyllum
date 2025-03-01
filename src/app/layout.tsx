@@ -21,45 +21,25 @@ export default function RootLayout({
     return (
         <html
             lang="zh-CN"
-            className="bg-[var(--page-bg)] transition text-[14px] md:text-[16px] data-overlayscrollbars-initialize"
+            className="text-sm md:text-base bg-gray-200"
         >
             <meta charSet="UTF-8" />
-            <body className="antialiased min-h-screen transition bg-gray-200">
+            <body className="min-h-screen">
                 {/* navbar */}
-                <slot slot="head" name="head"></slot>
-                <div className="z-50 pointer-events-none relative transition-all duration-700 max-w-[var(--page-width)] px-0 md:px-4 mx-auto">
-                    <div className="pointer-events-auto sticky top-0 transition-all">
-                        <NavBar></NavBar>
-                    </div>
-                </div>
-                {/* banner */}
-                {/* {siteConfig.banner.enable && (
-                    <div
-                        className="absolute z-10 w-full transition duration-700 overflow-hidden"
-                        style={{ top: "-" + BANNER_HEIGHT_EXTEND + "vh" }}
-                    >
-                        <MyImage
-                            src={siteConfig.banner.src}
-                            alt="Banner image of the blog"
-                            className="object-cover h-full transition duration-700 scale-105"
-                            position={siteConfig.banner.position}
-                        ></MyImage>
-                    </div>
-                )} */}
-                <Banner></Banner>
+                <NavBar></NavBar>
+                {/* <Banner></Banner> */}
                 <div
-                    className="transition duration-700 w-full left-0 right-0 grid grid-cols-[17.5rem_auto] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto]
-    mx-auto gap-4 px-0 md:px-4 mt-96"
+                    className="container mx-auto grid grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-0 md:px-4 mt-96"
                 >
-                    <SideBar className="mb-4 row-start-2 row-end-3 col-span-2 lg:row-start-1 lg:row-end-2 lg:col-span-1 lg:max-w-[17.5rem] onload-animation"></SideBar>
-                    <main className="transition-swup-fade col-span-2 lg:col-span-1 overflow-hidden">
-                        <div className="onload-animation">
+                    <main className="col-span-2 lg:col-span-1 overflow-hidden">
+                        <div>
                             {children}
                             <div className="footer col-span-2 onload-animation hidden lg:block">
                                 <Footer></Footer>
                             </div>
                         </div>
                     </main>
+                    <SideBar className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem]"></SideBar>
                     <div className="footer col-span-2 onload-animation block lg:hidden">
                         <Footer></Footer>
                     </div>

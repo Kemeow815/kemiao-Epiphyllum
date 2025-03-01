@@ -10,34 +10,10 @@
   --banner-height-extend : 30;
   --banner-height-home : calc(var(--banner-height)_+_var(--banner-height-extend));
 }
-.enable-banner.is-home #banner-wrapper {
-  @apply h-[var(--banner-height-home)] translate-y-[var(--banner-height-extend)]
-}
-.enable-banner #banner-wrapper {
-  @apply h-[var(--banner-height-home)]
-}
 
-.enable-banner.is-home #banner {
-  @apply h-[var(--banner-height-home)] translate-y-0
-}
-.enable-banner #banner {
-  @apply h-[var(--banner-height-home)] translate-y-[var(--bannerOffset)]
-}
-.enable-banner.is-home #main-grid {
-  @apply translate-y-[var(--banner-height-extend)];
-}
-.enable-banner #top-row {
-  @apply h-[calc(var(--banner-height-home)_-_4.5rem)] transition-all duration-300
-}
-.enable-banner.is-home #sidebar-sticky {
-  @apply top-[calc(1rem_-_var(--banner-height-extend))]
-}
-.navbar-hidden {
-  @apply opacity-0 -translate-y-16
-}
 @layer base {
   .Link{
-    @apply hover:bg-sky-300 rounded-lg px-4 font-bold h-11 flex items-center
+    @apply hover:bg-sky-200 rounded-lg px-4 font-bold h-11 flex items-center
   }
   .card-base {
     @apply rounded-[var(--rounded-large)] overflow-hidden bg-[var(--card-bg)] transition;

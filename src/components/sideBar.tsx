@@ -8,14 +8,14 @@ interface Props {
 
 export default function SideBar(props: Props) {
     return (
-        <div className="flex flex-col gap-2">
-            <div className={props.className + " w-full"}>
-                <div className="flex flex-col w-full gap-4">
+        <div className={"flex flex-col gap-4 " +props.className}>
+            <div className="w-full">
+                <div className="flex flex-col w-full">
                     <Profile></Profile>
                 </div>
             </div>
             <div
-                className="transition-all duration-700 flex flex-col w-full gap-4 sticky top-4"
+                className="flex flex-col w-full gap-4"
             >
                 <Categories
                     className="onload-animation"

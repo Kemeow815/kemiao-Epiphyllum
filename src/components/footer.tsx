@@ -11,8 +11,8 @@ export default function footer() {
                 <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="#">RSS</a> /
                 <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="#">Sitemap</a><br/>
                 Powered by
-                <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> &
-                <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari">Fuwari</a>
+                <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build"> react</a> &
+                <a className="transition link text-[var(--primary)] font-medium" target="_blank" href="https://github.com/saicaca/fuwari"> Epiphyllum</a>
             </div>
         </div>
     </>
