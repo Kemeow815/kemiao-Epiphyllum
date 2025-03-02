@@ -1,8 +1,8 @@
 import PageCreate from "@/components/pageCreate";
-import { getAllPosts } from "@/utils/posts";
+import { getPageById } from "@/utils/pages";
 export default async function Home() {
-    const posts = await getAllPosts();
+    const pages = await getPageById(1);
     return (
-        <PageCreate blogList={posts} id={1}></PageCreate>
+        <PageCreate pages={pages.content} id={1}></PageCreate>
     );
 }

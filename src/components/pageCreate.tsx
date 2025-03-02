@@ -1,40 +1,39 @@
 import Postcard from "@/components/postcard";
-import { BlogPost } from "@/utils/posts";
+import { PageContent } from "@/utils/pages";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-
-export default function Page({
-    blogList,
+import {getMxPage} from "@/utils/pages";
+export default async function Page({
+    pages,
     id,
 }: {
-    blogList: BlogPost[];
+    pages: PageContent[];
     id: number;
 }) {
-    const pageSize = 10;
-    const mxPageSize = Math.ceil(blogList.length / pageSize);
-    if (id > mxPageSize) {
+    
+    const mxPage = await getMxPage();
+    if (id > mxPage) {
         return notFound();
     }
-    const posts = blogList.slice((id - 1) * pageSize, id * pageSize);
     return (
         <>
             <div className="flex flex-col  divide-y divide-dashed md:gap-4 md:divide-none">
-                {posts.map((post: BlogPost) => {
-                    return <Postcard key={post.id} {...post}></Postcard>;
+                {pages.map((post: PageContent) => {
+                    return <Postcard key={post.title} {...post}></Postcard>;
                 })}
             </div>
-            {generatePagination(mxPageSize, id)}
+            {generatePagination(mxPage, id)}
         </>
     );
 }
-function generatePagination(mxPageSize: number, id: number){
+function generatePagination(mxPage: number, id: number){
     const pagelist = [];
     if (id === 1) {
         for (let i = 1; i <= 3; i++) {
-            if (i > mxPageSize) break;
+            if (i > mxPage) break;
             pagelist.push(i);
         }
-    } else if (id === mxPageSize) {
+    } else if (id === mxPage) {
         for (let i = Math.max(1, id - 2); i <= id; i++) {
             pagelist.push(i);
         }
@@ -76,7 +75,7 @@ function generatePagination(mxPageSize: number, id: number){
                     href={`/page/${id + 1}`}
                     className={
                         "shadow-md overflow-hidden rounded-lg text-gray-50 bg-white w-11 h-11 Myhover" +
-                        (id === mxPageSize ? " pointer-events-none" : "")
+                        (id === mxPage ? " pointer-events-none" : "")
                     }
                 >
                     {">"}

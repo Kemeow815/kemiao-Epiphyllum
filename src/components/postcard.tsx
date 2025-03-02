@@ -1,19 +1,21 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import { BlogPost } from "@/utils/posts";
+import { format } from 'date-fns';
+import { PageContent } from "@/utils/pages";
 function postMeta({
     published,
     category,
     tags,
 }: {
-    published: string;
+    published: Date;
     category: string;
     tags?: string[];
 }) {
     return (
         <div className="flex flex-wrap text-neutral-500 items-center gap-4 gap-x-4 gap-y-2 mb-2">
             <div className="flex items-center">
-                <span className="text-sm font-medium">{published}</span>
+                <span className="text-sm font-medium">{format(published, 'yyyy-MM-dd')}</span>
             </div>
 
             <div className="flex items-center">
@@ -59,7 +61,7 @@ function postMeta({
         </div>
     );
 }
-export default function postcard(props: BlogPost) {
+export default function postcard(props: PageContent) {
     return (
         <>
             <div className="card-base flex flex-col-reverse rounded-none first:rounded-t-[var(--rounded-large)] last:rounded-b-[var(--rounded-large)] md:flex-col w-full relative md:rounded-[var(--rounded-large)] ">
@@ -67,7 +69,7 @@ export default function postcard(props: BlogPost) {
                     <div className="flex gap-4 relative -left-5 mb-3">
                         <div className="h-6 w-1 relative top-[6px] bg-sky-500 mx-auto rounded-full transition"></div>
                         <Link
-                            href={`/post/${props.id}`}
+                            href={`/post/${props.title}`}
                             className=" w-full block font-bold text-3xl 
         hover:text-sky-500 transition line-clamp-2"
                         >

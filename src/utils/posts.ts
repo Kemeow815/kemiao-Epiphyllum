@@ -12,7 +12,7 @@ export interface BlogPost {
     id: string;
     contentHtml: string;
     title: string;
-    date: string;
+    date: Date;
     description: string;
     category :string;
     tags?: string[];
@@ -47,7 +47,7 @@ export async function getAllPosts() {
                 contentHtml,
                 ...(matterResult.data as {
                     title: string;
-                    date: string;
+                    date: Date;
                     description: string;
                     category :string;
                     tags?: string[];
@@ -83,7 +83,7 @@ export async function getPostById(id: string) {
         contentHtml,
         ...(matterResult.data as {
           title: string;
-          date: string;
+          date: Date;
           description: string;
           category :string;
           tags?: string[];
