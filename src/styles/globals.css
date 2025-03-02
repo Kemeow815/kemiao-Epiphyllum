@@ -1,3 +1,4 @@
+@import 'prismjs/themes/prism-tomorrow.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,4 +20,24 @@
     @apply rounded-[var(--rounded-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
 }
 }
+/* Markdown 内容样式 */
+.markdown-body {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+.markdown-body pre {
+  background: #f6f8fa;
+  padding: 1em;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+
 

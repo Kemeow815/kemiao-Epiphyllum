@@ -24,7 +24,8 @@ export default function RootLayout({
                 >
                     <main className="col-span-2 lg:col-span-1 overflow-hidden">
                         <div>
-                            {children}
+                           {children}
+                            
                             <div className="footer col-span-2 onload-animation hidden lg:block">
                                 <Footer></Footer>
                             </div>
