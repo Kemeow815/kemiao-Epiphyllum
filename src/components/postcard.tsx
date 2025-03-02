@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
-import { BlogPost } from "@/utils/posts";
 import { format } from 'date-fns';
 import { PageContent } from "@/utils/pages";
 function postMeta({
@@ -69,7 +68,7 @@ export default function postcard(props: PageContent) {
                     <div className="flex gap-4 relative -left-5 mb-3">
                         <div className="h-6 w-1 relative top-[6px] bg-sky-500 mx-auto rounded-full transition"></div>
                         <Link
-                            href={`/post/${props.title}`}
+                            href={`/post/${props.id}`}
                             className=" w-full block font-bold text-3xl 
         hover:text-sky-500 transition line-clamp-2"
                         >

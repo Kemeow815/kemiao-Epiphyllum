@@ -8,7 +8,7 @@ interface linkItem {
 }
 const linkList: linkItem[] = [
     { name: "首页", url: "/" },
-    { name: "时间线", url: "/archive" },
+    { name: "归档", url: "/archive" },
     { name: "友链", url: "/friends" },
     { name: "关于", url: "/about" },
 ];
@@ -45,7 +45,7 @@ export default function NavBar() {
     }, [prevScrollY]);
     return (
         <div
-            className={`fixed inset-0 w-full transition duration-200 font-bold text-black leading-6 h-[4.5rem] mx-auto container px-0 md:px-4 ${
+            className={`fixed inset-0 w-full z-10 transition duration-200 font-bold text-black leading-6 h-[4.5rem] mx-auto container px-0 md:px-4 ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
             }`}
         >

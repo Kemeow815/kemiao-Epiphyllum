@@ -19,7 +19,7 @@ export default async function Page({
         <>
             <div className="flex flex-col  divide-y divide-dashed md:gap-4 md:divide-none">
                 {pages.map((post: PageContent) => {
-                    return <Postcard key={post.title} {...post}></Postcard>;
+                    return <Postcard key={post.id} {...post}></Postcard>;
                 })}
             </div>
             {generatePagination(mxPage, id)}

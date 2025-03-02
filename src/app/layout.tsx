@@ -1,4 +1,8 @@
+import "@/styles/variables.css";
 import "@/styles/globals.css";
+import "@/styles/markdown.css"
+import "@/styles/markdown-extend.css"
+import 'katex/dist/katex.css'
 import NavBar from "../components/navBar";
 import Banner from "../components/Banner";
 import SideBar from "../components/sideBar";

@@ -6,6 +6,7 @@ const postsDirectory = path.join(process.cwd(), 'src/data/posts')
 
 const pageSize : number = 10;
 export interface PageContent {
+    id: string;
     title: string;
     date: Date;
     description: string;
@@ -25,23 +26,27 @@ export async function getAllPage() {
     cachedMxPage = Math.ceil(fileNames.length / pageSize);
     const allPostsData = await Promise.all(
         fileNames.map(async (fileName) => {
+            const id = fileName.replace(/\.md$/, "");
             const fullPath = path.join(postsDirectory, fileName);
             const fileContents = fs.readFileSync(fullPath, "utf8");
             // 解析 frontmatter
             const matterResult = matter(fileContents);
             return {
+                id,
                 ...(matterResult.data as {
                     title: string;
-                    date: Date;
                     description: string;
                     category :string;
                     tags?: string[];
                 }),
+                date : new Date(matterResult.data.date),
             };
         })
     );
     allPostsData.sort((a, b) => {
-        return a.date < b.date ? 1 : -1;
+        const timeA = a.date.getTime()
+        const timeB = b.date.getTime()
+        return timeB - timeA
     });
     
     const allPageData = Array.from({ length: cachedMxPage }, (_, index) => ({
