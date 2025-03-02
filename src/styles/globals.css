@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 :root {
-    --card-bg: white;
     --rounded-large: 1rem;
     --page-width: 75;
     --banner-height: 35;
@@ -17,9 +16,6 @@
 @layer base {
     .Link {
         @apply rounded-lg px-4 font-bold h-11 flex items-center;
-    }
-    .card-base {
-        @apply rounded-[var(--rounded-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
     }
     .Myhover {
         @apply hover:bg-sky-200 hover:text-sky-500 transition;

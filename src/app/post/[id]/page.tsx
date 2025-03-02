@@ -4,7 +4,8 @@ import { format } from 'date-fns';
 import ContentWrapper from "@/components/markDown";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 export const revalidate = 3600; // ISR 配置（单位：秒）
-export default async function Post({ params : {id}}: { params: { id: string } }) {
+export default async function Post({ params }: { params: { id: string } }) {
+    const { id } = await params
     const post: BlogPost = await getPostById(id);
     return (
         <div className="card-base p-8">

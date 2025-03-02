@@ -72,8 +72,6 @@ export const markdownConfig: MarkdownConfig = {
 
 
 // 统一处理器
-// 新增编译器导入
-
 export const createProcessor = () => 
   unified()
     .use(remarkParse)

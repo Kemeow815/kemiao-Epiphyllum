@@ -11,9 +11,10 @@ export async function generateStaticParams() {
       id: item.id.toString()
     }));
   }
-export default async function page({params : {id}} : { params : {id: string}}) {
-    const pages = await getPageById(Number(id));
+export default async function page({params } : { params : {id: string}}) {
+  const { id } = await params;
+  const pages = await getPageById(parseInt(id));
     return(
-        <PageCreate pages={pages.content} id={Number(id)}></PageCreate>
+        <PageCreate pages={pages.content} id={parseInt(id)}></PageCreate>
     )
 }
