@@ -1,7 +1,8 @@
 ---
-title: "hot_git"
+title: "how_git"
 date: "2023-10-01"
 description: "这是我的第一篇博客文章。"
+category : "study"
 tags:
   - "教程"
   - "入门"

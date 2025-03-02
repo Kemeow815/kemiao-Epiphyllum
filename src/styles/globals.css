@@ -1,43 +1,45 @@
-@import 'prismjs/themes/prism-tomorrow.css';
+@import "prismjs/themes/prism-tomorrow.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --card-bg : white;
-  --rounded-large : 1rem;
-  --page-width : 75;
-  --banner-height : 35;
-  --banner-height-extend : 30;
-  --banner-height-home : calc(var(--banner-height)_+_var(--banner-height-extend));
+    --card-bg: white;
+    --rounded-large: 1rem;
+    --page-width: 75;
+    --banner-height: 35;
+    --banner-height-extend: 30;
+    --banner-height-home: calc(
+        var(--banner-height) _+_var(--banner-height-extend)
+    );
 }
 
 @layer base {
-  .Link{
-    @apply hover:bg-sky-200 rounded-lg px-4 font-bold h-11 flex items-center
-  }
-  .card-base {
-    @apply rounded-[var(--rounded-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
-}
+    .Link {
+        @apply rounded-lg px-4 font-bold h-11 flex items-center;
+    }
+    .card-base {
+        @apply rounded-[var(--rounded-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
+    }
+    .Myhover {
+      @apply hover:bg-sky-200 hover:text-sky-500;
+    }
 }
 /* Markdown 内容样式 */
 .markdown-body {
-  line-height: 1.6;
-  font-size: 16px;
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 .markdown-body h1 {
-  font-size: 2em;
-  border-bottom: 1px solid #eaecef;
-  padding-bottom: 0.3em;
+    font-size: 2em;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.3em;
 }
 
 .markdown-body pre {
-  background: #f6f8fa;
-  padding: 1em;
-  border-radius: 6px;
-  overflow: auto;
+    background: #f6f8fa;
+    padding: 1em;
+    border-radius: 6px;
+    overflow: auto;
 }
-
-
-

@@ -15,14 +15,8 @@ export default function SideBar(props: Props) {
                 </div>
             </div>
             <div className="flex flex-col w-full gap-4">
-                <Categories
-                    className="onload-animation"
-                    style={{ "animation-delay": "150ms" }}
-                ></Categories>
-                <Tag
-                    className="onload-animation"
-                    style={{ "animation-delay": "200ms" }}
-                ></Tag>
+                <Categories></Categories>
+                <Tag></Tag>
             </div>
         </div>
     );
