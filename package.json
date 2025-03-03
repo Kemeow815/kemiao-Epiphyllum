@@ -17,6 +17,7 @@
     "katex": "^0.16.21",
     "next": "15.1.7",
     "overlayscrollbars": "^2.11.1",
+    "overlayscrollbars-react": "^0.5.6",
     "prismjs": "^1.29.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
