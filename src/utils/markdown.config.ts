@@ -2,6 +2,7 @@ import { unified } from 'unified'
 import type { PluggableList } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import rehypeShiki  from '@shikijs/rehype'
 import rehypeStringify from 'rehype-stringify'
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components"; 
@@ -66,6 +67,15 @@ export const markdownConfig: MarkdownConfig = {
               ],
             },
           },
+        ],
+        [
+          rehypeShiki,
+          {
+            themes: { 
+              light: "github-dark",
+              dark: "github-dark" 
+            }
+          }
         ],
       ],
 }

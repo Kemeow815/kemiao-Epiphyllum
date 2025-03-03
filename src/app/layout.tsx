@@ -2,11 +2,14 @@ import "@/styles/variables.css";
 import "@/styles/globals.css";
 import "@/styles/markdown.css"
 import "@/styles/markdown-extend.css"
+import "@/styles/scrollbar.css";
 import 'katex/dist/katex.css'
+import 'overlayscrollbars/overlayscrollbars.css';
 import NavBar from "../components/navBar";
 import Banner from "../components/Banner";
 import SideBar from "../components/sideBar";
 import Footer from "@/components/footer";
+import CustomScroll from "@/components/customScroll";
 
 export default function RootLayout({
     children,
@@ -16,10 +19,10 @@ export default function RootLayout({
     return (
         <html
             lang="zh-CN"
-            className="text-sm md:text-base bg-gray-200"
+            className="text-sm md:text-base bg-gray-200 data-overlayscrollbars-initialize"
         >
             <meta charSet="UTF-8" />
-            <body className="min-h-screen">
+            <body className="min-h-screen data-overlayscrollbars-initialize">
                 {/* navbar */}
                 <NavBar></NavBar>
                 {/* <Banner></Banner> */}
@@ -42,6 +45,7 @@ export default function RootLayout({
                 </div>
                 
                 <div id="page-height-extend" className="hidden h-[300vh]"></div>
+                <CustomScroll />
             </body>
         </html>
     );

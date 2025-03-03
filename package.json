@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
+    "@shikijs/rehype": "^3.1.0",
     "@tailwindcss/typography": "^0.5.16",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "katex": "^0.16.21",
     "next": "15.1.7",
+    "overlayscrollbars": "^2.11.1",
     "prismjs": "^1.29.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -34,6 +36,7 @@
     "remark-reading-time": "^2.0.1",
     "remark-rehype": "^11.1.1",
     "remark-sectionize": "^2.1.0",
+    "shiki": "^3.1.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
