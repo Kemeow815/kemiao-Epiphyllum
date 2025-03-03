@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { createProcessor } from "./markdown.config";
 
 const postsDirectory = path.join(process.cwd(), "src/data/posts");
 
@@ -20,13 +19,12 @@ async function processMarkdown(fileName: string) {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents);
 
-    const processedContent = await createProcessor().process(
-        matterResult.content
-    );
-
+    // const processedContent = await createProcessor().process(
+    //     matterResult.content
+    // );
     return {
         id,
-        contentHtml: processedContent.toString(),
+        contentHtml: matterResult.content,
         ...(matterResult.data as {
             title: string;
             description: string;

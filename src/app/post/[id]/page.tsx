@@ -1,7 +1,7 @@
 import { getAllPosts, getPostById } from "@/utils/posts";
 import { BlogPost } from "@/utils/posts";
 import { format } from "date-fns";
-import ContentWrapper from "@/components/markDown";
+import ContentWrapper from "@/components/contentWrapper";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 export const revalidate = 3600; // ISR 配置（单位：秒）
 
@@ -16,8 +16,7 @@ export default async function Post({
         <div className="card-base p-8">
             <h1>{post.title}</h1>
             <p>{format(post.date, "yyyy-MM-dd")}</p>
-            <ContentWrapper>
-                <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+            <ContentWrapper content={post.contentHtml}>
             </ContentWrapper>
         </div>
     );

@@ -9,16 +9,16 @@ import NavBar from "../components/navBar";
 import Banner from "../components/Banner";
 import SideBar from "../components/sideBar";
 import Footer from "@/components/footer";
-import ScrollBar from "@/components/scrollBar";
+import { OverlayScrollbars } from "overlayscrollbars";
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="zh-CN" className="text-sm md:text-base bg-gray-200">
+        <html lang="zh-CN" className="text-sm md:text-base bg-gray-200" data-overlayscrollbars-initialize>
             <meta charSet="UTF-8" />
-            <body className="min-h-screen">
+            <body className="min-h-screen" data-overlayscrollbars-initialize>
                 {/* navbar */}
                 <NavBar></NavBar>
                 {/* <Banner></Banner> */}
@@ -39,7 +39,6 @@ export default function RootLayout({
                 </div>
 
                 <div id="page-height-extend" className="hidden h-[300vh]"></div>
-                
             </body>
         </html>
     );
