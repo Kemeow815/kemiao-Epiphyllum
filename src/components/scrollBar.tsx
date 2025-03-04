@@ -2,12 +2,10 @@
 import React from "react";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
 interface Props {
-    className?: string;
     options?: any;
     children?: React.ReactNode;
 }
 export default function ScrollBar({
-    className = "",
     options,
     children,
 }: Props) {
@@ -16,7 +14,6 @@ export default function ScrollBar({
         <OverlayScrollbarsComponent
             defer
             options={options}
-            className={`${className}`}
         >
             {children}
         </OverlayScrollbarsComponent>

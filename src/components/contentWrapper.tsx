@@ -2,7 +2,7 @@
 import "@fontsource-variable/jetbrains-mono";
 import "@fontsource-variable/jetbrains-mono/wght-italic.css";
 import ReactMarkdown from "react-markdown";
-import { markdownConfig } from "@/config/markdown.config";
+import { markdownConfig } from "@/config/markdownConfig";
 import ScrollBar from "./scrollBar";
 interface Props {
     className?: string;
@@ -44,7 +44,7 @@ export default function ContentWrapper({
                     };
                         return (
                             <div className="relative code-block">
-                                <pre tabIndex={0} {...rest}>
+                                <pre tabIndex={0} >
                                     <ScrollBar
                                         options={{
                                             scrollbars: {
