@@ -52,7 +52,7 @@ export default function ContentWrapper({
                                                 autoHide: "leave",
                                                 autoHideDelay: 500,
                                                 autoHideSuspend: false,
-                                            },
+                                            },        
                                         }}
                                     >
                                         {children}

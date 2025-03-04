@@ -3,7 +3,12 @@
         @apply text-3xl;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         .anchor {
             @apply transition -m-0.5 ml-[0.2ch] p-0.5 select-none opacity-0 no-underline !important;
 
@@ -23,7 +28,8 @@
         @apply relative bg-none font-medium text-[var(--primary)]
         underline decoration-[var(--link-underline)] decoration-1 decoration-dashed underline-offset-4;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             @apply decoration-transparent;
         }
     }
@@ -31,12 +37,13 @@
     code {
         @apply bg-[var(--inline-code-bg)] text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
 
-        font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+        font-family: "JetBrains Mono Variable", ui-monospace, SFMono-Regular,
+            Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
         &:before {
-            content:none;
+            content: none;
         }
         &:after {
-            content:none;
+            content: none;
         }
 
         counter-reset: line;
@@ -47,7 +54,8 @@
                 counter-increment: line;
                 direction: rtl;
             }
-            &:last-child:empty, &:last-child:has(> span:empty:only-child) {
+            &:last-child:empty,
+            &:last-child:has(> span:empty:only-child) {
                 display: none;
             }
         }
@@ -56,17 +64,17 @@
     pre {
         @apply bg-[var(--codeblock-bg)] !important;
         @apply rounded-xl px-5;
-
+        ::selection {
+            @apply bg-[var(--codeblock-selection)];
+        }
         code {
+            overflow: visible !important;
             @apply bg-transparent text-inherit text-sm p-0;
-
-            ::selection {
-                @apply bg-[var(--codeblock-selection)];
-            }
         }
     }
 
-    ul, ol {
+    ul,
+    ol {
         li::marker {
             @apply text-[var(--primary)];
         }
@@ -81,9 +89,9 @@
         }
 
         /* Remove the double quotes from default styles */
-        p:before, p:after {
+        p:before,
+        p:after {
             @apply content-none;
         }
-
     }
 }
