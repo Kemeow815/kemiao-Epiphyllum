@@ -9,7 +9,7 @@ import NavBar from "../components/navBar";
 import Banner from "../components/Banner";
 import SideBar from "../components/sideBar";
 import Footer from "@/components/footer";
-import { OverlayScrollbars } from "overlayscrollbars";
+import BodyScrollBar from "@/components/bodyScrollBar";
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -19,6 +19,7 @@ export default function RootLayout({
         <html lang="zh-CN" className="text-sm md:text-base bg-gray-200" data-overlayscrollbars-initialize>
             <meta charSet="UTF-8" />
             <body className="min-h-screen" data-overlayscrollbars-initialize>
+                <BodyScrollBar></BodyScrollBar>
                 {/* navbar */}
                 <NavBar></NavBar>
                 {/* <Banner></Banner> */}

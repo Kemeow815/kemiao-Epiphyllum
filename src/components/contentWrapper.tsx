@@ -38,7 +38,7 @@ export default function ContentWrapper({
                                         event.currentTarget.classList.remove('success');
                                     }, 1000);
                                 })
-                                .catch(err => console.error('复制失败:', err));
+                                .catch(err => console.error('fail:', err));
                         }
                     };
                         return (
@@ -82,7 +82,7 @@ export default function ContentWrapper({
                             </div>
                         );
                     },
-                    span: ({ children, ...rest }) => {
+                    span: ({className, children, ...rest }) => {
                         if (className?.includes("katex-display")) {
                             return (
                                 <ScrollBar
@@ -96,7 +96,7 @@ export default function ContentWrapper({
                                 </ScrollBar>
                             );
                         } else {
-                            return <span {...rest}>{children}</span>;
+                            return <span className={className} {...rest}>{children}</span>;
                         }
                     },
                 }}
