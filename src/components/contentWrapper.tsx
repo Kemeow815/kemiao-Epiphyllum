@@ -25,18 +25,18 @@ export default function ContentWrapper({
                     // 注意要有node 属性即使未使用防止...rest 解构错误
                     pre: ({node, children, ...rest }) => {
                       const handleCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
-                        const preBlock = event.currentTarget
+                        const Btn = event.currentTarget;
+                        const preBlock = Btn
                             .closest('.code-block')
                             ?.querySelector('pre');
                             
                         const codeContent = preBlock?.querySelector('code')?.textContent;
-                        
                         if (codeContent) {
                             navigator.clipboard.writeText(codeContent)
                                 .then(() => {
-                                    event.currentTarget.classList.add('success');
+                                    Btn.classList.add('success');
                                     setTimeout(() => {
-                                        event.currentTarget.classList.remove('success');
+                                        Btn.classList.remove('success');
                                     }, 1000);
                                 })
                                 .catch(err => console.error('fail:', err));

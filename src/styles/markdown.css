@@ -68,7 +68,8 @@
             @apply bg-[var(--codeblock-selection)];
         }
         code {
-            overflow: visible !important;
+            /* 防止highlight.js/styles/github-dark.css覆盖overflow样式*/
+            overflow: visible !important; 
             @apply bg-transparent text-inherit text-sm p-0;
         }
     }
