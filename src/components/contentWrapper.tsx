@@ -22,7 +22,8 @@ export default function ContentWrapper({
                 remarkPlugins={markdownConfig.remarkPlugins}
                 rehypePlugins={markdownConfig.rehypePlugins}
                 components={{
-                    pre: ({ className, children }) => {
+                    // 注意要有node 属性即使未使用防止...rest 解构错误
+                    pre: ({node, children, ...rest }) => {
                       const handleCopy = (event: React.MouseEvent<HTMLButtonElement>) => {
                         const preBlock = event.currentTarget
                             .closest('.code-block')
@@ -43,7 +44,7 @@ export default function ContentWrapper({
                     };
                         return (
                             <div className="relative code-block">
-                                <pre className={className} tabIndex={0}>
+                                <pre tabIndex={0} {...rest}>
                                     <ScrollBar
                                         options={{
                                             scrollbars: {
@@ -82,7 +83,7 @@ export default function ContentWrapper({
                             </div>
                         );
                     },
-                    span: ({className, children, ...rest }) => {
+                    span: ({node, className, children, ...rest }) => {
                         if (className?.includes("katex-display")) {
                             return (
                                 <ScrollBar
@@ -92,7 +93,7 @@ export default function ContentWrapper({
                                         },
                                     }}
                                 >
-                                    <span {...rest}>{children}</span>
+                                    <span className={className} {...rest}>{children}</span>
                                 </ScrollBar>
                             );
                         } else {
