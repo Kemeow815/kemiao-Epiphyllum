@@ -11,7 +11,7 @@ import { AdmonitionComponent } from "../plugins/rehype-component-admonition.mjs"
 import { GithubCardComponent } from "../plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "../plugins/remark-directive-rehype.js";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/github-dark.css";
+import "@/styles/github-dark.css";
 interface MarkdownConfig {
     remarkPlugins: PluggableList;
     rehypePlugins: PluggableList;
