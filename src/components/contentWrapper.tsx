@@ -24,11 +24,10 @@ export default function ContentWrapper({
                 rehypePlugins={markdownConfig.rehypePlugins}
                 components={{
                     // 注意要有node 属性即使未使用防止...rest 解构错误
-                    pre: ({node, children, ...rest }) => {
-                      
+                    pre: ({ node, children, ...rest }) => {
                         return (
                             <div className="relative code-block">
-                                <pre tabIndex={0} >
+                                <pre tabIndex={0}>
                                     <ScrollBar
                                         options={{
                                             scrollbars: {
@@ -36,7 +35,7 @@ export default function ContentWrapper({
                                                 autoHide: "leave",
                                                 autoHideDelay: 500,
                                                 autoHideSuspend: false,
-                                            },        
+                                            },
                                         }}
                                     >
                                         {children}
@@ -46,7 +45,7 @@ export default function ContentWrapper({
                             </div>
                         );
                     },
-                    span: ({node, className, children, ...rest }) => {
+                    span: ({ node, className, children, ...rest }) => {
                         if (className?.includes("katex-display")) {
                             return (
                                 <ScrollBar
@@ -56,12 +55,25 @@ export default function ContentWrapper({
                                         },
                                     }}
                                 >
-                                    <span className={className} {...rest}>{children}</span>
+                                    <span className={className} {...rest}>
+                                        {children}
+                                    </span>
                                 </ScrollBar>
                             );
                         } else {
-                            return <span className={className} {...rest}>{children}</span>;
+                            return (
+                                <span className={className} {...rest}>
+                                    {children}
+                                </span>
+                            );
                         }
+                    },
+                    code: ({ node, className, children, ...rest }) => {
+                        return (
+                            <code className={className} {...rest}>
+                                <span>{children}</span>
+                            </code>
+                        );
                     },
                 }}
             >
