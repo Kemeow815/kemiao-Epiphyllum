@@ -56,6 +56,7 @@ export default function CopyButton() {
 
             observer.observe(document.body, { childList: true, subtree: true });
         }
+
         return () => {
             observer.disconnect();
             document.removeEventListener("DOMContentLoaded", addPreCopyButton);
