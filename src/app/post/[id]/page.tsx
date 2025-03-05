@@ -29,7 +29,7 @@ export default async function Post({
                     tags: post.tags,
                 })}
             </div>
-            <ContentWrapper content={post.contentHtml} className="pt-2"></ContentWrapper>
+            <ContentWrapper contentHtml={post.contentHtml} className="pt-2"></ContentWrapper>
         </div>
     );
 }

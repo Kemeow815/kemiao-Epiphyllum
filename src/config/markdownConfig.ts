@@ -1,4 +1,8 @@
 import type { PluggableList } from "unified";
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeComponents from "rehype-components";
 import rehypeKatex from "rehype-katex";
@@ -10,8 +14,8 @@ import remarkSectionize from "remark-sectionize";
 import { AdmonitionComponent } from "../plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "../plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "../plugins/remark-directive-rehype.js";
-import rehypeHighlight from "rehype-highlight";
-import "@/styles/github-dark.css";
+import rehypeShiki from "@shikijs/rehype"
+
 interface MarkdownConfig {
     remarkPlugins: PluggableList;
     rehypePlugins: PluggableList;
@@ -29,7 +33,6 @@ export const markdownConfig: MarkdownConfig = {
     rehypePlugins: [
         rehypeKatex,
         rehypeSlug,
-        rehypeHighlight,
         [
             rehypeComponents,
             {
@@ -69,6 +72,21 @@ export const markdownConfig: MarkdownConfig = {
                 },
             },
         ],
-        
+        [
+            rehypeShiki, {
+                theme:{
+                    dark: "github-dark",
+                    light: "github-dark"
+                }
+            }
+        ]
     ],
 };
+
+export const createProcessor = () => 
+    unified()
+      .use(remarkParse)
+      .use(markdownConfig.remarkPlugins)
+      .use(remarkRehype)
+      .use(markdownConfig.rehypePlugins)
+      .use(rehypeStringify)
