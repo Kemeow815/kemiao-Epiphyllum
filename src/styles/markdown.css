@@ -64,7 +64,7 @@
     pre {
         @apply bg-[var(--codeblock-bg)] !important;
         @apply rounded-xl px-5;
-        div  {
+        div div {
             ::selection {
                 @apply bg-[var(--codeblock-selection)];
             }
