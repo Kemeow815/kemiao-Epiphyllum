@@ -1,9 +1,3 @@
-import ScrollBar from "@/components/scrollBar";
 export default function Page() {
-    return(
-        <div className="h-20">
-            关于
-        </div>
-        
-    );
+    return <div className="card-base p-8">关于</div>;
 }

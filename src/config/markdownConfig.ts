@@ -17,6 +17,7 @@ interface MarkdownConfig {
     rehypePlugins: PluggableList;
 }
 
+
 export const markdownConfig: MarkdownConfig = {
     remarkPlugins: [
         remarkMath,
@@ -26,9 +27,9 @@ export const markdownConfig: MarkdownConfig = {
         parseDirectiveNode,
     ],
     rehypePlugins: [
-        rehypeHighlight,
         rehypeKatex,
         rehypeSlug,
+        rehypeHighlight,
         [
             rehypeComponents,
             {
