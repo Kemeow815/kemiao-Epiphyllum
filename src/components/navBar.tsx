@@ -45,7 +45,7 @@ export default function NavBar() {
     }, [prevScrollY]);
     return (
         <div
-            className={`fixed inset-0 w-full z-10 transition duration-200 font-bold text-black leading-6 h-[4.5rem] mx-auto container px-0 md:px-4 ${
+            className={`fixed inset-0 w-full z-10 transition duration-200 font-bold text-black leading-6 h-[4.5rem] ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
             }`}
         >

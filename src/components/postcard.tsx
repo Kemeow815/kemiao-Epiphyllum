@@ -9,7 +9,7 @@ export default function postcard(props: PageContent) {
                 <div className="flex gap-4 relative -left-5 mb-3">
                     <div className="h-6 w-1 relative top-[6px] bg-sky-500 mx-auto rounded-full transition"></div>
                     <Link
-                        href={`/post/${props.id}`}
+                        href={`/post/${props.slug}`}
                         className=" w-full block font-bold text-3xl 
         hover:text-sky-500 transition line-clamp-2"
                     >
@@ -18,6 +18,7 @@ export default function postcard(props: PageContent) {
                 </div>
 
                 {postMeta({
+                    className:"flex flex-wrap text-neutral-500 items-center gap-4 gap-x-4 gap-y-2 mb-2",
                     published: props.date,
                     category: props.category,
                     tags: props.tags,
@@ -29,16 +30,18 @@ export default function postcard(props: PageContent) {
 }
 
 export function postMeta({
+    className,
     published,
     category,
     tags,
 }: {
+    className?: string;
     published: Date;
     category: string;
     tags?: string[];
 }) {
     return (
-        <div className="flex flex-wrap text-neutral-500 items-center gap-4 gap-x-4 gap-y-2 mb-2">
+        <div className={className}>
             <div className="flex items-center">
                 <span className="text-sm font-medium">
                     {format(published, "yyyy-MM-dd")}

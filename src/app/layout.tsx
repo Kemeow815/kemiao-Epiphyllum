@@ -16,9 +16,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="zh-CN" className="text-sm md:text-base bg-gray-200" data-overlayscrollbars-initialize>
+        <html lang="zh-CN" className="text-sm md:text-base bg-gray-200 transition" data-overlayscrollbars-initialize>
             <meta charSet="UTF-8" />
-            <body className="min-h-screen" data-overlayscrollbars-initialize>
+            <body className="min-h-screen transition" data-overlayscrollbars-initialize>
                 <BodyScrollBar></BodyScrollBar>
                 {/* navbar */}
                 <NavBar></NavBar>

@@ -2,18 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { createProcessor } from "../config/markdownConfig";
-const postsDirectory = path.join(process.cwd(), "src/data/posts");
-
-export interface BlogPost {
-    slug: string;
-    contentHtml: string;
-    title: string;
-    date: Date;
-    description: string;
-    category: string;
-    tags?: string[];
-}
-async function processMarkdown(fileName: string) {
+const postsDirectory = path.join(process.cwd(), "src/data");
+export async function processMarkdown(fileName: string) {
     const slug = fileName.replace(/\.md$/, "");
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -33,18 +23,4 @@ async function processMarkdown(fileName: string) {
         }),
         date: new Date(matterResult.data.date),
     };
-}
-export async function getAllPosts() {
-    const fileNames = fs.readdirSync(postsDirectory);
-
-    const allPostsData = await Promise.all(
-        fileNames.map(async (fileName) => {
-            return processMarkdown(fileName);
-        })
-    );
-    return allPostsData;
-}
-export async function getPostById(slug: string) {
-    const decodedId = decodeURIComponent(slug);
-    return processMarkdown(`${decodedId}.md`);
 }
