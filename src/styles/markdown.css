@@ -64,12 +64,15 @@
     pre {
         @apply bg-[var(--codeblock-bg)] !important;
         @apply rounded-xl px-5;
-        code {
-            /* 防止github-dark.css覆盖overflow样式*/
-            overflow: visible !important;
+        div div {
             ::selection {
                 @apply bg-[var(--codeblock-selection)];
             }
+        }
+        code {
+            /* 防止github-dark.css覆盖overflow样式*/
+            overflow: visible !important;
+            
             @apply bg-transparent text-inherit text-sm p-0;
         }
     }
