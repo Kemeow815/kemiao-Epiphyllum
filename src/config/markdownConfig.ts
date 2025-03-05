@@ -77,7 +77,8 @@ export const markdownConfig: MarkdownConfig = {
                 theme:{
                     dark: "github-dark",
                     light: "github-dark"
-                }
+                },
+                defaultLanguage: 'text'
             }
         ]
     ],
