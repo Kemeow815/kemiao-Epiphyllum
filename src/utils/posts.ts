@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { createProcessor } from "../config/markdownConfig";
 const postsDirectory = path.join(process.cwd(), "src/data/posts");
 
-export interface BlogPost {
+export interface BlogData {
     slug: string;
     contentHtml: string;
     title: string;

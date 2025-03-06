@@ -1,5 +1,5 @@
 import { getAllPosts, getPostById } from "@/utils/posts";
-import { BlogPost } from "@/utils/posts";
+import { BlogData } from "@/utils/posts";
 import { postMeta } from "@/components/postcard";
 import ContentWrapper from "@/components/contentWrapper";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
@@ -11,7 +11,7 @@ export default async function Post({
     params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const post: BlogPost = await getPostById(slug);
+    const post: BlogData = await getPostById(slug);
     return (
         <div className="card-base p-8 divide-y divide-dashed">
             <div className="relative flex flex-col">

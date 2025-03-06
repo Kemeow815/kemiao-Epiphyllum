@@ -62,7 +62,7 @@ function generatePagination(mxPage: number, id: number){
                                 className={
                                     "h-11 w-11 rounded-lg flex items-center justify-center hover:bg-sky-300" +
                                     (page === id
-                                        ? " bg-sky-500 text-white pointer-events-none"
+                                        ? " bg-sky-500 text-white"
                                         : "")
                                 }
                             >
