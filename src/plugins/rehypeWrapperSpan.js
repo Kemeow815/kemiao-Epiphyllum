@@ -1,18 +1,13 @@
-import { visit } from 'unist-util-visit';
-import {h} from 'hastscript';
+import { visit } from "unist-util-visit";
+import { h } from "hastscript";
 
 export function rehypeWrapperSpan() {
-  return (tree) => {
-    visit(tree, 'element', (node) => {
-      if (
-        node.tagName === 'pre' && 
-        node.children?.[0]?.tagName === 'code'
-      ) {
-        const codeNode = node.children[0];
-        codeNode.children = [
-          h('span', codeNode.children) 
-        ];
-      }
-    });
-  };
+    return (tree) => {
+        visit(tree, "element", (node, parent) => {
+            if (parent?.tagName === "pre" && node.tagName === "code") {
+                node.children = [h("span", node.children)];
+                return visit.SKIP;
+            }
+        });
+    };
 }
