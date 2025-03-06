@@ -56,7 +56,7 @@ export default async function Page() {
                     </div>
                     {group.posts.map((post) => (
                         <a
-                            href={`\post\${post.slug}`}
+                            href={`/post/${post.slug}`}
                             key={post.slug}
                             className="group btn-plain !block h-10 w-full rounded-lg hover:text-[initial]"
                         >

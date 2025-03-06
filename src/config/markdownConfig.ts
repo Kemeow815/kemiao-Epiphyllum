@@ -15,6 +15,7 @@ import remarkSectionize from "remark-sectionize";
 import { AdmonitionComponent } from "../plugins/rehype-component-admonition.mjs";
 import { GithubCardComponent } from "../plugins/rehype-component-github-card.mjs";
 import { parseDirectiveNode } from "../plugins/remark-directive-rehype.js";
+import { rehypeWrapperSpan } from "../plugins/rehypeWrapperSpan.js";
 // 配置类型定义
 interface MarkdownConfig {
   remarkPlugins: PluggableList
@@ -78,6 +79,7 @@ export const markdownConfig: MarkdownConfig = {
             defaultLanguage: 'text',
           }
         ],
+        rehypeWrapperSpan,
       ],
 }
 
