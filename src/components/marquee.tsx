@@ -17,6 +17,10 @@ export default function Marquee({
   vertical = false,
   repeat = 4,
 }: MarqueeProps) {
+  const classname = `flex shrink-0 justify-around gap-[var(--marquee-gap)] 
+    ${vertical ? "animate-marquee-vertical flex-col" : "animate-marquee flex-row"} 
+    ${pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""}
+    ${reverse ? "animate-marquee-reverse" : ""}`;
   return (
     <div
       className={
@@ -28,11 +32,7 @@ export default function Marquee({
         .map((_, i) => (
           <div
             key={i}
-            className={"flex shrink-0 justify-around gap-[var(--marquee-gap)] " +
-                (vertical ? "animate-marquee-vertical flex-col " : "animate-marquee flex-row ") +
-                (pauseOnHover ? "group-hover:[animation-play-state:paused] " : " ") + 
-                (reverse ? "[animation-direction:reverse] " : " ")
-            }
+            className={classname}
           >
             {children}
           </div>

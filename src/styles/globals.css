@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-    --marquee-gap : 1rem;
-    --marquee-duration : 40s;
+    --marquee-gap: 1rem;
+    --marquee-duration: 40s;
     --rounded-large: 1rem;
     --page-width: 75;
     --banner-height: 35;
@@ -219,10 +219,33 @@
         transform: translateY(calc(-100% - var(--marquee-gap)));
     }
 }
+
+
 .animate-marquee {
-    animation: marquee var(--marquee-duration) infinite linear;
+    animation-name: marquee;
+    animation-duration: var(--marquee-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.animate-marquee-reverse {
+    animation-name: marquee;
+    animation-duration: var(--marquee-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: reverse;
 }
 
 .animate-marquee-vertical {
-    animation: marquee-vertical var(--marquee-duration) linear infinite;
+    animation-name: marquee-vertical;
+    animation-duration: var(--marquee-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.animate-marquee-vertical-reverse {
+    animation-name: marquee-vertical;
+    animation-duration: var(--marquee-duration);
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: reverse;
 }

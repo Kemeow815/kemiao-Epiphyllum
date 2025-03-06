@@ -4,7 +4,7 @@ import Marquee from "./marquee";
 import { getAllTags } from "@/utils/getData";
 export default async function tag() {
     const TagData: Array<string> = await getAllTags();
-    let length = TagData.length;
+    const length = TagData.length;
     const TagsList = [
         TagData.slice(0, length / 3),
         TagData.slice(length / 3, (length / 3) * 2),
@@ -19,9 +19,8 @@ export default async function tag() {
                 <div className="w-5 h-1 rounded-md bg-sky-500"></div>
                 <div className="relative overflow-hidden w-full px-3">
                     {TagsList.map((tags, index) => {
-                        console.log((index === 1));
                         return (
-                            <Marquee key={index} pauseOnHover={true}>
+                            <Marquee key={index} pauseOnHover={true} reverse={index === 1}>
                                 {tags.map((tag) => {
                                     return (
                                         <Link
