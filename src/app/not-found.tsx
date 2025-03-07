@@ -106,7 +106,7 @@ export default function NotFound() {
                         Whoops, that page is gone.
                     </p>
                     <p className="text-xl text-gray-600 mb-4">
-                        We can't seem to find the page you're looking for.
+                        We can&apos;t seem to find the page you&apos;re looking for.
                         
                     </p>
                     <p className="text-lg text-gray-600">
