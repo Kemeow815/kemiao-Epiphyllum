@@ -26,6 +26,7 @@ export default async function page({
     const tagPosts = posts.filter((post) => post.tags?.includes(decodedslug));
     return (
         <div className="card-base px-8 py-6">
+            <div className="mx-auto text-center text-3xl font-bold">{decodedslug}</div>
             <ArchiveCreate posts={tagPosts}></ArchiveCreate>
         </div>
     );

@@ -27,6 +27,7 @@ export default async function page({
     );
     return (
         <div className="card-base px-8 py-6">
+            <div className="mx-auto text-center text-3xl font-bold">{decodedslug}</div>
             <ArchiveCreate posts={CategoriesPosts}></ArchiveCreate>
         </div>
     );
