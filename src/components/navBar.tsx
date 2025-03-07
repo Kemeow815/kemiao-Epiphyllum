@@ -28,11 +28,10 @@ export default function NavBar() {
             else if (currentScrollY < prevScrollY) {
               setIsVisible(true);
             }
-            // if (currentScrollY < 5) {
-            //     setIsVisible(true);
-            // } else {
-            //     setIsVisible(false);
-            // }
+
+            if (currentScrollY < 5) {
+                setIsVisible(true);
+            }
             // 更新上一次滚动位置
             setPrevScrollY(currentScrollY);
         };
