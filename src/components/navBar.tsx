@@ -62,7 +62,6 @@ export default function NavBar() {
                 </div>
                 <div className="flex">
                     <div className="Link Myhover">搜索</div>
-                    <div className="Link Myhover">主题</div>
                 </div>
             </div>
         </div>

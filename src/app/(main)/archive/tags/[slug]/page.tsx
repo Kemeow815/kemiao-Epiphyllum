@@ -24,5 +24,9 @@ export default async function page({
     const decodedslug = decodeURIComponent(slug);
     const posts = await getAllSortedPosts();
     const tagPosts = posts.filter((post) => post.tags?.includes(decodedslug));
-    return <ArchiveCreate posts={tagPosts}></ArchiveCreate>;
+    return (
+        <div className="card-base px-8 py-6">
+            <ArchiveCreate posts={tagPosts}></ArchiveCreate>
+        </div>
+    );
 }

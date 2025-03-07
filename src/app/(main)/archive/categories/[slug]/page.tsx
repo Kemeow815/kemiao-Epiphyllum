@@ -22,6 +22,12 @@ export default async function page({
     const { slug } = await params;
     const decodedslug = decodeURIComponent(slug);
     const posts = await getAllSortedPosts();
-    const CategoriesPosts = posts.filter((post) => post.category === decodedslug);
-    return <ArchiveCreate posts={CategoriesPosts}></ArchiveCreate>;
+    const CategoriesPosts = posts.filter(
+        (post) => post.category === decodedslug
+    );
+    return (
+        <div className="card-base px-8 py-6">
+            <ArchiveCreate posts={CategoriesPosts}></ArchiveCreate>
+        </div>
+    );
 }

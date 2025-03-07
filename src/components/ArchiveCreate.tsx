@@ -9,11 +9,7 @@ function formatDate(date: Date) {
 function formatTag(tag: string[] = [""]) {
     return tag.map((t) => `#${t}`).join(" ");
 }
-export default function ArchiveCreate({
-    posts
-}: {
-    posts : BlogData[];
-}) {
+export default function ArchiveCreate({ posts }: { posts: BlogData[] }) {
     const groups: { year: number; posts: typeof posts }[] = (() => {
         const groupedPosts = posts.reduce(
             (grouped: { [year: number]: typeof posts }, post) => {
@@ -32,12 +28,11 @@ export default function ArchiveCreate({
             posts: groupedPosts[Number.parseInt(key)],
         }));
 
-
         groupedPostsArray.sort((a, b) => b.year - a.year);
         return groupedPostsArray;
     })();
     return (
-        <div className="card-base px-8 py-6">
+        <React.Fragment>
             {groups.map((group) => (
                 <div key={group.year}>
                     <div className="flex flex-row w-full items-center h-[3.75rem]">
@@ -92,6 +87,6 @@ export default function ArchiveCreate({
                     ))}
                 </div>
             ))}
-        </div>
+        </React.Fragment>
     );
 }
