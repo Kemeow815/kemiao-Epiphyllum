@@ -8,7 +8,7 @@ export const revalidate = 3600; // ISR 配置（单位：秒）
 export default async function Post({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string }>
 }) {
     const { slug } = await params;
     const post: BlogData = await getPostById(slug);
