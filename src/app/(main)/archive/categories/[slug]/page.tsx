@@ -2,6 +2,8 @@ import React from "react";
 import { BlogData } from "@/utils/posts";
 import ArchiveCreate from "@/components/ArchiveCreate";
 import { getAllSortedPosts } from "@/utils/getData";
+export const dynamicParams = false; // 禁用动态参数（纯静态生成）
+export const revalidate = 3600; // ISR 配置（单位：秒）
 export async function generateStaticParams() {
     const posts: BlogData[] = await getAllSortedPosts();
     const uniqueCategories = Array.from(
