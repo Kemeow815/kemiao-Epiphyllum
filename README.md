@@ -1,7 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-![alt text](image.png)
-![alt text](image-1.png)
+![image-20250307102641167](./assets/image-20250307102641167.png)
+
+![image-20250307102652636](./assets/image-20250307102705512.png)
+
 ## Getting Started
 
 First, run the development server:
@@ -36,3 +38,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## TODO
+
+- [ ] 搜索
+- [ ] 目录
+- [ ] Light/dark 模式
+- [ ] 评论
+
