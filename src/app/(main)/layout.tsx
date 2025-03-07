@@ -24,7 +24,7 @@ export default function RootLayout({
                         </div>
                     </div>
                 </main>
-                <SideBar className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem]"></SideBar>
+                <SideBar className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"></SideBar>
                 <div className="footer col-span-2 onload-animation block lg:hidden">
                     <Footer></Footer>
                 </div>

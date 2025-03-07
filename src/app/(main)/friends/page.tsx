@@ -27,7 +27,7 @@ export default function Page() {
         <div className="flex gap-4 flex-wrap">
             {
                 friends.map((friend, index) => (
-                    <Link href={friend.url} key={index} className="bg-sky-200 border border-black border-solid card-base h-[6.5rem] w-64 transition duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 ">
+                    <Link href={friend.url} key={index} target="_blank" className="bg-sky-200 border border-black border-solid card-base h-[6.5rem] w-64 transition duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 ">
                         <div className="h-full flex items-center gap-4 px-4">
                             <MyImage src={friend.avatar} alt={friend.name} className="h-20 w-20 rounded-[var(--radius-large)]"></MyImage>
                             <div>

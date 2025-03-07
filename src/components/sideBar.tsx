@@ -9,12 +9,11 @@ interface Props {
 export default function SideBar(props: Props) {
     return (
         <div className={"flex flex-col gap-4 " + props.className}>
-            <div className="w-full">
-                <div className="flex flex-col w-full">
-                    <Profile></Profile>
-                </div>
+            <div className="flex flex-col">
+                <Profile></Profile>
             </div>
-            <div className="flex flex-col w-full gap-4">
+
+            <div className="flex flex-col gap-4">
                 <Categories></Categories>
                 <Tag></Tag>
             </div>

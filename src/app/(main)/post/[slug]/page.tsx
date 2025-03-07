@@ -15,7 +15,7 @@ export default async function Post({
     return (
         <div className="card-base p-8 divide-y divide-dashed">
             <div className="relative flex flex-col">
-                    <div className=" w-full font-bold text-3xl transition line-clamp-2 text-center">
+                    <div className=" w-full font-bold text-3xl transition line-clamp-2 text-center mb-2">
                         {post.title}
                     </div>
 
