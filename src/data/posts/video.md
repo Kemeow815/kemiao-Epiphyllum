@@ -5,7 +5,7 @@ description: "This post demonstrates how to include embedded video in a blog pos
 tags: 
     - "Example" 
     - "Video"
-category: Examples
+category: try
 ---
 
 Just copy the embed code from YouTube or other platforms, and paste it in the markdown file.

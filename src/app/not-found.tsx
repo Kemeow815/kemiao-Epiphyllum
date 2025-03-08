@@ -1,5 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "404",
+    description: "404",
+};
 
 export default function NotFound() {
     // 为每个数字创建图片网格

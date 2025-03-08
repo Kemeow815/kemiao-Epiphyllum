@@ -14,13 +14,13 @@ export default function ArchiveCategory({
 }) {
     const [isVisible, setIsVisible] = useState(false);
     return (
-        <div className="flex flex-col mb-4">
+        <div className="flex flex-col mb-4 ">
             <div className="flex items-center gap-4">
-                <div className="transition text-2xl font-bold text-75 cursor-pointer hover:text-sky-500 " onClick={() => setIsVisible(!isVisible)}>
+                <div className="transition group text-2xl font-bold text-75">
                     {category}
+                    <span className="ml-4 transition text-50 text-base font-normal">{`${count}篇文章`}</span>        
                 </div>
-                <div className=" transition text-50">{`${count}篇文章`}</div>
-                
+                <button className="h-7 w-7 bg-gray-200 rounded-md font-bold hover:bg-gray-500 hover:text-white"  onClick={() => setIsVisible(!isVisible)}>{isVisible ? '-' : '+'}</button>
             </div>
             {isVisible && <ArchiveCreate posts={posts}></ArchiveCreate>}
         </div>

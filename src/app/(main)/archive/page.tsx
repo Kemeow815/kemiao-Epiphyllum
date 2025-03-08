@@ -1,6 +1,11 @@
 import { getAllSortedPosts } from "@/utils/getData";
 import { BlogData } from "@/utils/posts";
 import ArchiveCreate from "@/components/ArchiveCreate";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Archive - Blog",
+    description: "Archive - Blog",
+};
 export default async function Page() {
     const posts: BlogData[] = await getAllSortedPosts();
     return (

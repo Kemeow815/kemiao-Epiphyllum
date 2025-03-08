@@ -3,7 +3,11 @@ import { getAllPage, getPageById } from "@/utils/pages";
 import PageCreate from "@/components/pageCreate";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 export const revalidate = 3600; // ISR 配置（单位：秒）
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Epiphyllum",
+    description: "Page",
+};
 export async function generateStaticParams() {
     const pages = await getAllPage();
 

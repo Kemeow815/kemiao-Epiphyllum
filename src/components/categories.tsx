@@ -1,6 +1,7 @@
 import React from "react";
 import { getAllCategories } from "@/utils/getData";
 import Link from "next/link";
+import ScrollBar from "./scrollbar";
 export default async function categories() {
     const categories: Array<{
         category: string;
@@ -16,14 +17,26 @@ export default async function categories() {
                 >
                     分类
                 </Link>
-                <div className="w-5 h-1 rounded-md bg-sky-500 line-clamp-3"></div>
-                <div className="w-full">
-                    {categories.slice(0, 3).map(({ category, count }) => {
+                <div className="w-5 h-1 rounded-md bg-sky-500"></div>
+                <ScrollBar
+                className="w-full"
+                    options={{
+                        scrollbars: {
+                            theme: "scrollbar-base scrollbar-auto py-1",
+                            autoHide: "move",
+                            autoHideDelay: 500,
+                            autoHideSuspend: false,
+                        },
+                    }}
+                >   
+                    <div className="w-full max-h-[108px] transition">
+
+                    {categories.map(({ category, count }) => {
                         return (
                             <Link
                                 key={category}
                                 href={`/archive/categories/${category}`}
-                                className="flex w-full justify-between items-center rounded-lg text-neutral-700 Myhover px-3 py-1"
+                                className="flex w-full justify-between items-center rounded-lg text-neutral-700 Myhover px-3 py-1 transition"
                             >
                                 <div className="font-semibold">{category}</div>
                                 <div>
@@ -34,16 +47,8 @@ export default async function categories() {
                             </Link>
                         );
                     })}
-
-                    {categories.length > 3 && (
-                        <Link
-                            href={`/archive/categories`}
-                            className="w-full flex items-center justify-center Myhover"
-                        >
-                            {"more"}
-                        </Link>
-                    )}
-                </div>
+                    </div>
+                </ScrollBar>
             </div>
         </div>
     );

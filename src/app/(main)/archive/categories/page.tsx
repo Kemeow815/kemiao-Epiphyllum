@@ -2,6 +2,11 @@ import { getAllCategories } from "@/utils/getData";
 import { getAllSortedPosts } from "@/utils/getData";
 import ArchiveCategory from "@/components/archiveCategory";
 import { BlogData } from "@/utils/posts";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Categories - Blog",
+    description: "Categories",
+};
 export default async function page() {
     const categories = await getAllCategories();
     const posts = await getAllSortedPosts();
@@ -18,7 +23,7 @@ export default async function page() {
     }
 
     return (
-        <div className="card-base px-8 py-6">
+        <div className="card-base px-9 py-6">
             <div className="mx-auto text-center text-3xl font-bold mb-4">
                 Categories
             </div>

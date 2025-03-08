@@ -1,5 +1,10 @@
 import { getAllTags } from "@/utils/getData";
 import Link from "next/link";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Tags - Blog",
+    description: "Tags - A list of all tags",
+};
 export default async function page() {
     const Tags = await getAllTags();
     return (
