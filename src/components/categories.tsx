@@ -29,7 +29,7 @@ export default async function categories() {
                         },
                     }}
                 >   
-                    <div className="w-full max-h-[108px] transition">
+                    <div className="w-full max-h-[94.5px] md:max-h-[108px] transition">
 
                     {categories.map(({ category, count }) => {
                         return (
