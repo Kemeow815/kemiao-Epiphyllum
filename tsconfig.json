@@ -18,10 +18,8 @@
         "name": "next"
       }
     ],
-    "typeRoots": ["./node_modules/@types", "./src/types"],
     "paths": {
       "@/*": ["./src/*"],
-      "pagefind": ["./src/types/pagefind.d.ts"]
     },
     
   },

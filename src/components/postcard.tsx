@@ -6,7 +6,6 @@ export default function postcard(props: PageContent) {
     return (
         <div className="card-base flex flex-col rounded-none first:rounded-t-[var(--rounded-large)] last:rounded-b-[var(--rounded-large)] md:flex-col w-full relative md:rounded-[var(--rounded-large)] ">
             <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative space-y-3 ">
-                {/* <div className="h-6 w-1 relative top-[6px] bg-sky-500 mx-auto rounded-full transition"></div> */}
                 <Link
                     href={`/post/${props.slug}`}
                     className=" w-full block font-bold text-3xl 

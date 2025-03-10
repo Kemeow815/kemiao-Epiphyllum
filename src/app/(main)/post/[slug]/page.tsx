@@ -4,7 +4,7 @@ import { postMeta } from "@/components/postcard";
 import ContentWrapper from "@/components/contentWrapper";
 import type { Metadata, ResolvingMetadata } from "next";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
-export const revalidate = 3600; // ISR 配置（单位：秒）
+// export const revalidate = 3600; // ISR 配置（单位：秒）
 type Props = {
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
