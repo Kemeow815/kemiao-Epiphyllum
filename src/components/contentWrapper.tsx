@@ -39,7 +39,7 @@ export default function ContentWrapper({
     return (
         <div
             data-pagefind-body
-            className={`prose dark:prose-invert prose-base !max-w-none custom-md ${className}`}
+            className={`prose prose-base !max-w-none custom-md ${className}`}
         >
             <div dangerouslySetInnerHTML={{ __html: contentHtml }} suppressHydrationWarning={true} />
             <CopyButton></CopyButton>
