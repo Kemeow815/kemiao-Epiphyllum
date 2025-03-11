@@ -21,6 +21,7 @@ interface SearchResult {
     data: () => Promise<SearchData>;
 }
 export default function Search() {
+    const [isVisable, setIsVisable] = useState(false);
     useEffect(() => {
         async function loadPagefind() {
             if (process.env.NODE_ENV === "production") {
@@ -60,8 +61,14 @@ export default function Search() {
             }
         }
         loadPagefind();
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === "/" && !isVisable) {
+                setIsVisable(true);
+            }
+        }
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
     }, []);
-    const [isVisable, setIsVisable] = useState(false);
     function handleClick() {
         setIsVisable(!isVisable);
     }
@@ -81,7 +88,11 @@ export default function Search() {
                     >
                         <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
                     </svg>
-                    <span>search</span>
+                    <div className="overflow-hidden">
+                        <span>
+                            Press <kbd>/</kbd> to search
+                        </span>
+                    </div>
                 </div>
             )}
 
@@ -89,7 +100,7 @@ export default function Search() {
         </>
     );
 }
-function SearchUi({ handleClick }: { handleClick?: () => void }) {
+function SearchUi({ handleClick }: { handleClick: () => void }) {
     const [result, setResult] = useState<SearchResult[]>([]);
     const [query, setQuery] = useState("");
     const inputRef = React.useRef<HTMLInputElement>(null);
@@ -98,7 +109,14 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
         bodyOsInstance?.destroy();
         document.body.classList.add("overflow-hidden");
         inputRef.current?.focus();
+        function handleKeyDown(event: KeyboardEvent) {
+            if (event.key === "Escape") {
+                handleClick();
+            }
+        }
+        document.addEventListener("keydown", handleKeyDown);
         return () => {
+            document.removeEventListener("keydown", handleKeyDown);
             document.body.classList.remove("overflow-hidden");
             OverlayScrollbars(
                 {
@@ -155,25 +173,33 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
                                 onInput={handleSearch}
                             />
                         </div>
-                        {query !== "" && (
-                            <button
-                                className="w-7 h-7 rounded-md hover:bg-gray-200 flex justify-center items-center"
-                                onClick={() => {
-                                    setQuery("");
-                                    inputRef.current?.focus();
-                                }}
-                            >
-                                <svg
-                                    aria-hidden="true"
-                                    height="1em"
-                                    viewBox="0 0 16 16"
-                                    version="1.1"
-                                    width="1em"
+                        <div className="flex gap-1 items-center">
+                            {query !== "" && (
+                                <button
+                                    className="w-7 h-7 rounded-md hover:bg-gray-200 flex justify-center items-center"
+                                    onClick={() => {
+                                        setQuery("");
+                                        inputRef.current?.focus();
+                                    }}
                                 >
-                                    <path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>
-                                </svg>
+                                    <svg
+                                        aria-hidden="true"
+                                        height="1em"
+                                        viewBox="0 0 16 16"
+                                        version="1.1"
+                                        width="1em"
+                                    >
+                                        <path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>
+                                    </svg>
+                                </button>
+                            )}
+                            <button
+                                className="w-7 h-7 rounded-md border-2 border-solid hover:bg-gray-200 flex justify-center items-center text-sm font-normal p-1"
+                                onClick={handleClick}
+                            >
+                                Esc
                             </button>
-                        )}
+                        </div>
                     </div>
                     <ScrollBar
                         options={{
