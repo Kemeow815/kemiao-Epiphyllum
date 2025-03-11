@@ -1,6 +1,6 @@
 "use client";
 import { BlogData } from "@/utils/posts";
-import ArchiveCreate from "@/components/ArchiveCreate";
+import ArchiveCreate from "@/components/archiveCreate";
 import React, { useState } from "react";
 
 export default function ArchiveCategory({

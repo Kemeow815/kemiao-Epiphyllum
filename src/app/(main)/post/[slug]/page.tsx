@@ -15,11 +15,10 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug } = await params;
-    const decodedslug = decodeURIComponent(slug);
-
+    const post: BlogData = await getPostById(slug);
     return {
-        title: `${slug}`,
-        description: `${slug}`,
+        title: `${post.title}`,
+        description: `${post.description}`,
     };
 }
 
@@ -33,9 +32,9 @@ export default async function Post({
     return (
         <div className="card-base p-8 divide-y divide-dashed">
             <div className="relative flex flex-col mb-4">
-                    <div className=" w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
+                    <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
                         {post.title}
-                    </div>
+                    </h1>
 
                 {postMeta({
                     className : "flex justify-center items-center text-neutral-500 gap-x-4", 

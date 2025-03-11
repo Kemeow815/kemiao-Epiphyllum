@@ -9,17 +9,17 @@ export default async function categories() {
     }> = await getAllCategories();
 
     return (
-        <div className="card-base p-2">
+        <div className="card-base">
             <div className="text-lg font-bold flex flex-col items-center gap-1 justify-center">
                 <Link
                     href={"/archive/categories"}
-                    className="hover:text-sky-500"
+                    className="hover:text-sky-500 mt-2"
                 >
                     分类
                 </Link>
                 <div className="w-5 h-1 rounded-md bg-sky-500"></div>
                 <ScrollBar
-                className="w-full"
+                className="w-full mb-2"
                     options={{
                         scrollbars: {
                             theme: "scrollbar-base scrollbar-auto py-1",
@@ -29,7 +29,7 @@ export default async function categories() {
                         },
                     }}
                 >   
-                    <div className="w-full max-h-[94.5px] md:max-h-[108px] transition">
+                    <div className="w-full px-2 max-h-[94.5px] md:max-h-[108px] transition">
 
                     {categories.map(({ category, count }) => {
                         return (

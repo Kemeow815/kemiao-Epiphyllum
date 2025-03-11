@@ -61,7 +61,7 @@ export default function ArchiveCreate({ posts }: { posts: BlogData[] }) {
                                     <div
                                         className="transition-all mx-auto w-1 h-1 rounded group-hover:h-5
                                 bg-[oklch(0.5_0.05_var(--hue))] group-hover:bg-[var(--primary)]
-                                outline outline-4 z-50
+                                outline outline-4 z-10
                                 outline-[var(--card-bg)]
                                 group-hover:outline-[var(--btn-plain-bg-hover)]
                                 group-active:outline-[var(--btn-plain-bg-active)]

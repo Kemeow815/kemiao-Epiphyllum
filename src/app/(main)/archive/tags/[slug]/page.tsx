@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogData } from "@/utils/posts";
-import ArchiveCreate from "@/components/ArchiveCreate";
+import ArchiveCreate from "@/components/archiveCreate";
 import { getAllSortedPosts } from "@/utils/getData";
 import type { Metadata, ResolvingMetadata } from "next";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
@@ -18,8 +18,8 @@ export async function generateMetadata(
     const decodedslug = decodeURIComponent(slug);
 
     return {
-        title: `${slug} - Tag - Blog`,
-        description: `${slug} - Tag - Blog`,
+        title: `${decodedslug} - Tag - Blog`,
+        description: `${decodedslug} - Tag - Blog`,
     };
 }
 export async function generateStaticParams() {

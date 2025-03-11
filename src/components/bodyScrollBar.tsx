@@ -2,11 +2,9 @@
 import { useEffect } from "react";
 import { OverlayScrollbars } from "overlayscrollbars";
 export default function ScrollBar() {
-    useEffect(() => {
-        let scrollbarsInstance: OverlayScrollbars | null = null;
-        
+    useEffect(() => {    
         if (typeof window !== "undefined") {
-            scrollbarsInstance = OverlayScrollbars(
+            OverlayScrollbars(
                 { 
                     target: document.body,
                     cancel: { 
@@ -25,9 +23,8 @@ export default function ScrollBar() {
         }
     
         return () => {
-            if (scrollbarsInstance) {
-                scrollbarsInstance.destroy(); // 清理滚动条实例
-            }
+            const bodyOsInstance = OverlayScrollbars(document.body);
+            bodyOsInstance?.destroy();
         };
     }, []);
     return null;

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { useEffect, useState } from "react";
+import Search from "./search";
 interface linkItem {
     name: string;
     url: string;
@@ -44,7 +45,7 @@ export default function NavBar() {
     }, [prevScrollY]);
     return (
         <div
-            className={`fixed inset-0 w-full z-10 transition duration-200 font-bold text-black leading-6 h-[4.5rem] ${
+            className={`fixed inset-0 w-full z-20 transition duration-200 font-bold text-black leading-6 h-[4.5rem] ${
                 isVisible ? "translate-y-0" : "-translate-y-full"
             }`}
         >
@@ -61,7 +62,7 @@ export default function NavBar() {
                     ))}
                 </div>
                 <div className="flex">
-                    <div className="Link Myhover">搜索</div>
+                    <Search></Search>
                 </div>
             </div>
         </div>

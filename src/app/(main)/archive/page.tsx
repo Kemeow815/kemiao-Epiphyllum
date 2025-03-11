@@ -1,6 +1,6 @@
 import { getAllSortedPosts } from "@/utils/getData";
 import { BlogData } from "@/utils/posts";
-import ArchiveCreate from "@/components/ArchiveCreate";
+import ArchiveCreate from "@/components/archiveCreate";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Archive - Blog",
