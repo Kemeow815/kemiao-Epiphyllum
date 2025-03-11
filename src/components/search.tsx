@@ -67,21 +67,23 @@ export default function Search() {
     }
     return (
         <>
-            {!isVisable && <div
-                className="flex cursor-pointer gap-2 items-center font-bold bg-gray-200/50 rounded-lg p-2"
-                onClick={handleClick}
-            >
-                <svg
-                    aria-hidden="true"
-                    height="1em"
-                    viewBox="0 0 16 16"
-                    version="1.1"
-                    width="1em"
+            {!isVisable && (
+                <div
+                    className="flex cursor-pointer gap-2 items-center font-bold bg-gray-200/50 rounded-lg p-2 Myhover"
+                    onClick={handleClick}
                 >
-                    <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
-                </svg>
-                <span>search</span>
-            </div>}
+                    <svg
+                        aria-hidden="true"
+                        height="1em"
+                        viewBox="0 0 16 16"
+                        version="1.1"
+                        width="1em"
+                    >
+                        <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+                    </svg>
+                    <span>search</span>
+                </div>
+            )}
 
             {isVisable && <SearchUi handleClick={handleClick}></SearchUi>}
         </>
@@ -127,28 +129,19 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
             className="search-panel fixed inset-0 w-screen h-screen bg-gray-700/10 z-50"
             onClick={handleClick}
         >
-            <ScrollBar
-                className="card-base w-full mx-auto box-border max-w-[30rem] min-h-[4.5rem] max-h-[50vh] p-4 bg-white opacity-100"
-                options={{
-                    scrollbars: {
-                        theme: "scrollbar-base scrollbar-auto py-1",
-                        autoHide: "move",
-                        autoHideDelay: 500,
-                        autoHideSuspend: false,
-                    },
-                }}
+            <div
+                className="card-base w-full mx-auto box-border max-w-[30rem] min-h-[4.5rem] bg-white opacity-100"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="flex flex-col">
-                    <div className="flex justify-between items-center border-0 border-b-2 border-solid w-full mb-2">
-                        <div className="flex gap-1 items-center">
+                <div className="flex flex-col w-full py-4">
+                    <div className="flex justify-between items-center border-0 border-b-2 border-solid mb-2 mx-4">
+                        <div className="flex gap-1 items-center h-8">
                             <svg
                                 aria-hidden="true"
                                 height="1em"
                                 viewBox="0 0 16 16"
                                 version="1.1"
                                 width="1em"
-                                
                             >
                                 <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
                             </svg>
@@ -162,32 +155,49 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
                                 onInput={handleSearch}
                             />
                         </div>
-                        {query !== "" && <button
-                            className="w-7 h-7 rounded-md hover:bg-gray-200 flex justify-center items-center"
-                            onClick={() => setQuery("")}
-                        >
-                            <svg
-                                aria-hidden="true"
-                                height="1em"
-                                viewBox="0 0 16 16"
-                                version="1.1"
-                                width="1em"
+                        {query !== "" && (
+                            <button
+                                className="w-7 h-7 rounded-md hover:bg-gray-200 flex justify-center items-center"
+                                onClick={() => {
+                                    setQuery("");
+                                    inputRef.current?.focus();
+                                }}
                             >
-                                <path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>
-                            </svg>
-                        </button>}
+                                <svg
+                                    aria-hidden="true"
+                                    height="1em"
+                                    viewBox="0 0 16 16"
+                                    version="1.1"
+                                    width="1em"
+                                >
+                                    <path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>
+                                </svg>
+                            </button>
+                        )}
                     </div>
-                    <div className="flex flex-col">
-                        {(result || []).map((items) => (
-                            <SearchCard
-                                key={items.id}
-                                result={items}
-                                handleClick={handleClick}
-                            ></SearchCard>
-                        ))}
-                    </div>
+                    <ScrollBar
+                        options={{
+                            scrollbars: {
+                                theme: "scrollbar-base scrollbar-auto py-1",
+                                autoHide: "move",
+                                autoHideDelay: 500,
+                                autoHideSuspend: false,
+                            },
+                        }}
+                        className="px-4 max-h-[50vh]"
+                    >
+                        <div className="flex flex-col">
+                            {(result || []).map((items) => (
+                                <SearchCard
+                                    key={items.id}
+                                    result={items}
+                                    handleClick={handleClick}
+                                ></SearchCard>
+                            ))}
+                        </div>
+                    </ScrollBar>
                 </div>
-            </ScrollBar>
+            </div>
         </div>
     );
 }
