@@ -134,7 +134,7 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
                     <input
                         type="text"
                         ref={inputRef}
-                        className="border-0 border-b-2 border-solid w-full mb-2 px-2"
+                        className="border-0 border-b-2 border-solid w-full mb-2 px-2 outline-none"
                         placeholder="Search"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
