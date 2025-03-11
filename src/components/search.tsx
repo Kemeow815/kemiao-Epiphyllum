@@ -134,8 +134,8 @@ function SearchUi({ handleClick }: { handleClick?: () => void }) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex flex-col w-full py-4">
-                    <div className="flex justify-between items-center border-0 border-b-2 border-solid mb-2 mx-4">
-                        <div className="flex gap-1 items-center h-8">
+                    <div className="flex justify-between items-center border-0 border-b-2 border-solid mb-2 mx-4 h-8">
+                        <div className="flex gap-1 items-center">
                             <svg
                                 aria-hidden="true"
                                 height="1em"
