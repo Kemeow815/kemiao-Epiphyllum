@@ -57,13 +57,7 @@ function generatePagination(mxPage: number, id: number) {
                     viewBox="0 0 24 24"
                     width="1em"
                 >
-                    <symbol id="ai:material-symbols:chevron-left-rounded">
-                        <path
-                            d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"
-                            fill="currentColor"
-                        ></path>
-                    </symbol>
-                    <use xlinkHref="#ai:material-symbols:chevron-left-rounded"></use>
+                    <use href="#ai:material-symbols:chevron-left-rounded"></use>
                 </svg>
             </Link>
             <div className="flex flex-row items-center bg-white rounded-lg text-black font-bold shadow-md">
@@ -96,13 +90,7 @@ function generatePagination(mxPage: number, id: number) {
                     viewBox="0 0 24 24"
                     width="1em"
                 >
-                    <symbol id="ai:material-symbols:chevron-right-rounded">
-                        <path
-                            d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"
-                            fill="currentColor"
-                        ></path>
-                    </symbol>
-                    <use xlinkHref="#ai:material-symbols:chevron-right-rounded"></use>
+                    <use href="#ai:material-symbols:chevron-right-rounded"></use>
                 </svg>
             </Link>
         </div>

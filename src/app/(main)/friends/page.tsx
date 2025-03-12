@@ -1,30 +1,11 @@
 import Link from "next/link";
 import MyImage from "@/components/myImage";
+import { friends } from "@/config/config";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "MyFriends",
     description: "MyFriends",
 };
-interface friend {
-    name: string;
-    url: string;
-    avatar: string;
-    description: string;
-}
-const friends: friend[] = [
-    {
-        name: "Fuyuki_Vila",
-        url: "https://fuyuki.fun/",
-        avatar: "https://masttf.fun/static/img/74d702568c910c2db809b5b88e695baf.clipboard-2025-02-26.webp",
-        description: "ゆき - ヴぃら",
-    },
-    {
-        name: "Masttf",
-        url: "https://masttf.fun/",
-        avatar: "https://masttf.fun/static/img/1f3cc55c3d0693d0583f4e7fff5c7aab.b_6dbd850baa93eeacc9c174faafb1e29b.webp",
-        description: "Masttf",
-    },
-];
 export default function Page() {
     return (
         <div className="card-base px-8 py-6">
@@ -50,7 +31,7 @@ export default function Page() {
                                 <h2 className="text-xl font-bold">
                                     {friend.name}
                                 </h2>
-                                <p className="text-sm">{friend.description}</p>
+                                <p className="text-sm">{friend.bio}</p>
                             </div>
                         </div>
                     </Link>

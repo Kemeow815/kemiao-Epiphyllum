@@ -5,7 +5,7 @@ import "@/styles/markdown-extend.css";
 import "@/styles/scrollbar.css";
 import "katex/dist/katex.css";
 import "overlayscrollbars/styles/overlayscrollbars.css";
-
+import Icon from "@/components/Icon";
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -15,6 +15,7 @@ export default function RootLayout({
         <html lang="zh-CN" className="text-sm md:text-base bg-gray-200 transition" data-overlayscrollbars-initialize>
             <meta charSet="UTF-8" />
             <body className="min-h-screen transition" data-overlayscrollbars-initialize>
+                <Icon/>
                 {children}
             </body>
         </html>
