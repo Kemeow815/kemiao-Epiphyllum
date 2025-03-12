@@ -1,5 +1,4 @@
 import NavBar from "@/components/navBar";
-import Banner from "@/components/Banner";
 import SideBar from "@/components/sideBar";
 import Footer from "@/components/footer";
 import BodyScrollBar from "@/components/bodyScrollBar";
