@@ -31,7 +31,7 @@ export default function Search() {
                 );
             } else {
                 window.pagefind = {
-                    debouncedSearch: () => ({
+                    search: () => ({
                         results: [
                             {
                                 id: "masttf",
@@ -136,12 +136,16 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
             );
         };
     }, []);
-    async function handleSearch() {
+    useEffect(() => {
+        async function handleSearch() {
         if (window.pagefind) {
-            const search = await window.pagefind.debouncedSearch(query);
+            const search = await window.pagefind.search(query);
             setResult(search?.results || []);
         }
     }
+    handleSearch();
+    }, [query]);
+    
     return (
         <div
             className="search-panel fixed inset-0 w-screen h-screen bg-gray-700/10 z-50"
@@ -170,7 +174,6 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
                                 placeholder="Search"
                                 value={query}
                                 onChange={(e) => setQuery(e.target.value)}
-                                onInput={handleSearch}
                             />
                         </div>
                         <div className="flex gap-1 items-center">

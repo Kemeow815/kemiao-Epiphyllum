@@ -27,7 +27,7 @@ const friends: friend[] = [
 ];
 export default function Page() {
     return (
-        <div className="card-base p-8">
+        <div className="card-base px-8 py-6">
             <div className="text-3xl font-bold mx-auto text-center">
                 Friends
             </div>
