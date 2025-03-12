@@ -80,13 +80,12 @@ export default function Search() {
                     onClick={handleClick}
                 >
                     <svg
-                        aria-hidden="true"
                         height="1em"
-                        viewBox="0 0 16 16"
-                        version="1.1"
                         width="1em"
+                        viewBox="0 0 512 512"
+                        className="text-[1rem]"
                     >
-                        <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+                        <use href="#ai:fa6:search"></use>
                     </svg>
                     <div className="overflow-hidden">
                         <span>
@@ -138,14 +137,14 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
     }, []);
     useEffect(() => {
         async function handleSearch() {
-        if (window.pagefind) {
-            const search = await window.pagefind.search(query);
-            setResult(search?.results || []);
+            if (window.pagefind) {
+                const search = await window.pagefind.search(query);
+                setResult(search?.results || []);
+            }
         }
-    }
-    handleSearch();
+        handleSearch();
     }, [query]);
-    
+
     return (
         <div
             className="search-panel fixed inset-0 w-screen h-screen bg-gray-700/10 z-50"
@@ -159,13 +158,12 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
                     <div className="flex justify-between items-center border-0 border-b-2 border-solid mb-2 mx-4 h-8">
                         <div className="flex gap-1 items-center">
                             <svg
-                                aria-hidden="true"
                                 height="1em"
-                                viewBox="0 0 16 16"
-                                version="1.1"
                                 width="1em"
+                                viewBox="0 0 512 512"
+                                className="text-[1rem]"
                             >
-                                <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+                                <use href="#ai:fa6:search"></use>
                             </svg>
                             <input
                                 type="text"
@@ -186,13 +184,12 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
                                     }}
                                 >
                                     <svg
-                                        aria-hidden="true"
                                         height="1em"
                                         viewBox="0 0 16 16"
-                                        version="1.1"
                                         width="1em"
+                                        className="text-[1rem]"
                                     >
-                                        <path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657ZM6.03 4.97a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.749.749 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.749.749 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.749.749 0 0 0-.734.215L8 6.94Z"></path>
+                                        <use href="#ai:fa6:delete"></use>
                                     </svg>
                                 </button>
                             )}

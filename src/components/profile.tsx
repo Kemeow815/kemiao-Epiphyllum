@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import MyImage from "./myImage";
 import { profileConfig } from "@/config/config";
+import { links } from "@/config/config";
 export default function Profile() {
     return (
         <div className="card-base p-4">
@@ -27,37 +28,23 @@ export default function Profile() {
                 <div className="flex gap-2 justify-center mb-1"></div>
             </div>
             <div className="flex flex-row items-center justify-center gap-2">
-                <Link
-                    href="https://github.com/Masttf"
-                    target="_blank"
-                    className="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95"
-                >
-                    <svg
-                        className="text-[1.5rem]"
-                        data-icon="fa6-brands:github"
-                        height="1em"
-                        viewBox="0 0 512 512"
-                        width="1em"
+                {links.map((link) => (
+                    <Link
+                        key={link.name}
+                        href={link.url}
+                        target="_blank"
+                        className="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95"
                     >
-                        <use href="#ai:fa6-brands:github"></use>
-                    </svg>
-                </Link>
-
-                <Link
-                    href="https://space.bilibili.com/158090842"
-                    target="_blank"
-                    className="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95"
-                >
-                    <svg
-                        className="text-[1.5rem]"
-                        data-icon="fa6-brands:bilibili"
-                        height="1em"
-                        width="1em"
-                        viewBox="0 0 512 512"
-                    >
-                        <use href="#ai:fa6-brands:bilibili"></use>
-                    </svg>
-                </Link>
+                        <svg
+                            className="text-[1.5rem]"
+                            height="1em"
+                            viewBox="0 0 512 512"
+                            width="1em"
+                        >
+                            <use href={`#${link.symbolId}`}></use>
+                        </svg>
+                    </Link>
+                ))}
             </div>
         </div>
     );

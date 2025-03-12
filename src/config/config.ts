@@ -36,15 +36,25 @@ export const friends: friend[] = [
 export interface link{
     name: string;
     url: string;
+    symbolId: string;
 }
 export const links: link[] = [
     {
         name: "github",
         url: "https://github.com/Masttf",
+        symbolId : "ai:fa6-brands:github",
     },
     {
         name: "bilibili",
         url: "https://space.bilibili.com/158090842",
+        symbolId : "ai:fa6-brands:bilibili",
     },
+    {
+        name:"music",
+        url:"https://music.163.com/#/user/home?id=1403156707",
+        symbolId:"ai:fa6:music"
+    },
+    // symbolId  定义在Icon 组件内， /src/components/Icon.tsx 用来管理svg图标
+    // 没有的图标可以去找path https://fontawesome.com/
 ]
 
