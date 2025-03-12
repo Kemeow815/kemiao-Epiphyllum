@@ -8,11 +8,11 @@ export default function footer() {
         <div className="border-dashed  rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
             <div className="text-50 text-sm text-center">
                 &copy; <span>{currentYear}</span> Masttf. All Rights Reserved. /
-                <Link className="link text-sky-500 font-semibold" target="_blank" href="#"> RSS</Link> /
-                <Link className="link text-sky-500 font-semibold" target="_blank" href="#"> Sitemap</Link><br/>
+                <Link className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition" target="_blank" href="#">RSS</Link> /
+                <Link className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition" target="_blank" href="#">Sitemap</Link><br/>
                 Powered by
-                <Link className="link text-sky-500 font-semibold" target="_blank" href="https://zh-hans.react.dev/"> React</Link> &
-                <Link className="link text-sky-500 font-semibold" target="_blank" href="https://github.com/Masttf/Epiphyllum"> Epiphyllum</Link>
+                <Link className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition" target="_blank" href="https://zh-hans.react.dev/">React</Link> &
+                <Link className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition" target="_blank" href="https://github.com/Masttf/Epiphyllum">Epiphyllum</Link>
             </div>
         </div>
     </>

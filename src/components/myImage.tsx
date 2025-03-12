@@ -1,22 +1,25 @@
 import React from "react";
+import Image from "next/image";
 interface Props {
     src: string;
     alt?: string;
     position?: string;
     className?: string;
-    
+    sizes?: number;
 }
-export default function myImage(props: Props) {
-    const position: string = props.position || "center";
+export default function myImage({src, alt = "", position = "center", className, sizes = 100}: Props) {
     return (
-        <div className={`overflow-hidden relative ${props.className}`}>
-            <img
-                src={props.src}
-                alt={props.alt || ""}
+        <div className={`overflow-hidden relative ${className}`}>
+            <Image
+                src={src}
+                alt={alt}
+                sizes="50vw"
+                fill
+                quality={100}
                 className={
-                    `h-full w-full object-cover object-position-${position}`
+                    `object-cover object-position-${position}`
                 }
-            ></img>
+            ></Image>
         </div>
     );
 }

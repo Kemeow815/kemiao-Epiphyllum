@@ -13,7 +13,7 @@ export default function Profile() {
                 <MyImage
                     src={profileConfig.imageSrc}
                     alt="Profile Image of the Author"
-                    className="mx-auto lg:w-full h-full lg:mt-0 object-cover object-center"
+                    className="mx-auto aspect-square lg:w-full h-full lg:mt-0 object-cover object-center"
                 />
             </Link>
             <div className="px-2">
