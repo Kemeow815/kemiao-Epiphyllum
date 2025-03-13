@@ -15,7 +15,8 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug } = await params;
-    const post: BlogData = (await getPostBySlug(slug)) as BlogData;
+    const decodeSlug = decodeURIComponent(slug);
+    const post: BlogData = (await getPostBySlug(decodeSlug)) as BlogData;
     return {
         title: `${post.title}`,
         description: `${post.description}`,

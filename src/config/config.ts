@@ -20,20 +20,14 @@ export interface friend {
 }
 export const friends: friend[] = [
     {
-        name: "Fuyuki_Vila",
-        url: "https://fuyuki.fun/",
-        avatar: "https://masttf.fun/static/img/74d702568c910c2db809b5b88e695baf.clipboard-2025-02-26.webp",
-        bio: "ゆき - ヴぃら",
-    },
-    {
         name: "Masttf",
-        url: "https://masttf.fun/",
+        url: "https://epiphyllum.masttf.fun/",
         avatar: "https://masttf.fun/static/img/1f3cc55c3d0693d0583f4e7fff5c7aab.b_6dbd850baa93eeacc9c174faafb1e29b.webp",
         bio: "Masttf",
     },
 ];
 
-export interface link{
+export interface link {
     name: string;
     url: string;
     symbolId: string;
@@ -42,19 +36,18 @@ export const links: link[] = [
     {
         name: "github",
         url: "https://github.com/Masttf",
-        symbolId : "ai:fa6-brands:github",
+        symbolId: "ai:fa6-brands:github",
     },
     {
         name: "bilibili",
         url: "https://space.bilibili.com/158090842",
-        symbolId : "ai:fa6-brands:bilibili",
+        symbolId: "ai:fa6-brands:bilibili",
     },
     {
-        name:"music",
-        url:"https://music.163.com/#/user/home?id=1403156707",
-        symbolId:"ai:fa6:music"
+        name: "music",
+        url: "https://music.163.com/#/user/home?id=1403156707",
+        symbolId: "ai:fa6:music",
     },
     // symbolId  定义在Icon 组件内， /src/components/Icon.tsx 用来管理svg图标
     // 没有的图标可以去找path https://fontawesome.com/
-]
-
+];
