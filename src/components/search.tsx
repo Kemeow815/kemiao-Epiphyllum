@@ -20,8 +20,7 @@ interface SearchResult {
     id: string;
     data: () => Promise<SearchData>;
 }
-export default function Search() {
-    const [isVisable, setIsVisable] = useState(false);
+export default function Search({ handleClick }: { handleClick: () => void }) {
     useEffect(() => {
         async function loadPagefind() {
             if (process.env.NODE_ENV === "production") {
@@ -61,43 +60,9 @@ export default function Search() {
             }
         }
         loadPagefind();
-        function handleKeyDown(event: KeyboardEvent) {
-            if (event.key === "/" && !isVisable) {
-                setIsVisable(true);
-            }
-        }
-        document.addEventListener("keydown", handleKeyDown);
-        return () => document.removeEventListener("keydown", handleKeyDown);
     }, []);
-    function handleClick() {
-        setIsVisable(!isVisable);
-    }
-    return (
-        <>
-            {!isVisable && (
-                <div
-                    className="flex cursor-pointer gap-2 items-center font-bold bg-gray-200/50 rounded-lg p-2 Myhover"
-                    onClick={handleClick}
-                >
-                    <svg
-                        height="1em"
-                        width="1em"
-                        viewBox="0 0 512 512"
-                        className="text-[1rem]"
-                    >
-                        <use href="#ai:fa6:search"></use>
-                    </svg>
-                    <div className="overflow-hidden">
-                        <span>
-                            Press <kbd>/</kbd> to search
-                        </span>
-                    </div>
-                </div>
-            )}
 
-            {isVisable && <SearchUi handleClick={handleClick}></SearchUi>}
-        </>
-    );
+    return <SearchUi handleClick={handleClick} />;
 }
 function SearchUi({ handleClick }: { handleClick: () => void }) {
     const [result, setResult] = useState<SearchResult[]>([]);
