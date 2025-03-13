@@ -86,6 +86,7 @@ export const markdownConfig: MarkdownConfig = {
             },
         ],
         rehypeWrapperSpan,
+        rehypeImage,
     ],
 };
 
