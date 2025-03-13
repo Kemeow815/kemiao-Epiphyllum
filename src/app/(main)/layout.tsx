@@ -2,6 +2,7 @@ import NavBar from "@/components/navBar";
 import SideBar from "@/components/sideBar";
 import Footer from "@/components/footer";
 import BodyScrollBar from "@/components/bodyScrollBar";
+import BackToTop from "@/components/backToTop";
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -29,7 +30,7 @@ export default function RootLayout({
                 </div>
             </div>
 
-            <div id="page-height-extend" className="hidden h-[300vh]"></div>
+            <BackToTop></BackToTop>
         </>
     );
 }
