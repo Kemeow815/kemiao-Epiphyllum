@@ -2,11 +2,9 @@
 title: Markdown Example
 date: 2023-10-01
 description: A simple example of a Markdown blog post.
-tags: 
-    - "Markdown"
-    - "Blogging"
-    - "Demo"
+tags: [Markdown, Blogging, Demo]
 category: Examples
+draft: false
 ---
 
 # An h1 header
@@ -16,9 +14,9 @@ Paragraphs are separated by a blank line.
 2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
 look like:
 
-- this one
-- that one
-- the other one
+-   this one
+-   that one
+-   the other one
 
 Note that --- not considering the asterisk --- the actual text
 content starts at 4-columns in.
@@ -72,15 +70,15 @@ for i in range(10):
 
 Now a nested list:
 
-1. First, get these ingredients:
+1.  First, get these ingredients:
 
-    - carrots
-    - celery
-    - lentils
+    -   carrots
+    -   celery
+    -   lentils
 
-2. Boil some water.
+2.  Boil some water.
 
-3. Dump everything in the pot and follow
+3.  Dump everything in the pot and follow
     this algorithm:
 
         find wooden spoon
@@ -157,7 +155,7 @@ Here's a "line block":
 
 and images can be specified like so:
 
-[//]: # (![example image]&#40;./demo-banner.png "An exemplary image"&#41;)
+![example](./assets/banner.jpg)
 
 Inline math equations go in like so: $\omega = d\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:

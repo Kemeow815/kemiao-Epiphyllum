@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogData } from "@/utils/posts";
+import { BlogData } from "@/utils/getData";
 import ArchiveCreate from "@/components/ArchiveCreate";
 import { getAllSortedPosts } from "@/utils/getData";
 import type { Metadata, ResolvingMetadata } from "next";

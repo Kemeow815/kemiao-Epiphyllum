@@ -1,7 +1,7 @@
 import { getAllCategories } from "@/utils/getData";
 import { getAllSortedPosts } from "@/utils/getData";
 import ArchiveCategory from "@/components/archiveCategory";
-import { BlogData } from "@/utils/posts";
+import { BlogData } from "@/utils/getData";
 import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Categories - Blog",

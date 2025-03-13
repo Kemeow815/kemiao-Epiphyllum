@@ -1,5 +1,5 @@
-import { getAllPosts, getPostById } from "@/utils/posts";
-import { BlogData } from "@/utils/posts";
+import { getAllSortedPosts, getPostBySlug } from "@/utils/getData";
+import { BlogData } from "@/utils/getData";
 import { postMeta } from "@/components/postcard";
 import ContentWrapper from "@/components/contentWrapper";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -15,7 +15,7 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const { slug } = await params;
-    const post: BlogData = await getPostById(slug);
+    const post: BlogData = (await getPostBySlug(slug)) as BlogData;
     return {
         title: `${post.title}`,
         description: `${post.description}`,
@@ -25,29 +25,34 @@ export async function generateMetadata(
 export default async function Post({
     params,
 }: {
-    params: Promise<{ slug: string }>
+    params: Promise<{ slug: string }>;
 }) {
     const { slug } = await params;
-    const post: BlogData = await getPostById(slug);
+    const decodeSlug = decodeURIComponent(slug);
+    const post: BlogData = (await getPostBySlug(decodeSlug)) as BlogData;
     return (
         <div className="card-base p-8 divide-y divide-dashed">
             <div className="relative flex flex-col mb-4">
-                    <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
-                        {post.title}
-                    </h1>
+                <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
+                    {post.title}
+                </h1>
 
                 {postMeta({
-                    className : "flex justify-center items-center text-neutral-500 gap-x-4", 
+                    className:
+                        "flex justify-center items-center text-neutral-500 gap-x-4",
                     published: post.date,
                     category: post.category,
                     tags: post.tags,
                 })}
             </div>
-            <ContentWrapper contentHtml={post.contentHtml} className="pt-2"></ContentWrapper>
+            <ContentWrapper
+                contentHtml={post.contentHtml}
+                className="pt-2"
+            ></ContentWrapper>
         </div>
     );
 }
 export async function generateStaticParams() {
-    const posts = await getAllPosts();
+    const posts = await getAllSortedPosts();
     return posts.map((post) => ({ slug: post.slug }));
 }

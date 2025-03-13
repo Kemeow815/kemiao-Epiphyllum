@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogData } from "@/utils/posts";
+import { BlogData } from "@/utils/getData";
 function formatDate(date: Date) {
     const month = (date.getMonth() + 1).toString().padStart(2, "0");
     const day = date.getDate().toString().padStart(2, "0");
