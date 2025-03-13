@@ -34,7 +34,6 @@ export default function NavBar() {
 
         // 添加滚动监听
         window.addEventListener("scroll", handleScroll, { passive: true });
-
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };

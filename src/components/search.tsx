@@ -69,6 +69,7 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
     const [query, setQuery] = useState("");
     const inputRef = React.useRef<HTMLInputElement>(null);
     useEffect(() => {
+        //把body滚动条设为overflow-hiden 即禁止滚动
         const bodyOsInstance = OverlayScrollbars(document.body);
         bodyOsInstance?.destroy();
         document.body.classList.add("overflow-hidden");
@@ -116,12 +117,12 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
             onClick={handleClick}
         >
             <div
-                className="card-base w-full mx-auto box-border max-w-[30rem] min-h-[4.5rem] bg-white opacity-100"
+                className="card-base w-full mx-auto max-w-[30rem] min-h-[4.5rem] bg-white opacity-100"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex flex-col w-full py-4">
                     <div className="flex justify-between items-center border-0 border-b-2 border-solid mb-2 mx-4 h-8">
-                        <div className="flex gap-1 items-center">
+                        <div className="flex gap-1 items-center overflow-hidden">
                             <svg
                                 height="1em"
                                 width="1em"
