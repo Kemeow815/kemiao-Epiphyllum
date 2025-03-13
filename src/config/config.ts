@@ -51,3 +51,14 @@ export const links: link[] = [
     // symbolId  定义在Icon 组件内， /src/components/Icon.tsx 用来管理svg图标
     // 没有的图标可以去找path https://fontawesome.com/
 ];
+
+export interface linkItem {
+    name: string;
+    url: string;
+}
+export const linkList: linkItem[] = [
+    { name: "首页", url: "/" },
+    { name: "归档", url: "/archive" },
+    { name: "友链", url: "/friends" },
+    { name: "关于", url: "/about" },
+];

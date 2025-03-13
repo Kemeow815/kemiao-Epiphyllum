@@ -3,19 +3,12 @@ import Link from "next/link";
 import React from "react";
 import { useEffect, useState } from "react";
 import Search from "./search";
-interface linkItem {
-    name: string;
-    url: string;
-}
-const linkList: linkItem[] = [
-    { name: "首页", url: "/" },
-    { name: "归档", url: "/archive" },
-    { name: "友链", url: "/friends" },
-    { name: "关于", url: "/about" },
-];
+import { linkList } from "@/config/config";
+import MobileMenu from "./mobileMenu";
 export default function NavBar() {
     const [isVisible, setIsVisible] = useState(true);
     const [isSearchVisible, setIsSearchVisible] = useState(false);
+    const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
     const [prevScrollY, setPrevScrollY] = useState(0);
 
     useEffect(() => {
@@ -25,6 +18,7 @@ export default function NavBar() {
             // 向下滚动且超过阈值时隐藏导航栏
             if (currentScrollY > prevScrollY) {
                 setIsVisible(false);
+                setIsMobileMenuVisible(false);
             }
             // 向上滚动时显示导航栏
             else if (currentScrollY < prevScrollY) {
@@ -59,14 +53,33 @@ export default function NavBar() {
     function handleClick() {
         setIsSearchVisible(!isSearchVisible);
     }
+    function MobileMenuCilck() {
+        setIsMobileMenuVisible(!isMobileMenuVisible);
+    }
     return (
         <>
+            {isMobileMenuVisible && (
+                <MobileMenu handleClick={MobileMenuCilck} />
+            )}
             <div
                 className={`fixed inset-0 w-full z-20 transition duration-200 font-bold text-black leading-6 h-[4.5rem] ${
                     isVisible ? "translate-y-0" : "-translate-y-full"
                 }`}
             >
-                <div className=" bg-white h-[4.5rem] flex items-center justify-between px-0 md:px-4 card-base !rounded-t-[0px]">
+                <div className=" bg-white h-[4.5rem] flex items-center justify-between px-0 md:px-4 card-base !rounded-t-[0px] overflow-visible">
+                    <div
+                        className="md:hidden Link hover:text-sky-500 relative"
+                        onClick={MobileMenuCilck}
+                    >
+                        <svg
+                            height="1em"
+                            width="1em"
+                            viewBox="0 0 448 512"
+                            className="text-[1.5rem] "
+                        >
+                            <use href="#ai:fa6:bars"></use>
+                        </svg>
+                    </div>
                     <Link
                         href="/"
                         className="Link Myhover text-xl text-sky-500"
@@ -88,7 +101,7 @@ export default function NavBar() {
                         </svg>
                         <div>Epipyhllum</div>
                     </Link>
-                    <div className="flex items-center">
+                    <div className="hidden md:flex items-center">
                         {linkList.map((item, index) => (
                             <Link
                                 key={index}
@@ -99,10 +112,10 @@ export default function NavBar() {
                             </Link>
                         ))}
                     </div>
-                    <div>
+                    <div className="mx-[1rem]">
                         {!isSearchVisible && (
                             <div
-                                className="flex cursor-pointer gap-2 items-center font-bold bg-gray-200/50 rounded-lg p-2 Myhover"
+                                className="cursor-pointer gap-2  bg-gray-200/50 Link Myhover"
                                 onClick={handleClick}
                             >
                                 <svg
@@ -113,7 +126,7 @@ export default function NavBar() {
                                 >
                                     <use href="#ai:fa6:search"></use>
                                 </svg>
-                                <div className="overflow-hidden">
+                                <div className="hidden md:flex">
                                     <span>
                                         Press <kbd>/</kbd> to search
                                     </span>
