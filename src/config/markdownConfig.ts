@@ -79,8 +79,8 @@ export const markdownConfig: MarkdownConfig = {
             rehypeShiki,
             {
                 themes: {
-                    light: "github-dark",
-                    dark: "github-dark",
+                    light: "github-light",
+                    dark: "github-light",
                 },
                 defaultLanguage: "text",
             },

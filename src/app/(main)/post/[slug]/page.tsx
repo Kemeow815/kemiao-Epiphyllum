@@ -43,7 +43,7 @@ export default async function Post({
         nextPostId < PostIdToSlug.size ? PostIdToSlug.get(nextPostId) : "#";
     return (
         <>
-            <div className="card-base p-8 divide-y divide-dashed">
+            <div className="card-base p-8 divide-y divide-dashed transition ease-in-out">
                 <div className="relative flex flex-col mb-4">
                     <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
                         {post.title}

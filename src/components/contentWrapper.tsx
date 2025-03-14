@@ -18,7 +18,7 @@ export default function ContentWrapper({
         preElements.forEach((ele) => {
             OverlayScrollbars(ele, {
                 scrollbars: {
-                    theme: "scrollbar-base scrollbar-dark px-2",
+                    theme: "scrollbar-base scrollbar-light px-2",
                     autoHide: "leave",
                     autoHideDelay: 500,
                     autoHideSuspend: false,
@@ -41,7 +41,10 @@ export default function ContentWrapper({
             data-pagefind-body
             className={`prose prose-base !max-w-none custom-md ${className}`}
         >
-            <div dangerouslySetInnerHTML={{ __html: contentHtml }} suppressHydrationWarning={true} />
+            <div
+                dangerouslySetInnerHTML={{ __html: contentHtml }}
+                suppressHydrationWarning={true}
+            />
             <CopyButton></CopyButton>
         </div>
     );

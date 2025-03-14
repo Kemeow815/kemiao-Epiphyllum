@@ -49,7 +49,7 @@
         counter-reset: line;
         span.line {
             &:before {
-                @apply text-white/25 mr-4 w-4 inline-block;
+                @apply text-black/50 mr-4 w-4 inline-block;
                 content: counter(line);
                 counter-increment: line;
                 direction: rtl;
@@ -62,14 +62,14 @@
     }
 
     pre {
-        @apply bg-[var(--codeblock-bg)] !important;
+        @apply bg-gray-100 !important;
         @apply rounded-xl px-5;
         code {
             /* 防止覆盖overflow样式*/
             overflow: visible !important;
-            ::selection {
+            /* ::selection {
                 @apply bg-[var(--codeblock-selection)];
-            }
+            } */
             @apply bg-transparent text-inherit text-sm p-0;
         }
     }
