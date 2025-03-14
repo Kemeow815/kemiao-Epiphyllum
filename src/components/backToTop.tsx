@@ -32,7 +32,7 @@ export default function BackToTop() {
             {isVisible && (
                 <button
                     onClick={scrollToTop}
-                    className="w-11 h-11 rounded-lg shadow-md bg-white flex items-center justify-center Myhover"
+                    className="w-11 h-11 rounded-lg shadow-md bg-white flex items-center justify-center Myhover hover:scale-110 transition"
                 >
                     <svg
                         viewBox="0 0 512 512"

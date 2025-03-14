@@ -117,3 +117,26 @@ export async function getAllTags() {
     cacheTags = tempTags.map(({ tag, count }) => tag);
     return cacheTags;
 }
+
+let cachePostSlugToId: Map<string, number> | null = null;
+export async function getPostSlugToId() {
+    if (cachePostSlugToId) return cachePostSlugToId;
+    const BlogDatas = (await getAllSortedPosts()) as BlogData[];
+    const map = new Map<string, number>();
+    BlogDatas.forEach((Blog, index) => {
+        map.set(Blog.slug, index);
+    });
+    cachePostSlugToId = map;
+    return cachePostSlugToId;
+}
+let cachePostIdToSlug: Map<number, string> | null = null;
+export async function getPostIdToSlug() {
+    if (cachePostIdToSlug) return cachePostIdToSlug;
+    const BlogDatas = (await getAllSortedPosts()) as BlogData[];
+    const map = new Map<number, string>();
+    BlogDatas.forEach((Blog, index) => {
+        map.set(index, Blog.slug);
+    });
+    cachePostIdToSlug = map;
+    return cachePostIdToSlug;
+}
