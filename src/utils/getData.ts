@@ -2,9 +2,17 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { createProcessor } from "../config/markdownConfig";
+
+export interface TocItem {
+    depth: number;
+    text: string;
+    id: string;
+    children?: TocItem[];
+}
 export interface BlogData {
     slug: string;
     contentHtml: string;
+    toc: TocItem[];
     title: string;
     date: Date;
     description: string;
@@ -23,6 +31,7 @@ export async function processMarkdown(filepath: string, fileName: string) {
     return {
         slug,
         contentHtml: processedContent.toString(),
+        toc: (processedContent.data as any).toc || [],
         ...(matterResult.data as {
             title: string;
             description: string;

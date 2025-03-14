@@ -3,6 +3,7 @@ import { BlogData } from "@/utils/getData";
 import { postMeta } from "@/components/postcard";
 import ContentWrapper from "@/components/contentWrapper";
 import { getPostIdToSlug, getPostSlugToId } from "@/utils/getData";
+import Toc from "@/components/Toc";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
@@ -61,12 +62,13 @@ export default async function Post({
                     contentHtml={post.contentHtml}
                     className="pt-2"
                 ></ContentWrapper>
+                <Toc data={post.toc}></Toc>
             </div>
-            <div className="flex w-full font-bold mt-4 overflow-hidden flex-col gap-4 md:flex-row md:justify-between">
+            <div className="flex w-full font-bold mt-4 flex-col gap-4 md:flex-row md:justify-between">
                 {prevSlug != "#" && (
                     <Link
                         href={`/post/${prevSlug}`}
-                        className="flex w-full items-center px-4 gap-4 bg-white rounded-2xl h-[3.75rem]"
+                        className="flex w-full overflow-hidden items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                     >
                         <svg
                             height="1em"
@@ -76,13 +78,15 @@ export default async function Post({
                         >
                             <use href="#ai:material-symbols:chevron-left-rounded"></use>
                         </svg>
-                        <div>{prevSlug}</div>
+                        <div className="text-back/75 overflow-hidden text-base whitespace-nowrap">
+                            {prevSlug}
+                        </div>
                     </Link>
                 )}
                 {nextSlug != "#" && (
                     <Link
                         href={`/post/${nextSlug}`}
-                        className="flex flex-row-reverse w-full items-center px-4 gap-4 bg-white rounded-2xl h-[3.75rem]"
+                        className="flex flex-row-reverse overflow-hidden w-full items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                     >
                         <svg
                             height="1em"

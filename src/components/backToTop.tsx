@@ -28,7 +28,7 @@ export default function BackToTop() {
     };
 
     return (
-        <div className="fixed z-20 bottom-10 right-10">
+        <div className="fixed z-20 bottom-5 right-5">
             {isVisible && (
                 <button
                     onClick={scrollToTop}

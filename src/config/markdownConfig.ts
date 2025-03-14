@@ -18,6 +18,7 @@ import { GithubCardComponent } from "@/plugins/rehype-component-github-card.mjs"
 import { parseDirectiveNode } from "@/plugins/remark-directive-rehype.js";
 import { rehypeWrapperSpan } from "@/plugins/rehypeWrapperSpan.js";
 import { rehypeImage } from "@/plugins/rehypeImage.js";
+import { tocExtractor } from "@/plugins/toc-extractor";
 // 配置类型定义
 interface MarkdownConfig {
     remarkPlugins: PluggableList;
@@ -36,6 +37,7 @@ export const markdownConfig: MarkdownConfig = {
         rehypeRaw,
         rehypeKatex,
         rehypeSlug,
+        tocExtractor,
         [
             rehypeComponents,
             {
