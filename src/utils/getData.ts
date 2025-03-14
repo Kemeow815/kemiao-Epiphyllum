@@ -7,7 +7,6 @@ export interface TocItem {
     depth: number;
     text: string;
     id: string;
-    children?: TocItem[];
 }
 export interface BlogData {
     slug: string;

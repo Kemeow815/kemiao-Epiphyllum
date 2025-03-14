@@ -1,5 +1,6 @@
 import NavBar from "@/components/navBar";
 import SideBar from "@/components/sideBar";
+import SideBarWrapper from "@/components/sideBarWrapper";
 import Footer from "@/components/footer";
 import BodyScrollBar from "@/components/bodyScrollBar";
 import BackToTop from "@/components/backToTop";
@@ -24,7 +25,10 @@ export default function RootLayout({
                         </div>
                     </div>
                 </main>
-                <SideBar className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"></SideBar>
+                <SideBarWrapper className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]">
+                    <SideBar className="row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"></SideBar>
+                </SideBarWrapper>
+
                 <div className="footer col-span-2 onload-animation block lg:hidden">
                     <Footer></Footer>
                 </div>

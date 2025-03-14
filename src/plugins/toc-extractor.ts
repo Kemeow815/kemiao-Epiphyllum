@@ -14,26 +14,12 @@ export const tocExtractor: Plugin<[void?], HtmlRoot> = () => {
             const depth = parseInt(node.tagName[1], 10);
             const text = toString(node);
             const id = (node.properties?.id as string) || "";
-
             const item: TocItem = {
                 depth,
                 text,
                 id,
-                children: [],
             };
-
-            // 处理层级嵌套
-            while (stack.length && stack[0].depth >= depth) {
-                stack.shift();
-            }
-
-            if (stack.length) {
-                stack[0].node.children!.push(item);
-                stack.unshift({ depth, node: item });
-            } else {
-                toc.push(item);
-                stack.push({ depth, node: item });
-            }
+            toc.push(item);
         });
 
         // 挂载到文件数据

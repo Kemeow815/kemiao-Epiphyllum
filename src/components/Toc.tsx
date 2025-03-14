@@ -1,61 +1,65 @@
+"use client";
 import { TocItem } from "@/utils/getData";
-export default function Toc({ data }: { data: TocItem[] }) {
+import { useEffect, useState } from "react";
+import ScrollBar from "@/components/scrollbar";
+export default function Toc({
+    slug,
+    className,
+}: {
+    slug: string;
+    className: string;
+}) {
+    const [tocData, setTocData] = useState<TocItem[]>([]);
+    const decodedSlug = decodeURIComponent(slug);
+
+    useEffect(() => {
+        const fetchToc = async () => {
+            try {
+                const response = await fetch(
+                    `/api/post/${encodeURIComponent(decodedSlug)}`
+                );
+                const data = await response.json();
+                setTocData(data.data.toc || []);
+            } catch (error) {
+                console.error("Failed to fetch TOC:", error);
+            }
+        };
+
+        fetchToc();
+    }, [decodedSlug]);
     return (
-        <div>
-            {data.map((item) => (
-                <Tocitem key={item.id} item={item} depth={1} />
-            ))}
+        <div className={`${className} hidden lg:block`}>
+            <div className="sticky top-[20vh] overflow-y-scroll overflow-x-hidden max-h-[66vh] scroll-container">
+                {tocData.map((item, index) => (
+                    <Tocitem key={item.id} item={item} index={index} />
+                ))}
+            </div>
         </div>
     );
 }
-const Tocitem = ({ item, depth }: { item: TocItem; depth: number }) => (
-    <>
-        <a
-            href={`#${item.id}`}
-            className="px-2 flex gap-2 relative transition w-full min-h-9 rounded-xl
-        hover:bg-[var(--toc-btn-hover)] active:bg-[var(--toc-btn-active)] py-2"
+const Tocitem = ({ item, index }: { item: TocItem; index: number }) => (
+    <a
+        href={`#${item.id}`}
+        className="p-2 flex gap-2 relative transition w-full h-9 rounded-xl
+        hover:bg-sky-200 active:bg-sky-200 group"
+    >
+        <div
+            className={`transition ${
+                index === 0 ? "" : "toc-dash-line"
+            } w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold`}
         >
-            <div
-                className={`transition w-5 h-5 shrink-0 rounded-lg text-xs flex items-center justify-center font-bold
-                    ${(() => {
-                        switch (depth) {
-                            case 1:
-                                return "bg-[var(--toc-badge-bg)] text-[var(--btn-content)]";
-                            case 2:
-                                return "ml-4";
-                            case 3:
-                                return "ml-8";
-                        }
-                    })()}
-                `}
-            >
-                {depth === 2 && (
-                    <div className="transition w-2 h-2 rounded-[0.1875rem] bg-[var(--toc-badge-bg)]"></div>
-                )}
-                {depth === 3 && (
-                    <div className="transition w-1.5 h-1.5 rounded-sm bg-black/5 dark:bg-white/10"></div>
-                )}
-            </div>
-            {/* 标题文本 */}
-            <div
-                className={`transition text-sm ${(() => {
-                    switch (depth) {
-                        case 1:
-                            return "text-50";
-                        case 2:
-                            return "text-50";
-                        case 3:
-                            return "text-30";
-                    }
-                })()}
-                `}
-            >
-                {item.text}
-            </div>
-        </a>
-        {item.children &&
-            item.children.map((child, index) => (
-                <Tocitem key={index} item={child} depth={depth + 1} />
-            ))}
-    </>
+            {item.depth <= 3 ? (
+                <div className="transition group-hover:scale-125 group-active:scale-125 z-10 w-2 h-2 rounded-[0.1875rem] bg-[var(--primary)]"></div>
+            ) : (
+                <div className="transition group-hover:scale-125 group-active:scale-125 z-10 w-1.5 h-1.5 rounded-sm bg-[var(--primary)] "></div>
+            )}
+        </div>
+        <div
+            className={`transition group-hover:text-sky-600 group-active:text-sky-600 text-sm ${(() => {
+                return `pl-[${item.depth - 1}rem]`;
+            })()} overflow-hidden whitespace-nowrap text-overflow-ellipsis`}
+        >
+            {item.text}
+        </div>
+    </a>
 );

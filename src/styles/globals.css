@@ -248,3 +248,26 @@
     animation-timing-function: linear;
     animation-direction: reverse;
 }
+
+.toc-dash-line {
+    position: relative;
+}
+
+.toc-dash-line::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 36px;
+    border-left: 2px dashed var(--line-color);
+    pointer-events: none;
+    transition: all 0.3s;
+    transform: translateY(-50%);
+}
+
+.scroll-container {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}

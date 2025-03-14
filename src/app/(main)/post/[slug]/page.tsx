@@ -62,7 +62,6 @@ export default async function Post({
                     contentHtml={post.contentHtml}
                     className="pt-2"
                 ></ContentWrapper>
-                <Toc data={post.toc}></Toc>
             </div>
             <div className="flex w-full font-bold mt-4 flex-col gap-4 md:flex-row md:justify-between">
                 {prevSlug != "#" && (
