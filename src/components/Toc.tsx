@@ -1,38 +1,33 @@
-"use client";
-import { TocItem } from "@/utils/getData";
-import { useEffect, useState } from "react";
+import { getPostBySlug, TocItem } from "@/utils/getData";
 import ScrollBar from "@/components/scrollbar";
-export default function Toc({
+export default async function Toc({
     slug,
-    className,
 }: {
-    slug: string;
-    className: string;
+    slug: string; //转码后的
 }) {
-    const [tocData, setTocData] = useState<TocItem[]>([]);
-    const decodedSlug = decodeURIComponent(slug);
-
-    useEffect(() => {
-        const fetchToc = async () => {
-            try {
-                const response = await fetch(
-                    `/api/post/${encodeURIComponent(decodedSlug)}`
-                );
-                const data = await response.json();
-                setTocData(data.data.toc || []);
-            } catch (error) {
-                console.error("Failed to fetch TOC:", error);
-            }
-        };
-
-        fetchToc();
-    }, [decodedSlug]);
+    const tocData = (await getPostBySlug(slug)).toc as TocItem[];
     return (
-        <div className={`${className} hidden lg:block`}>
-            <div className="sticky top-[20vh] overflow-y-scroll overflow-x-hidden max-h-[66vh] scroll-container">
-                {tocData.map((item, index) => (
-                    <Tocitem key={item.id} item={item} index={index} />
-                ))}
+        <div className="card-base">
+            <div className="flex flex-col items-center gap-1 justify-center">
+                <div className="mt-2 text-lg font-bold">目录</div>
+                <div className="w-5 h-1 rounded-md bg-sky-500"></div>
+                <ScrollBar
+                    className="w-full mb-2"
+                    options={{
+                        scrollbars: {
+                            theme: "scrollbar-base scrollbar-auto py-1",
+                            autoHide: "move",
+                            autoHideDelay: 500,
+                            autoHideSuspend: false,
+                        },
+                    }}
+                >
+                    <div className="w-full px-2 max-h-[66vh] transition">
+                        {tocData.map((item, index) => (
+                            <Tocitem key={item.id} item={item} index={index} />
+                        ))}
+                    </div>
+                </ScrollBar>
             </div>
         </div>
     );
