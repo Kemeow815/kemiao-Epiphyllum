@@ -12,7 +12,7 @@ export default function SideBar(props: Props) {
             <div className="flex flex-col">
                 <Profile></Profile>
             </div>
-            <div className="flex flex-col gap-4 lg:sticky lg:top-24">
+            <div className="flex flex-col gap-4 lg:sticky lg:top-[14px]">
                 <Categories></Categories>
                 <Tag></Tag>
             </div>

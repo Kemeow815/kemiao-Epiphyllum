@@ -33,10 +33,10 @@ export default function NavBar() {
             )}
             <div
                 className={
-                    "fixed inset-0 w-full z-20 transition font-bold text-black leading-6 h-[4.5rem]"
+                    "absolute inset-0 w-full z-20 transition font-bold text-black leading-6 h-24"
                 }
             >
-                <div className=" bg-white h-[4.5rem] flex items-center justify-between px-0 md:px-4 card-base !rounded-t-[0px] overflow-visible">
+                <div className="sticky top-0 bg-white h-[4.5rem] flex items-center justify-between px-0 md:px-4 card-base !rounded-t-[0px] overflow-visible">
                     <div
                         className="md:hidden Link hover:text-sky-500 relative"
                         onClick={MobileMenuCilck}
