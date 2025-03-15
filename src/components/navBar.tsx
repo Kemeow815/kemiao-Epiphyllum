@@ -6,38 +6,9 @@ import Search from "./search";
 import { linkList } from "@/config/config";
 import MobileMenu from "./mobileMenu";
 export default function NavBar() {
-    const [isVisible, setIsVisible] = useState(true);
     const [isSearchVisible, setIsSearchVisible] = useState(false);
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
-    const [prevScrollY, setPrevScrollY] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            // 向下滚动且超过阈值时隐藏导航栏
-            if (currentScrollY > prevScrollY) {
-                setIsVisible(false);
-                setIsMobileMenuVisible(false);
-            }
-            // 向上滚动时显示导航栏
-            else if (currentScrollY < prevScrollY) {
-                setIsVisible(true);
-            }
-
-            if (currentScrollY < 5) {
-                setIsVisible(true);
-            }
-            // 更新上一次滚动位置
-            setPrevScrollY(currentScrollY);
-        };
-
-        // 添加滚动监听
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [prevScrollY]);
     useEffect(() => {
         function handleKeyDown(event: KeyboardEvent) {
             if (event.key === "/" && !isSearchVisible) {
@@ -61,9 +32,9 @@ export default function NavBar() {
                 <MobileMenu handleClick={MobileMenuCilck} />
             )}
             <div
-                className={`fixed inset-0 w-full z-20 transition duration-200 font-bold text-black leading-6 h-[4.5rem] ${
-                    isVisible ? "translate-y-0" : "-translate-y-full"
-                }`}
+                className={
+                    "fixed inset-0 w-full z-20 transition font-bold text-black leading-6 h-[4.5rem]"
+                }
             >
                 <div className=" bg-white h-[4.5rem] flex items-center justify-between px-0 md:px-4 card-base !rounded-t-[0px] overflow-visible">
                     <div
