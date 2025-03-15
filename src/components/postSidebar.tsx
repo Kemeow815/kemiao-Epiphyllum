@@ -13,7 +13,7 @@ export default function PostSideBar(props: Props) {
             <div className="flex flex-col">
                 <Profile></Profile>
             </div>
-            <div className="hidden lg:block lg:sticky lg:top-[14px]">
+            <div className="hidden lg:block lg:sticky lg:top-[0.875rem]">
                 <Toc slug={props.slug}></Toc>
             </div>
         </div>
