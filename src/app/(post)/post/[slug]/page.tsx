@@ -6,7 +6,6 @@ import { getPostIdToSlug, getPostSlugToId } from "@/utils/getData";
 import Footer from "@/components/footer";
 import PostSideBar from "@/components/postSidebar";
 import type { Metadata, ResolvingMetadata } from "next";
-import NavBar from "@/components/navBar";
 import Link from "next/link";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）

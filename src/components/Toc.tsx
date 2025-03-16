@@ -1,5 +1,6 @@
 import { getPostBySlug, TocItem } from "@/utils/getData";
 import ScrollBar from "@/components/scrollbar";
+import TocClient from "./TocClient";
 export default async function Toc({
     slug,
 }: {
@@ -22,19 +23,21 @@ export default async function Toc({
                         },
                     }}
                 >
-                    <div className="w-full px-2 max-h-[66vh] transition">
+                    <div className="w-full mt-2 px-2 max-h-[66vh] transition">
                         {tocData.map((item, index) => (
                             <Tocitem key={item.id} item={item} index={index} />
                         ))}
                     </div>
                 </ScrollBar>
             </div>
+            <TocClient />
         </div>
     );
 }
 const Tocitem = ({ item, index }: { item: TocItem; index: number }) => (
     <a
         href={`#${item.id}`}
+        data-target-id={item.id}
         className="p-2 flex gap-2 relative transition w-full h-9 rounded-xl
         hover:bg-sky-200 active:bg-sky-200 group"
     >

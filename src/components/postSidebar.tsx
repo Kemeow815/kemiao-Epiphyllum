@@ -1,7 +1,6 @@
 import React from "react";
 import Profile from "./profile";
 import Toc from "./Toc";
-import NavBar from "./navBar";
 interface Props {
     className?: string;
     slug: string;

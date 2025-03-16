@@ -42,6 +42,7 @@ export default function ContentWrapper({
             className={`prose prose-base !max-w-none custom-md ${className}`}
         >
             <div
+                id="target-content"
                 dangerouslySetInnerHTML={{ __html: contentHtml }}
                 suppressHydrationWarning={true}
             />

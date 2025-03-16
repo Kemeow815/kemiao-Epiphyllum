@@ -23,6 +23,9 @@
     }
 }
 @layer components {
+    html {
+        scroll-behavior: smooth;
+    }
     .card-base {
         @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
     }
@@ -270,4 +273,10 @@
 }
 .scroll-container::-webkit-scrollbar {
     display: none; /* Chrome, Safari, and Opera */
+}
+:target::before {
+    content: "";
+    display: block;
+    height: 10vh;
+    margin: -10vh 0 0;
 }
