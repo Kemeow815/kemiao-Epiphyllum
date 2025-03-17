@@ -6,6 +6,7 @@ import { getPostIdToSlug, getPostSlugToId } from "@/utils/getData";
 import Footer from "@/components/footer";
 import PostSideBar from "@/components/postSidebar";
 import type { Metadata, ResolvingMetadata } from "next";
+import MyImage from "@/components/myImage";
 import Link from "next/link";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
@@ -72,8 +73,14 @@ export default async function Page({
         nextPostId < PostIdToSlug.size ? PostIdToSlug.get(nextPostId) : "#";
     return (
         <PostWrapper slug={decodeSlug}>
-            <div className="card-base p-8 divide-y divide-dashed transition ease-in-out">
-                <div className="relative flex flex-col mb-4">
+            <div className="card-base p-8 transition ease-in-out">
+                {post.image && (
+                    <MyImage
+                        src={post.image}
+                        className="w-full aspect-video rounded-2xl mb-8"
+                    />
+                )}
+                <div className="relative flex flex-col pb-8 border-b border-dashed">
                     <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">
                         {post.title}
                     </h1>
