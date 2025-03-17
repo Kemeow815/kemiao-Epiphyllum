@@ -9,7 +9,7 @@ interface Props {
 export default function PostSideBar(props: Props) {
     return (
         <div className={props.className}>
-            <div className="w-full h-full lg:box-border lg:mb-[33vh]">
+            <div className="w-full h-full lg:box-border lg:mb-[calc(100vh-28.75rem)]">
                 <div className="lg:block lg:sticky lg:top-[0.875rem]">
                     <div className="flex flex-col gap-4">
                         <div className="flex flex-col">

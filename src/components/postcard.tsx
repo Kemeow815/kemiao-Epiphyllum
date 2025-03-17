@@ -5,20 +5,20 @@ import { PageContent } from "@/utils/pages";
 import MyImage from "@/components/myImage";
 export default function postcard(props: PageContent) {
     return (
-        <div className="card-base rounded-none first:rounded-t-[var(--rounded-large)] last:rounded-b-[var(--rounded-large)] md:flex-col w-full relative md:rounded-[var(--rounded-large)] ">
-            <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative flex flex-col md:flex-row md:justify-between">
-                {props.image && (
-                    <Link
-                        href={`/post/${props.slug}`}
-                        className="block mb-3 md:hidden"
-                    >
-                        <MyImage
-                            src={props.image}
-                            className="w-full h-48 flex-0 rounded-xl shadow-sm hover:scale-105 transition duration-200"
-                        ></MyImage>
-                    </Link>
-                )}
-                <div className="flex flex-col space-y-3 flex-1">
+        <div className="card-base flex flex-col sm:flex-row md:justify-between rounded-none first:rounded-t-2xl last:rounded-b-2xl w-full relative md:rounded-2xl">
+            {props.image && (
+                <Link
+                    href={`/post/${props.slug}`}
+                    className="flex sm:hidden flex-0 w-full"
+                >
+                    <MyImage
+                        src={props.image}
+                        className="w-full h-64 hover:scale-105 transition duration-200"
+                    ></MyImage>
+                </Link>
+            )}
+            <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative flex-1">
+                <div className="flex flex-col space-y-3">
                     <Link
                         href={`/post/${props.slug}`}
                         className="w-full block font-bold text-3xl 
@@ -50,18 +50,18 @@ export default function postcard(props: PageContent) {
                         {props.description}
                     </div>
                 </div>
-                {props.image && (
-                    <Link
-                        href={`/post/${props.slug}`}
-                        className="hidden md:block"
-                    >
-                        <MyImage
-                            src={props.image}
-                            className="w-64 h-full flex-0 rounded-xl shadow-md hover:scale-105 transition duration-200"
-                        ></MyImage>
-                    </Link>
-                )}
             </div>
+            {props.image && (
+                <Link
+                    href={`/post/${props.slug}`}
+                    className="hidden sm:flex flex-0"
+                >
+                    <MyImage
+                        src={props.image}
+                        className="w-64 hover:scale-105 transition duration-200"
+                    ></MyImage>
+                </Link>
+            )}
         </div>
     );
 }

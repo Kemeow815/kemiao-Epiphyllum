@@ -7,7 +7,13 @@ interface Props {
     className?: string;
     sizes?: number;
 }
-export default function myImage({src, alt = "", position = "center", className, sizes = 100}: Props) {
+export default function myImage({
+    src,
+    alt = "",
+    position = "center",
+    className,
+    sizes = 100,
+}: Props) {
     return (
         <div className={`overflow-hidden relative ${className}`}>
             <Image
@@ -16,9 +22,7 @@ export default function myImage({src, alt = "", position = "center", className, 
                 sizes="50vw"
                 fill
                 quality={100}
-                className={
-                    `object-cover object-position-${position}`
-                }
+                className={`object-cover object-position-${position}`}
             ></Image>
         </div>
     );

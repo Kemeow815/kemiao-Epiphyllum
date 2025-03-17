@@ -2,7 +2,7 @@
 title: Markdown Extended Features
 date: 2024-05-01
 description: "Read more about Markdown features in Fuwari"
-image: ""
+image: /test.jpg
 tags: [Demo, Example, Markdown, Fuwari]
 category: "Examples"
 draft: false

@@ -1,6 +1,7 @@
 import { getPostBySlug, TocItem } from "@/utils/getData";
 import ScrollBar from "@/components/scrollbar";
 import TocClient from "./TocClient";
+import { max } from "date-fns";
 export default async function Toc({
     slug,
 }: {
@@ -23,7 +24,7 @@ export default async function Toc({
                         },
                     }}
                 >
-                    <div className="w-full mt-2 px-2 max-h-[30vh] transition">
+                    <div className="w-full mt-2 px-2 transition max-h-[calc(100vh-33rem)]">
                         {tocData.map((item, index) => (
                             <Tocitem key={item.id} item={item} index={index} />
                         ))}
