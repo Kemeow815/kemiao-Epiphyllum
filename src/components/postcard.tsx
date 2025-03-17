@@ -2,38 +2,65 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import { PageContent } from "@/utils/pages";
+import MyImage from "@/components/myImage";
 export default function postcard(props: PageContent) {
     return (
-        <div className="card-base flex flex-col rounded-none first:rounded-t-[var(--rounded-large)] last:rounded-b-[var(--rounded-large)] md:flex-col w-full relative md:rounded-[var(--rounded-large)] ">
-            <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative space-y-3 ">
-                <Link
-                    href={`/post/${props.slug}`}
-                    className=" w-full block font-bold text-3xl 
+        <div className="card-base rounded-none first:rounded-t-[var(--rounded-large)] last:rounded-b-[var(--rounded-large)] md:flex-col w-full relative md:rounded-[var(--rounded-large)] ">
+            <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative flex flex-col md:flex-row md:justify-between">
+                {props.image && (
+                    <Link
+                        href={`/post/${props.slug}`}
+                        className="block mb-3 md:hidden"
+                    >
+                        <MyImage
+                            src={props.image}
+                            className="w-full h-48 flex-0 rounded-xl shadow-sm hover:scale-105 transition duration-200"
+                        ></MyImage>
+                    </Link>
+                )}
+                <div className="flex flex-col space-y-3 flex-1">
+                    <Link
+                        href={`/post/${props.slug}`}
+                        className="w-full block font-bold text-3xl 
         hover:text-sky-500 transition line-clamp-2 group md:before:block
           before:w-1 before:h-6 before:hidden before:absolute before:left-[18px]
           before:rounded-md before:bg-[var(--primary)] before:top-[35px]
           "
-                >
-                    {props.title}
-                    <svg
-                        className="transition text-[var(--primary)] -translate-x-1 absolute group-hover:opacity-100 inline group-hover:translate-x-0 opacity-0 text-[2rem] translate-y-0.5"
-                        data-icon="material-symbols:chevron-right-rounded"
-                        height="1em"
-                        viewBox="0 0 24 24"
-                        width="1em"
                     >
-                        <use href="#ai:material-symbols:chevron-right-rounded"></use>
-                    </svg>
-                </Link>
+                        {props.title}
+                        <svg
+                            className="transition text-[var(--primary)] -translate-x-1 absolute group-hover:opacity-100 inline group-hover:translate-x-0 opacity-0 text-[2rem] translate-y-0.5"
+                            data-icon="material-symbols:chevron-right-rounded"
+                            height="1em"
+                            viewBox="0 0 24 24"
+                            width="1em"
+                        >
+                            <use href="#ai:material-symbols:chevron-right-rounded"></use>
+                        </svg>
+                    </Link>
 
-                {postMeta({
-                    className:
-                        "flex flex-wrap text-neutral-500 items-center gap-4 gap-x-4 gap-y-2 mb-2 ",
-                    published: props.date,
-                    category: props.category,
-                    tags: props.tags,
-                })}
-                <div className="text-75 mb-3.5 pr-4">{props.description}</div>
+                    {postMeta({
+                        className:
+                            "flex flex-wrap text-neutral-500 items-center gap-4 gap-x-4 gap-y-2 mb-2 ",
+                        published: props.date,
+                        category: props.category,
+                        tags: props.tags,
+                    })}
+                    <div className="text-75 mb-3.5 pr-4">
+                        {props.description}
+                    </div>
+                </div>
+                {props.image && (
+                    <Link
+                        href={`/post/${props.slug}`}
+                        className="hidden md:block"
+                    >
+                        <MyImage
+                            src={props.image}
+                            className="w-64 h-full flex-0 rounded-xl shadow-md hover:scale-105 transition duration-200"
+                        ></MyImage>
+                    </Link>
+                )}
             </div>
         </div>
     );

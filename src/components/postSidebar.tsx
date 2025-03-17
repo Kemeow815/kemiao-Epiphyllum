@@ -8,12 +8,17 @@ interface Props {
 
 export default function PostSideBar(props: Props) {
     return (
-        <div className={"flex flex-col gap-4 " + props.className}>
-            <div className="flex flex-col">
-                <Profile></Profile>
-            </div>
-            <div className="hidden lg:block lg:sticky lg:top-[0.875rem]">
-                <Toc slug={props.slug}></Toc>
+        <div className={props.className}>
+            <div className="w-full h-full lg:box-border lg:mb-[33vh]">
+                <div className="lg:block lg:sticky lg:top-[0.875rem]">
+                    <div className="flex flex-col gap-4">
+                        <div className="flex flex-col">
+                            <Profile></Profile>
+                        </div>
+
+                        <Toc slug={props.slug}></Toc>
+                    </div>
+                </div>
             </div>
         </div>
     );

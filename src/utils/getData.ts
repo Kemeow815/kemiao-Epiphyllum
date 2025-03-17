@@ -17,6 +17,7 @@ export interface BlogData {
     description: string;
     category: string;
     tags?: string[];
+    image?: string;
 }
 
 export async function processMarkdown(filepath: string, fileName: string) {
@@ -36,6 +37,7 @@ export async function processMarkdown(filepath: string, fileName: string) {
             description: string;
             category: string;
             tags?: string[];
+            image?: string;
         }),
         date: new Date(matterResult.data.date),
     };

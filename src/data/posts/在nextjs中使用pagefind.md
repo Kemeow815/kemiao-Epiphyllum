@@ -5,6 +5,7 @@ description: Pagefind使用实例.
 tags: [Example]
 category: Examples
 draft: false
+image: /avatar.jpg
 ---
 
 Pagefind 是对于构建后生成的静态文件，生成索引文件

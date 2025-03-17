@@ -277,6 +277,6 @@
 :target::before {
     content: "";
     display: block;
-    height: 10vh;
-    margin: -10vh 0 0;
+    height: 15vh;
+    margin: -15vh 0 0;
 }

@@ -23,7 +23,7 @@ export default async function Toc({
                         },
                     }}
                 >
-                    <div className="w-full mt-2 px-2 max-h-[66vh] transition">
+                    <div className="w-full mt-2 px-2 max-h-[30vh] transition">
                         {tocData.map((item, index) => (
                             <Tocitem key={item.id} item={item} index={index} />
                         ))}

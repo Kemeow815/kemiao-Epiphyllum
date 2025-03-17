@@ -19,7 +19,7 @@ export default function TocClient() {
             },
             {
                 rootMargin: "-15% 0px -75% 0px",
-                threshold: 1.0,
+                threshold: 0.5,
             }
         );
         const targetContentDiv = document.getElementById("target-content");

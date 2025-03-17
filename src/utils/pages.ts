@@ -7,6 +7,7 @@ export interface PageContent {
     description: string;
     category: string;
     tags?: string[];
+    image?: string;
 }
 let cachedMxPage: number | null = null;
 export async function getMxPage() {
@@ -23,6 +24,7 @@ export async function getAllPage() {
         description: post.description,
         category: post.category,
         tags: post.tags,
+        image: post.image,
     }));
 
     const allPageData = Array.from(
