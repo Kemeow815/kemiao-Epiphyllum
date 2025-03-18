@@ -5,7 +5,7 @@ interface Props {
     className?: string;
     options?: any;
     children?: React.ReactNode;
-    onClick?: (e : any) => void;
+    onClick?: (e: any) => void;
 }
 export default function ScrollBar({
     className = "",

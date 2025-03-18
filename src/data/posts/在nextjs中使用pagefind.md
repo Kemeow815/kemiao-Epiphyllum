@@ -74,4 +74,4 @@ useEffect(() => {
 
 这样就可以使用 window.search() 进行搜索
 
-具体实现可以参考 [Epiphyllum]([Masttf/Epiphyllum: A static blog powered by react to be continue](https://github.com/Masttf/Epiphyllum))
+具体实现可以参考 [Masttf/Epiphyllum: A static blog powered by react to be continue](https://github.com/Masttf/Epiphyllum)

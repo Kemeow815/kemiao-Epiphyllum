@@ -1,7 +1,6 @@
 import { getPostBySlug, TocItem } from "@/utils/getData";
 import ScrollBar from "@/components/scrollbar";
 import TocClient from "./TocClient";
-import { max } from "date-fns";
 export default async function Toc({
     slug,
 }: {
@@ -13,23 +12,15 @@ export default async function Toc({
             <div className="flex flex-col items-center gap-1 justify-center">
                 <div className="mt-2 text-lg font-bold">目录</div>
                 <div className="w-5 h-1 rounded-md bg-sky-500"></div>
-                <ScrollBar
-                    className="w-full mb-2"
-                    options={{
-                        scrollbars: {
-                            theme: "scrollbar-base scrollbar-auto py-1",
-                            autoHide: "move",
-                            autoHideDelay: 500,
-                            autoHideSuspend: false,
-                        },
-                    }}
+
+                <div
+                    id="toc-container"
+                    className="w-full overflow-scroll scroll-container  mt-2 px-2 transition max-h-[calc(100vh-33rem)]"
                 >
-                    <div className="w-full mt-2 px-2 transition max-h-[calc(100vh-33rem)]">
-                        {tocData.map((item, index) => (
-                            <Tocitem key={item.id} item={item} index={index} />
-                        ))}
-                    </div>
-                </ScrollBar>
+                    {tocData.map((item, index) => (
+                        <Tocitem key={item.id} item={item} index={index} />
+                    ))}
+                </div>
             </div>
             <TocClient />
         </div>

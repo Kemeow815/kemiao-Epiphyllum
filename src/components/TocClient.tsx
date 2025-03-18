@@ -3,17 +3,35 @@ import { useEffect, useRef } from "react";
 export default function TocClient() {
     const last = useRef<Element>(null);
     useEffect(() => {
-        const setActiveId = (id: string) => {
-            if (last.current)
-                last.current.classList.remove("bg-sky-200", "text-sky-500");
-            last.current = document.querySelector(`a[data-target-id="${id}"]`);
-            last.current?.classList.add("bg-sky-200", "text-sky-500");
+        const setActive = (id: string) => {
+            const tocItem = document.querySelector(
+                `a[data-target-id="${id}"]`
+            ) as HTMLElement;
+            if (!tocItem) return;
+            last.current?.classList.remove("bg-sky-200", "text-sky-600");
+            tocItem.classList.add("bg-sky-200", "text-sky-600");
+            last.current = tocItem;
+
+            // 滚动到目录项
+            const tocContainer = document.getElementById("toc-container");
+            if (tocContainer) {
+                const containerHeight = tocContainer.offsetHeight;
+                const itemTop = tocItem.offsetTop - tocContainer.offsetTop;
+                const targetScroll =
+                    itemTop - containerHeight / 2 + tocItem.offsetHeight / 2;
+
+                // 使用平滑滚动
+                tocContainer.scrollTo({
+                    top: targetScroll,
+                    behavior: "smooth",
+                });
+            }
         };
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveId(entry.target.id);
+                        setActive(entry.target.id);
                     }
                 });
             },
