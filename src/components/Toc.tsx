@@ -15,7 +15,7 @@ export default async function Toc({
 
                 <div
                     id="toc-container"
-                    className="w-full overflow-scroll scroll-container  mt-2 px-2 transition max-h-[calc(100vh-33rem)]"
+                    className="w-full overflow-scroll scroll-container  mt-2 px-2 pb-2 transition max-h-[calc(100vh-33rem)]"
                 >
                     {tocData.map((item, index) => (
                         <Tocitem key={item.id} item={item} index={index} />
