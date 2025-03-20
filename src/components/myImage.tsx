@@ -5,17 +5,17 @@ interface Props {
     alt?: string;
     position?: string;
     className?: string;
-    sizes?: number;
+    id?: string;
 }
 export default function myImage({
     src,
     alt = "",
     position = "center",
     className,
-    sizes = 100,
+    id,
 }: Props) {
     return (
-        <div className={`overflow-hidden relative ${className}`}>
+        <div className={`overflow-hidden relative ${className}`} id={id}>
             <Image
                 src={src}
                 alt={alt}

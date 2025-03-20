@@ -12,6 +12,7 @@ export default function postcard(props: PageContent) {
                     className="flex sm:hidden flex-0 w-full"
                 >
                     <MyImage
+                        id="ImageCard"
                         src={props.image}
                         className="w-full h-64 hover:scale-105 transition duration-200"
                     ></MyImage>
@@ -57,6 +58,7 @@ export default function postcard(props: PageContent) {
                     className="hidden sm:flex flex-0"
                 >
                     <MyImage
+                        id="ImageCard"
                         src={props.image}
                         className="w-64 hover:scale-105 transition duration-200"
                     ></MyImage>
