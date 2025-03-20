@@ -5,7 +5,7 @@ export default function TocClient() {
     useEffect(() => {
         const setActive = (id: string) => {
             const tocItem = document.querySelector(
-                `a[data-target-id="${id}"]`
+                `#toc-container a[data-target-id="${id}"]`
             ) as HTMLElement;
             if (!tocItem) return;
             last.current?.classList.remove("bg-sky-200", "text-sky-600");
@@ -14,6 +14,7 @@ export default function TocClient() {
 
             // 滚动到目录项
             const tocContainer = document.getElementById("toc-container");
+            console.log(tocContainer);
             if (tocContainer) {
                 const containerHeight = tocContainer.offsetHeight;
                 const itemTop = tocItem.offsetTop - tocContainer.offsetTop;
