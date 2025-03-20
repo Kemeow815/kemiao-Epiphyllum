@@ -1,52 +1,48 @@
 ---
 title: Markdown Example
-date: 2023-10-01
+date: 2025-3-20
 description: A simple example of a Markdown blog post.
 tags: [Markdown, Blogging, Demo]
 category: Examples
 draft: false
 ---
 
-# An h1 header
+# 一级标题
 
-Paragraphs are separated by a blank line.
+段落之间空行分隔
 
-2nd paragraph. _Italic_, **bold**, and `monospace`. Itemized lists
-look like:
+第二段 _斜体_, **粗体**, `等宽字体`
 
--   this one
--   that one
--   the other one
+列表项
 
-Note that --- not considering the asterisk --- the actual text
-content starts at 4-columns in.
+-   1
+-   2
+-   3
 
-> Block quotes are
-> written like so.
+> 块引用
+> 这样写
 >
-> They can span multiple paragraphs,
-> if you like.
+> 可以跨越多行
 
-Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis.
-Unicode is supported. ☺
+---
 
-## An h2 header
+三个-表示分割线
 
-Here's a numbered list:
+支持 Unicode ☺
 
-1. first item
-2. second item
-3. third item
+## 二级标题
 
-Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here's a code sample:
+数字列表:
 
-    # Let me re-iterate ...
+1. 1
+2. 2
+3. 3
+
+再次注意文本实际从第 4 列开始。代码示例：
+
     for i in 1 .. 10 { do-something(i) }
 
-As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:
+代码块
 
 ```
 define foobar() {
@@ -54,113 +50,73 @@ define foobar() {
 }
 ```
 
-(which makes copying & pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:
+标记语言可以有代码高亮
 
 ```python
 import time
-# Quick, count to ten!
 for i in range(10):
-    # (but not *too* quick)
     time.sleep(0.5)
     print i
 ```
 
-### An h3 header
+### 三级标题
 
-Now a nested list:
+嵌套列表
 
-1.  First, get these ingredients:
+1.  First:
 
-    -   carrots
-    -   celery
-    -   lentils
+    -   1
+    -   2
+    -   3
 
-2.  Boil some water.
+2.  second
 
-3.  Dump everything in the pot and follow
-    this algorithm:
+3.  third
 
-        find wooden spoon
-        uncover pot
-        stir
-        cover pot
-        balance wooden spoon precariously on pot handle
-        wait 10 minutes
-        goto first step (or shut off burner when done)
+        code...
 
-    Do not bump wooden spoon or it will fall.
+链接示例 [a website](http://foo.bar), to a [local
+doc](local-doc.html), and to a [三级标题](#三级标题). 脚注 [^1].
 
-Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).
+[^1]: 脚注内容
 
-Here's a link to [a website](http://foo.bar), to a [local
-doc](local-doc.html), and to a [section heading in the current
-doc](#an-h2-header). Here's a footnote [^1].
+表格
 
-[^1]: Footnote text goes here.
+| size | material | color       |
+| ---- | -------- | ----------- |
+| 9    | leather  | brown       |
+| 10   | hemp     | canvas      |
+| 11   | glass    | transparent |
 
-Tables can look like this:
+左对齐（默认）
 
-size material color
+| size | material | color |
+| :--- | :------- | :---- |
+| 9    | leather  | brown |
 
----
+居中对齐
 
-9 leather brown
-10 hemp canvas natural
-11 glass transparent
+| size | material | color  |
+| :--: | :------: | :----: |
+|  10  |   hemp   | canvas |
 
-Table: Shoes, their sizes, and what they're made of
+右对齐
 
-(The above is the caption for the table.) Pandoc also supports
-multi-line tables:
+| size | material |       color |
+| ---: | -------: | ----------: |
+|   11 |    glass | transparent |
 
----
-
-keyword text
-
----
-
-red Sunsets, apples, and
-other red or reddish
-things.
-
-green Leaves, grass, frogs
-and other things it's
-not easy being.
-
----
-
-A horizontal rule follows.
-
----
-
-Here's a definition list:
-
-apples
-: Good for making applesauce.
-oranges
-: Citrus!
-tomatoes
-: There's no "e" in tomatoe.
-
-Again, text is indented 4 spaces. (Put a blank line between each
-term/definition pair to spread things out more.)
-
-Here's a "line block":
-
-| Line one
-| Line too
-| Line tree
-
-and images can be specified like so:
+插入图片
 
 ![example](./assets/banner.jpg)
 
-Inline math equations go in like so: $\omega = d\phi / dt$. Display
-math should get its own line and be put in in double-dollarsigns:
+内联数学公式: $\omega = d\phi / dt$.
+
+独立公式
 
 $$I = \int \rho R^{2} dV$$
+
+公式块
 
 $$
 \begin{equation*}
@@ -170,6 +126,3 @@ $$
  \;5923078164\;0628620899\;8628034825\;3421170679\;\ldots
 \end{equation*}
 $$
-
-And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: \`foo\`, \*bar\*, etc.

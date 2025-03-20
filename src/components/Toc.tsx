@@ -45,9 +45,8 @@ const Tocitem = ({ item, index }: { item: TocItem; index: number }) => (
             )}
         </div>
         <div
-            className={`transition group-hover:text-sky-600 group-active:text-sky-600 text-sm ${(() => {
-                return `pl-[${item.depth - 1}rem]`;
-            })()} overflow-hidden whitespace-nowrap text-overflow-ellipsis`}
+            className="transition group-hover:text-sky-600 group-active:text-sky-600 text-sm overflow-hidden whitespace-nowrap text-overflow-ellipsis"
+            style={{ paddingLeft: `${(item.depth - 1) * 0.5}rem` }}
         >
             {item.text}
         </div>

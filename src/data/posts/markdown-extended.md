@@ -1,83 +1,70 @@
 ---
 title: Markdown Extended Features
-date: 2024-05-01
-description: "Read more about Markdown features in Fuwari"
+date: 2025-03-20
+description: "Read more about Markdown features"
 image: /test.jpg
-tags: [Demo, Example, Markdown, Fuwari]
+tags: [Demo, Example, Markdown]
 category: "Examples"
 draft: false
 ---
 
-## GitHub Repository Cards
+## GitHub 仓库卡片
 
-You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API.
+可以通过动态卡片链接到 GitHub 仓库，页面加载时会自动从 GitHub API 获取仓库信息
 
-::github{repo="Fabrizz/MMM-OnSpotify"}
+::github{repo="Masttf/Epiphyllum"}
 
-Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
+创建一个 GitHub 仓库卡片可以用这个代码 `::github{repo="<owner>/<repo>"}`.
 
 ```markdown
-::github{repo="saicaca/fuwari"}
+::github{repo="Masttf/Epiphyllum"}
 ```
 
-## Admonitions
+## 提示框类型
 
-Following types of admonitions are supported: `note` `tip` `important` `warning` `caution`
+支持以下类型的提示框: `note` `tip` `important` `warning` `caution`
 
 :::note
-Highlights information that users should take into account, even when skimming.
+需要用户特别注意的信息，即使快速浏览时也不应忽略。
 :::
 
 :::tip
-Optional information to help a user be more successful.
+帮助用户更高效完成任务的补充性信息。
 :::
 
 :::important
-Crucial information necessary for users to succeed.
+确保用户成功操作所需的关键信息
 :::
 
 :::warning
-Critical content demanding immediate user attention due to potential risks.
+涉及潜在风险，需要用户立即关注的关键内容。
 :::
 
 :::caution
-Negative potential consequences of an action.
+警示某项操作可能引发的负面后果。
 :::
 
-### Basic Syntax
+### 基本语法
 
 ```markdown
 :::note
-Highlights information that users should take into account, even when skimming.
+需要用户特别注意的信息，即使快速浏览时也不应忽略。
 :::
 
 :::tip
-Optional information to help a user be more successful.
+帮助用户更高效完成任务的补充性信息。
 :::
 ```
 
-### Custom Titles
+### GitHub 语法
 
-The title of the admonition can be customized.
-
-:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
-:::
-
-```markdown
-:::note[MY CUSTOM TITLE]
-This is a note with a custom title.
-:::
-```
-
-### GitHub Syntax
-
-> [!TIP] > [The GitHub syntax](https://github.com/orgs/community/discussions/16925) is also supported.
+> [!NOTE]
+> Github 语法也支持。
 
 ```
 > [!NOTE]
-> The GitHub syntax is also supported.
+> Github 语法也支持。
 
 > [!TIP]
-> The GitHub syntax is also supported.
+> Github 语法也支持。
 ```

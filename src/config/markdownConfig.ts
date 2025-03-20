@@ -1,6 +1,7 @@
 import { unified } from "unified";
 import type { PluggableList } from "unified";
 import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeShiki from "@shikijs/rehype";
 import rehypeStringify from "rehype-stringify";
@@ -28,6 +29,7 @@ interface MarkdownConfig {
 export const markdownConfig: MarkdownConfig = {
     remarkPlugins: [
         remarkMath,
+        remarkGfm,
         remarkGithubAdmonitionsToDirectives,
         remarkDirective,
         remarkSectionize,
