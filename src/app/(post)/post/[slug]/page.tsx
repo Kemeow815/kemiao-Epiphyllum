@@ -8,6 +8,7 @@ import PostSideBar from "@/components/postSidebar";
 import type { Metadata, ResolvingMetadata } from "next";
 import MyImage from "@/components/myImage";
 import Link from "next/link";
+import TocContent from "@/components/TocContent";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
 type Props = {
@@ -73,7 +74,7 @@ export default async function Page({
         nextPostId < PostIdToSlug.size ? PostIdToSlug.get(nextPostId) : "#";
     return (
         <PostWrapper slug={decodeSlug}>
-            <div className="card-base p-8 transition ease-in-out">
+            <div className="card-base p-4 transition ease-in-out">
                 {post.image && (
                     <MyImage
                         src={post.image}
@@ -93,6 +94,16 @@ export default async function Page({
                         tags: post.tags,
                     })}
                 </div>
+                <div className="lg:hidden pb-2 mb-2 border-b border-dashed">
+                    <div className="flex flex-col items-center gap-1 justify-center">
+                        <div className="mt-2 text-lg font-bold">目录</div>
+                        <div className="w-5 h-1 rounded-md bg-sky-500"></div>
+
+                        <div className="w-full overflow-scroll scroll-container mt-2 px-2 pb-2 transition max-h-[20vh]">
+                            <TocContent slug={decodeSlug} />
+                        </div>
+                    </div>
+                </div>
                 <ContentWrapper
                     contentHtml={post.contentHtml}
                     className="pt-2"
@@ -102,7 +113,7 @@ export default async function Page({
                 {prevSlug != "#" && (
                     <Link
                         href={`/post/${prevSlug}`}
-                        className="flex w-full overflow-hidden items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
+                        className="flex w-full m-1 overflow-hidden items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                     >
                         <svg
                             height="1em"
@@ -120,7 +131,7 @@ export default async function Page({
                 {nextSlug != "#" && (
                     <Link
                         href={`/post/${nextSlug}`}
-                        className="flex flex-row-reverse overflow-hidden w-full items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
+                        className="flex m-1 flex-row-reverse overflow-hidden w-full items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                     >
                         <svg
                             height="1em"
