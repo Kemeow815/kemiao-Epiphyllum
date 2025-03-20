@@ -14,7 +14,7 @@ export default function TocClient() {
 
             // 滚动到目录项
             const tocContainer = document.getElementById("toc-container");
-            console.log(tocContainer);
+            // console.log(tocContainer);
             if (tocContainer) {
                 const containerHeight = tocContainer.offsetHeight;
                 const itemTop = tocItem.offsetTop - tocContainer.offsetTop;
@@ -37,7 +37,7 @@ export default function TocClient() {
                 });
             },
             {
-                rootMargin: "-15% 0px -75% 0px",
+                rootMargin: "0px 0px -50% 0px",
                 threshold: 0.5,
             }
         );
