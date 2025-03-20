@@ -22,10 +22,10 @@ webpack 的打包忽视，使用相对路径进行动态加载
 
 ```
 "build": "next build && pnpm generate-pagefind",
-"generate-pagefind": "pagefind --site .next --output-path .next/static/chunks/app/pagefind"
+"generate-pagefind": "pagefind --site .next --output-path .next/static/chunks/pagefind"
 ```
 
-因为我使用的是 nextjs 的 app route 所以我把索引文件放在`app/pagefind` 下 这个可以通过相对路径来正确获取
+因为我使用的是 nextjs 的 app route 所以我把索引文件放在`pagefind` 下 这个可以通过相对路径来正确获取, 如果不知道路径可以 conselog 看看
 
 然后就可以使用 useEffect 在组件挂载时进行加载，同时因为测试环境不会
 
@@ -35,7 +35,7 @@ useEffect(() => {
         if (process.env.NODE_ENV === "production") {
             window.pagefind = await import(
                 // @ts-expect-error pagefind generated after build
-                /* webpackIgnore: true */ "../pagefind/pagefind.js"
+                /* webpackIgnore: true */ "./pagefind/pagefind.js"
             );
         } else {
             window.pagefind = {

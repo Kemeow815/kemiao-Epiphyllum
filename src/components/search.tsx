@@ -23,10 +23,11 @@ interface SearchResult {
 export default function Search({ handleClick }: { handleClick: () => void }) {
     useEffect(() => {
         async function loadPagefind() {
+            // console.log("./pagefind/pagefind.js");
             if (process.env.NODE_ENV === "production") {
                 window.pagefind = await import(
                     // @ts-expect-error pagefind generated after build
-                    /* webpackIgnore: true */ "../pagefind/pagefind.js"
+                    /* webpackIgnore: true */ "./pagefind/pagefind.js"
                 );
             } else {
                 window.pagefind = {
@@ -103,6 +104,7 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
     }, []);
     useEffect(() => {
         async function handleSearch() {
+            // console.log("query", query);
             if (window.pagefind) {
                 const search = await window.pagefind.search(query);
                 setResult(search?.results || []);
