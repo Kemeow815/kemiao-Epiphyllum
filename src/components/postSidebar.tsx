@@ -16,7 +16,10 @@ export default function PostSideBar(props: Props) {
                             <Profile></Profile>
                         </div>
 
-                        <Toc slug={props.slug}></Toc>
+                        <Toc
+                            slug={props.slug}
+                            className="hidden lg:block"
+                        ></Toc>
                     </div>
                 </div>
             </div>

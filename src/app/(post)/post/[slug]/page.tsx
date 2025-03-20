@@ -74,7 +74,7 @@ export default async function Page({
         nextPostId < PostIdToSlug.size ? PostIdToSlug.get(nextPostId) : "#";
     return (
         <PostWrapper slug={decodeSlug}>
-            <div className="card-base p-4 transition ease-in-out">
+            <div className="relative w-full card-base md:px-9 pb-4 pt-6 px-6 z-10">
                 {post.image && (
                     <MyImage
                         src={post.image}
