@@ -16,6 +16,7 @@ export interface BlogData {
     date: Date;
     description: string;
     category: string;
+    top: number;
     tags?: string[];
     image?: string;
 }
@@ -36,6 +37,7 @@ export async function processMarkdown(filepath: string, fileName: string) {
             title: string;
             description: string;
             category: string;
+            top: number;
             tags?: string[];
             image?: string;
         }),
@@ -62,9 +64,13 @@ export async function getAllSortedPosts() {
         })
     );
     cacheBlogData = allPostsData.sort((a, b) => {
-        const timeA = a.date.getTime();
-        const timeB = b.date.getTime();
-        return timeB - timeA;
+        if (a.top !== b.top) {
+            return b.top - a.top;
+        } else {
+            const timeA = a.date.getTime();
+            const timeB = b.date.getTime();
+            return timeB - timeA;
+        }
     });
     return cacheBlogData;
 }

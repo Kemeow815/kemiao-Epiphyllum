@@ -2,10 +2,11 @@
 title: Markdown Extended Features
 date: 2025-03-20
 description: "Read more about Markdown features"
-image: /test.jpg
-tags: [Demo, Example, Markdown]
 category: "Examples"
+tags: [Demo, Example, Markdown]
+top: 2
 draft: false
+image: /test.jpg
 ---
 
 ## GitHub 仓库卡片

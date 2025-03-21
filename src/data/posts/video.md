@@ -2,10 +2,9 @@
 title: 如何在文章添加视频
 date: 2025-03-12
 description: 如何在文章中添加视频
-tags:
-    - "Example"
-    - "Video"
 category: Examples
+tags: [Example, Video]
+top: 0
 ---
 
 支持在 markdown 内嵌 HTML 标签，下面是一个简单的例子

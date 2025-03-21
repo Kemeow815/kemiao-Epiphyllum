@@ -2,8 +2,9 @@
 title: 在Next.js中使用Pagefind
 date: 2025-03-13
 description: Pagefind使用实例.
-tags: [Example]
 category: Examples
+tags: [Example]
+top: 0
 draft: false
 image: /avatar.jpg
 ---

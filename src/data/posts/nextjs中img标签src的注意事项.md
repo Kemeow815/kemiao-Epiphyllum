@@ -4,7 +4,8 @@ date: 2025-03-13
 description: nextjs中img标签src的注意事项
 category: "Examples"
 tags: [nextjs, Markdown, image]
-daftar: false
+top: 0
+draft: false
 ---
 
 在 next.js 中只有 public 文件夹是公开可以访问的静态资源文件夹 `/` 直接是 `/public`
