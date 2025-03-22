@@ -6,7 +6,7 @@ import { getPostIdToSlug, getPostSlugToId } from "@/utils/getData";
 import Footer from "@/components/footer";
 import PostSideBar from "@/components/postSidebar";
 import type { Metadata, ResolvingMetadata } from "next";
-import MyImage from "@/components/myImage";
+import Image from "next/image";
 import Link from "next/link";
 import TocContent from "@/components/TocContent";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
@@ -76,10 +76,16 @@ export default async function Page({
         <PostWrapper slug={decodeSlug}>
             <div className="relative w-full card-base md:px-9 pb-4 pt-6 px-6 z-10">
                 {post.image && (
-                    <MyImage
-                        src={post.image}
-                        className="w-full aspect-video rounded-2xl mb-8"
-                    />
+                    <div className="overflow-hidden relative w-full aspect-video rounded-2xl mb-8">
+                        <Image
+                            src={post.image}
+                            alt=""
+                            sizes="100vw"
+                            fill
+                            quality={100}
+                            className={`object-cover object-center`}
+                        />
+                    </div>
                 )}
                 <div className="relative flex flex-col pb-8 border-b border-dashed">
                     <h1 className="block w-full font-bold text-3xl transition line-clamp-2 text-center mb-3">

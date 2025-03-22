@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import MyImage from "./myImage";
+import Image from "next/image";
 import { profileConfig } from "@/config/config";
 import { links } from "@/config/config";
 export default function Profile() {
@@ -11,11 +11,16 @@ export default function Profile() {
                 className="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
                     max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95 shadow-md"
             >
-                <MyImage
-                    src={profileConfig.imageSrc}
-                    alt="Profile Image of the Author"
-                    className="mx-auto aspect-square lg:w-full h-full lg:mt-0 object-cover object-center"
-                />
+                <div className="overflow-hidden relative mx-auto aspect-square lg:w-full h-full lg:mt-0">
+                    <Image
+                        src={profileConfig.imageSrc}
+                        alt="Profile Image of the Author"
+                        sizes="50vw"
+                        fill
+                        quality={100}
+                        className={`object-cover object-center`}
+                    />
+                </div>
             </Link>
             <div className="px-2">
                 <div className="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">

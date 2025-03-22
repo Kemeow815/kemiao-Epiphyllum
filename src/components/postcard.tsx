@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import { format } from "date-fns";
 import { PageContent } from "@/utils/pages";
-import MyImage from "@/components/myImage";
+import Image from "next/image";
 export default function postcard(props: PageContent) {
     return (
         <div className="card-base flex flex-col sm:flex-row md:justify-between rounded-none first:rounded-t-2xl last:rounded-b-2xl w-full relative md:rounded-2xl">
@@ -11,11 +11,19 @@ export default function postcard(props: PageContent) {
                     href={`/post/${props.slug}`}
                     className="flex sm:hidden flex-0 w-full"
                 >
-                    <MyImage
+                    <div
+                        className="overflow-hidden relative w-full h-64 hover:scale-105 transition duration-200"
                         id="ImageCard"
-                        src={props.image}
-                        className="w-full h-64 hover:scale-105 transition duration-200"
-                    ></MyImage>
+                    >
+                        <Image
+                            src={props.image}
+                            alt=""
+                            sizes="100vw"
+                            fill
+                            quality={100}
+                            className={`object-cover object-center`}
+                        ></Image>
+                    </div>
                 </Link>
             )}
 
@@ -66,11 +74,19 @@ export default function postcard(props: PageContent) {
                     href={`/post/${props.slug}`}
                     className="hidden sm:flex flex-0"
                 >
-                    <MyImage
+                    <div
+                        className="overflow-hidden relative w-64 hover:scale-105 transition duration-200"
                         id="ImageCard"
-                        src={props.image}
-                        className="w-64 hover:scale-105 transition duration-200"
-                    ></MyImage>
+                    >
+                        <Image
+                            src={props.image}
+                            alt=""
+                            sizes="(max-width: 1024px) 40vw, 30vw"
+                            fill
+                            quality={100}
+                            className={`object-cover object-center`}
+                        />
+                    </div>
                 </Link>
             )}
         </div>
