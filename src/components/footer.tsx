@@ -1,14 +1,16 @@
 import React from "react";
-const currentYear = new Date().getFullYear();
 import Link from "next/link";
+import { profileConfig } from "@/config/config";
+const currentYear = new Date().getFullYear();
 export default function footer() {
     return (
         <>
             <div className="border-t border-black/10  my-10 border-dashed mx-32"></div>
             <div className="border-dashed  rounded-2xl mb-12 flex flex-col items-center justify-center px-6">
                 <div className="text-50 text-sm text-center">
-                    &copy; <span>{currentYear}</span> Masttf. All Rights
-                    Reserved.
+                    &copy; <span>{currentYear}</span>
+                    {` ${profileConfig.name}. All Rights
+                    Reserved.`}
                     <br />
                     Powered by
                     <Link
