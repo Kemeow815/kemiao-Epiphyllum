@@ -1,7 +1,7 @@
 ---
-title: nextjs中img标签src的注意事项
+title: markdown中图片地址
 date: 2025-03-13
-description: nextjs中img标签src的注意事项
+description: markdown中图片地址注意事项
 category: "Examples"
 tags: [nextjs, Markdown, image]
 top: 0
@@ -11,18 +11,6 @@ draft: false
 在 next.js 中只有 public 文件夹是公开可以访问的静态资源文件夹 `/` 直接是 `/public`
 
 那么对于一些静态资源(图片)的访问就存在问题
-
--   使用 nextjs 的 Image 组件 地址是网络地址，需要在`next.config.ts` 配置
-
-    ```
-    images: {
-            remotePatterns: [
-                {
-                    hostname: "your domain",
-                },
-            ],
-        },
-    ```
 
 -   使用本地图片但是没有放在`/public`文件夹下
 
