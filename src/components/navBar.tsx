@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Search from "./search";
 import { linkList } from "@/config/config";
 import MobileMenu from "./mobileMenu";
+import { WebName } from "@/config/config";
 export default function NavBar() {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
     const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
@@ -69,7 +70,7 @@ export default function NavBar() {
                             </symbol>
                             <use xlinkHref="#ai:material-symbols:home-outline-rounded"></use>
                         </svg>
-                        <div>Epipyhllum</div>
+                        <div>{WebName}</div>
                     </Link>
                     <div className="hidden md:flex items-center">
                         {linkList.map((item, index) => (

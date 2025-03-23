@@ -1,11 +1,12 @@
 import React from "react";
 import { getAllPage, getPageById } from "@/utils/pages";
 import PageCreate from "@/components/pageCreate";
+import { WebName } from "@/config/config";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Epiphyllum",
+    title: WebName,
     description: "Page",
 };
 export async function generateStaticParams() {
