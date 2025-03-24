@@ -6,3 +6,4 @@ git checkout then
 git merge origin/then
 git rebase master
 git push -u origin then
+git push -u origin master
