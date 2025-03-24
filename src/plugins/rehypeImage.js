@@ -7,6 +7,8 @@ export function rehypeImage() {
                     node.properties.src = `/posts/${node.properties.src.slice(
                         2
                     )}`;
+                } else if (node.properties.src.startsWith("assets/")) {
+                    node.properties.src = `/posts/${node.properties.src}`;
                 }
             }
         });
