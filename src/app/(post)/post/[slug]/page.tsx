@@ -91,7 +91,7 @@ export default async function Page({
                     <div className="overflow-hidden relative w-full aspect-video rounded-2xl mb-8">
                         <Image
                             src={post.image}
-                            alt=""
+                            alt="post cover"
                             sizes="100vw"
                             fill
                             quality={100}

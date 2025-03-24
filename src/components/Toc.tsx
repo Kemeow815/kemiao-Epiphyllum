@@ -1,4 +1,3 @@
-import { getPostBySlug, TocItem } from "@/utils/getData";
 import TocClient from "./TocClient";
 import TocContent from "./TocContent";
 export default async function Toc({

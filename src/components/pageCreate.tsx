@@ -45,6 +45,7 @@ function generatePagination(mxPage: number, id: number) {
         <div className="flex flex-row gap-1 justify-center mx-auto mt-4">
             <Link
                 href={id === 2 ? "/" : `/page/${id - 1}`}
+                aria-label="上一页"
                 className={
                     "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === 1 ? " pointer-events-none" : "")
@@ -66,6 +67,7 @@ function generatePagination(mxPage: number, id: number) {
                     <Link
                         key={page}
                         href={page === 1 ? "/" : `/page/${page}`}
+                        aria-label={`page ${page}`}
                         className={
                             "m-1 h-11 w-11 rounded-lg flex bg-white items-center font-bold text-black  justify-center hover:bg-sky-300 shadow-md" +
                             (page === id ? " !bg-sky-500 !text-white" : "")
@@ -78,6 +80,7 @@ function generatePagination(mxPage: number, id: number) {
 
             <Link
                 href={`/page/${id + 1}`}
+                aria-label="下一页"
                 className={
                     "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === mxPage ? " pointer-events-none" : "")

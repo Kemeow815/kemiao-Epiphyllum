@@ -17,7 +17,7 @@ export default function postcard(props: PageContent) {
                     >
                         <Image
                             src={props.image}
-                            alt=""
+                            alt="post cover"
                             sizes="100vw"
                             fill
                             quality={100}
@@ -39,6 +39,7 @@ export default function postcard(props: PageContent) {
                 <div className="flex flex-col space-y-3">
                     <Link
                         href={`/post/${props.slug}`}
+                        aria-label="文章链接"
                         className="w-full block font-bold text-3xl 
         hover:text-sky-500 transition line-clamp-2 group md:before:block
           before:w-1 before:h-6 before:hidden before:absolute before:left-[18px]
@@ -72,6 +73,7 @@ export default function postcard(props: PageContent) {
             {props.image && (
                 <Link
                     href={`/post/${props.slug}`}
+                    aria-label="文章链接"
                     className="hidden sm:flex flex-0"
                 >
                     <div
@@ -80,7 +82,7 @@ export default function postcard(props: PageContent) {
                     >
                         <Image
                             src={props.image}
-                            alt=""
+                            alt="post cover"
                             sizes="(max-width: 1024px) 40vw, 30vw"
                             fill
                             quality={100}
@@ -136,6 +138,7 @@ export function postMeta({
                 <div className="flex flex-row flex-nowrap items-center">
                     <Link
                         href={`/archive/categories/${category}`}
+                        aria-label="分类链接"
                         className="rounded-md px-2 py-1 whitespace-nowrap Myhover block"
                     >
                         {category}
@@ -167,6 +170,7 @@ export function postMeta({
                             </div>
                             <Link
                                 href={`/archive/tags/${tag}`}
+                                aria-label="Tag链接"
                                 className="text-50 p-1 rounded-md Myhover whitespace-nowrap"
                             >
                                 {tag}

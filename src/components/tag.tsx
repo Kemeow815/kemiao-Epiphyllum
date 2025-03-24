@@ -20,11 +20,16 @@ export default async function tag() {
                 <div className="relative overflow-hidden w-full px-3">
                     {TagsList.map((tags, index) => {
                         return (
-                            <Marquee key={index} pauseOnHover={true} reverse={index === 1}>
+                            <Marquee
+                                key={index}
+                                pauseOnHover={true}
+                                reverse={index === 1}
+                            >
                                 {tags.map((tag) => {
                                     return (
                                         <Link
                                             key={tag}
+                                            aria-label={tag}
                                             href={`/archive/tags/${tag}`}
                                             className="shadow-md text-sm flex items-center justify-center font-thin h-8 px-3 bg-sky-200 rounded-md border-solid  text-sky-600 text-center hover:bg-sky-300"
                                         >

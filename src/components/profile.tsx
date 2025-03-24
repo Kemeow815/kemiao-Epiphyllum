@@ -37,6 +37,7 @@ export default function Profile() {
                     <Link
                         key={link.name}
                         href={link.url}
+                        aria-label={link.name}
                         target="_blank"
                         className="btn-regular rounded-lg h-10 gap-2 px-3 font-bold active:scale-95"
                     >
