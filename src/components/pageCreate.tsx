@@ -42,7 +42,7 @@ function generatePagination(mxPage: number, id: number) {
         }
     }
     return (
-        <div className="flex flex-row gap-3 justify-center mx-auto mt-4">
+        <div className="flex flex-row gap-1 justify-center mx-auto mt-4">
             <Link
                 href={id === 2 ? "/" : `/page/${id - 1}`}
                 className={
@@ -60,22 +60,22 @@ function generatePagination(mxPage: number, id: number) {
                     <use href="#ai:material-symbols:chevron-left-rounded"></use>
                 </svg>
             </Link>
-            <div className="m-1 flex flex-row items-center bg-white rounded-lg text-black font-bold shadow-md">
-                {pagelist.map((page) => {
-                    return (
-                        <Link
-                            key={page}
-                            href={page === 1 ? "/" : `/page/${page}`}
-                            className={
-                                "h-11 w-11 rounded-lg flex items-center justify-center hover:bg-sky-300" +
-                                (page === id ? " bg-sky-500 text-white" : "")
-                            }
-                        >
-                            {page}
-                        </Link>
-                    );
-                })}
-            </div>
+
+            {pagelist.map((page) => {
+                return (
+                    <Link
+                        key={page}
+                        href={page === 1 ? "/" : `/page/${page}`}
+                        className={
+                            "m-1 h-11 w-11 rounded-lg flex bg-white items-center font-bold text-black  justify-center hover:bg-sky-300 shadow-md" +
+                            (page === id ? " !bg-sky-500 !text-white" : "")
+                        }
+                    >
+                        {page}
+                    </Link>
+                );
+            })}
+
             <Link
                 href={`/page/${id + 1}`}
                 className={
