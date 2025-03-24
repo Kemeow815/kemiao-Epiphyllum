@@ -10,7 +10,9 @@ export default function MobileMenu({
 }) {
     useEffect(() => {
         document.addEventListener("click", handleClick);
+        window.addEventListener("scroll", handleClick);
         return () => {
+            window.removeEventListener("scroll", handleClick);
             document.removeEventListener("click", handleClick);
         };
     }, []);

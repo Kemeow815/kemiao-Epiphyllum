@@ -46,7 +46,7 @@ function generatePagination(mxPage: number, id: number) {
             <Link
                 href={id === 2 ? "/" : `/page/${id - 1}`}
                 className={
-                    "shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
+                    "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === 1 ? " pointer-events-none" : "")
                 }
             >
@@ -60,7 +60,7 @@ function generatePagination(mxPage: number, id: number) {
                     <use href="#ai:material-symbols:chevron-left-rounded"></use>
                 </svg>
             </Link>
-            <div className="flex flex-row items-center bg-white rounded-lg text-black font-bold shadow-md">
+            <div className="m-1 flex flex-row items-center bg-white rounded-lg text-black font-bold shadow-md">
                 {pagelist.map((page) => {
                     return (
                         <Link
@@ -79,7 +79,7 @@ function generatePagination(mxPage: number, id: number) {
             <Link
                 href={`/page/${id + 1}`}
                 className={
-                    "shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
+                    "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === mxPage ? " pointer-events-none" : "")
                 }
             >
