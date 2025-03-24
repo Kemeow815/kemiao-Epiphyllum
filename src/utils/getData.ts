@@ -17,7 +17,7 @@ export interface BlogData {
     description: string;
     category: string;
     top: number;
-    tags?: string[];
+    tags: string[];
     image?: string;
 }
 
@@ -38,7 +38,7 @@ export async function processMarkdown(filepath: string, fileName: string) {
             description: string;
             category: string;
             top: number;
-            tags?: string[];
+            tags: string[];
             image?: string;
         }),
         date: new Date(matterResult.data.date),
@@ -113,7 +113,7 @@ export async function getAllTags() {
     const Tags = new Map<string, number>();
     const BlogData = (await getAllSortedPosts()) as BlogData[];
     BlogData.forEach((Blog) => {
-        Blog.tags?.map((tag) => {
+        Blog.tags.map((tag) => {
             if (Tags.has(tag)) {
                 Tags.set(tag, Tags.get(tag)! + 1);
             } else {

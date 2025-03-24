@@ -1,4 +1,5 @@
 export const WebName: string = "Epiphyllum";
+export const WebUrl: string = "https://epiphyllum.masttf.fun";
 export interface ProfileConfig {
     name: string;
     bio: string;

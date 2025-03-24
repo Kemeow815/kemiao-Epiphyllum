@@ -102,7 +102,7 @@ export function postMeta({
     className?: string;
     published: Date;
     category: string;
-    tags?: string[];
+    tags: string[];
 }) {
     return (
         <div className={`${className} font-semibold text-sm`}>
@@ -156,29 +156,23 @@ export function postMeta({
                             <use href="#ai:material-symbols:tag-rounded"></use>
                         </svg>
                     </div>
-                    {tags &&
-                        tags.length > 0 &&
-                        tags.map((tag, i) => (
-                            <Fragment key={i}>
-                                <div
-                                    className={
-                                        "mx-1.5 text-sm" +
-                                        (i == 0 ? " hidden" : "")
-                                    }
-                                >
-                                    /
-                                </div>
-                                <Link
-                                    href={`/archive/tags/${tag}`}
-                                    className="text-50 p-1 rounded-md Myhover whitespace-nowrap"
-                                >
-                                    {tag}
-                                </Link>
-                            </Fragment>
-                        ))}
-                    {!(tags && tags.length > 0) && (
-                        <div className="transition text-50">noTags</div>
-                    )}
+                    {tags.map((tag, i) => (
+                        <Fragment key={i}>
+                            <div
+                                className={
+                                    "mx-1.5 text-sm" + (i == 0 ? " hidden" : "")
+                                }
+                            >
+                                /
+                            </div>
+                            <Link
+                                href={`/archive/tags/${tag}`}
+                                className="text-50 p-1 rounded-md Myhover whitespace-nowrap"
+                            >
+                                {tag}
+                            </Link>
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </div>

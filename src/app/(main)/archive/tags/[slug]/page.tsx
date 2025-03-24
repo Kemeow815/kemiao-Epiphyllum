@@ -27,7 +27,7 @@ export async function generateStaticParams() {
     const uniqueTags = Array.from(
         new Set(
             posts.flatMap(
-                (post) => post.tags?.filter(Boolean) || [] // 过滤空标签
+                (post) => post.tags.filter(Boolean) || [] // 过滤空标签
             )
         )
     );
@@ -41,7 +41,7 @@ export default async function page({
     const { slug } = await params;
     const decodedslug = decodeURIComponent(slug);
     const posts = await getAllSortedPosts();
-    const tagPosts = posts.filter((post) => post.tags?.includes(decodedslug));
+    const tagPosts = posts.filter((post) => post.tags.includes(decodedslug));
     return (
         <div className="card-base px-8 py-6">
             <div className="mx-auto text-center text-3xl font-bold">

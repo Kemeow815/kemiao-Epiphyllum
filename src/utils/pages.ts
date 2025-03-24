@@ -7,7 +7,7 @@ export interface PageContent {
     description: string;
     category: string;
     top: number;
-    tags?: string[];
+    tags: string[];
     image?: string;
 }
 let cachedMxPage: number | null = null;

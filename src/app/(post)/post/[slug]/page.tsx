@@ -51,8 +51,20 @@ export async function generateMetadata(
     const decodeSlug = decodeURIComponent(slug);
     const post: BlogData = (await getPostBySlug(decodeSlug)) as BlogData;
     return {
-        title: `${post.title}`,
-        description: `${post.description}`,
+        title: post.title,
+        description: post.description,
+        keywords: post.tags.join(", "),
+        openGraph: {
+            title: post.title,
+            description: post.description,
+            type: "article",
+            publishedTime: post.date.toString(),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.description,
+        },
     };
 }
 

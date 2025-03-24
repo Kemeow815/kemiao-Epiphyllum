@@ -11,6 +11,14 @@ export default function footer() {
                     &copy; <span>{currentYear}</span>
                     {` ${profileConfig.name}. All Rights
                     Reserved.`}
+                    <span> /</span>
+                    <Link
+                        className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition"
+                        target="_blank"
+                        href="/sitemap.xml"
+                    >
+                        Sitemap
+                    </Link>
                     <br />
                     Powered by
                     <Link
