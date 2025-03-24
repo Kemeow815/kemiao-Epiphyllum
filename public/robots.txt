@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://epiphyllum.masttf.fun/sitemap.xml
