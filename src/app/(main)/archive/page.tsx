@@ -8,12 +8,17 @@ export const metadata: Metadata = {
 };
 export default async function Page() {
     const posts: BlogData[] = await getAllSortedPosts();
+    const sortedPosts = posts.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB.getTime() - dateA.getTime();
+    });
     return (
         <div className="card-base px-8 py-6">
             <div className="mx-auto text-center text-3xl font-bold">
                 Archive
             </div>
-            <ArchiveCreate posts={posts}></ArchiveCreate>
+            <ArchiveCreate posts={sortedPosts}></ArchiveCreate>
         </div>
     );
 }
