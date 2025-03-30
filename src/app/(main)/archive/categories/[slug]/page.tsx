@@ -20,6 +20,7 @@ export async function generateMetadata(
     return {
         title: `${decodedslug} - Category - Blog`,
         description: `${decodedslug} - Category - Blog`,
+        keywords: [decodedslug],
     };
 }
 export async function generateStaticParams() {

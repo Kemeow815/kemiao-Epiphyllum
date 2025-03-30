@@ -6,6 +6,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Categories - Blog",
     description: "Categories",
+    keywords: [
+        ...(await getAllCategories()).map((category) => category.category),
+    ],
 };
 export default async function page() {
     const categories = await getAllCategories();

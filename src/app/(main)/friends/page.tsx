@@ -5,6 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "MyFriends",
     description: "MyFriends",
+    keywords: [...friends.map((friend) => friend.name)],
 };
 export default function Page() {
     return (

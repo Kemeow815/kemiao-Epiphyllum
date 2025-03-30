@@ -16,10 +16,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     const { slug } = await params;
     const decodedslug = decodeURIComponent(slug);
-
     return {
         title: `${decodedslug} - Tag - Blog`,
         description: `${decodedslug} - Tag - Blog`,
+        keywords: [decodedslug],
     };
 }
 export async function generateStaticParams() {
