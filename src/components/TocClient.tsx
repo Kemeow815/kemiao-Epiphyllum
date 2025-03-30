@@ -94,10 +94,6 @@ export default function TocClient({ tocData }: { tocData: TocItem[] }) {
         </a>
     );
 
-    if (!tocData || !Array.isArray(tocData)) {
-        return null;
-    }
-
     return (
         <>
             {tocData.map((item, index) => (

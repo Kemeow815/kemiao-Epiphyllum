@@ -8,7 +8,7 @@ import PostSideBar from "@/components/postSidebar";
 import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import TocContent from "@/components/TocContent";
+import PageTocContent from "@/components/pageTocContent";
 import { profileConfig, WebUrl } from "@/config/config";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
@@ -154,7 +154,7 @@ export default async function Page({
                             <div className="w-5 h-1 rounded-md bg-sky-500"></div>
 
                             <div className="w-full overflow-scroll scroll-container mt-2 px-2 pb-2 transition max-h-[20vh]">
-                                <TocContent slug={decodeSlug} />
+                                <PageTocContent slug={decodeSlug} />
                             </div>
                         </div>
                     </div>
