@@ -72,10 +72,6 @@ export async function getAllSortedPosts() {
             return timeB - timeA;
         }
     });
-    for (let i = 0; i < allPostsData.length; i++) {
-        const Blog = allPostsData[i];
-        console.log(Blog.date);
-    }
     return cacheBlogData;
 }
 export async function getPostBySlug(slug: string) {

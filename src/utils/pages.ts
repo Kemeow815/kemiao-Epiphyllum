@@ -28,11 +28,6 @@ export async function getAllPage() {
         tags: post.tags,
         image: post.image,
     }));
-    console.log("allPagesData");
-    for (let i = 0; i < allPagesData.length; i++) {
-        const Blog = allPagesData[i];
-        console.log(Blog.date);
-    }
     const allPageData = Array.from(
         { length: await getMxPage() },
         (_, index) => ({
