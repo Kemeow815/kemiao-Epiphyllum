@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 export default async function Page() {
     const posts: BlogData[] = await getAllSortedPosts();
-    const sortedPosts = posts.sort((a, b) => {
+    const sortedPosts = [...posts].sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
         return dateB.getTime() - dateA.getTime();
