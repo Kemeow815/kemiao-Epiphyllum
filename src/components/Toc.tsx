@@ -20,7 +20,6 @@ export default async function Toc({
                     <TocContent slug={slug} />
                 </div>
             </div>
-            <TocClient />
         </div>
     );
 }
