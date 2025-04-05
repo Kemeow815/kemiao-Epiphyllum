@@ -32,7 +32,7 @@ export default async function Home() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
-            <PageCreate pages={pages.content} id={1}></PageCreate>;
+            <PageCreate pages={pages.content} id={1}></PageCreate>
         </>
     );
 }
