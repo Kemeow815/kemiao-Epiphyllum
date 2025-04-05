@@ -6,10 +6,11 @@ import { getAllTags } from "@/utils/getData";
 export default async function tag() {
     const TagData: Array<string> = await getAllTags();
     const length = TagData.length;
+    const num = Math.floor(length / 3);
     const TagsList = [
-        TagData.slice(0, length / 3),
-        TagData.slice(length / 3, (length / 3) * 2),
-        TagData.slice((length / 3) * 2, length),
+        TagData.slice(0, num),
+        TagData.slice(num, num * 2),
+        TagData.slice(num * 2, length),
     ];
     return (
         <div className="card-base p-2">
@@ -26,12 +27,12 @@ export default async function tag() {
                                 pauseOnHover={true}
                                 reverse={index === 1}
                             >
-                                {tags.map((tag, index) => {
+                                {tags.map((tag, i) => {
                                     return (
                                         <TagItem
-                                            key={index}
+                                            key={i}
                                             tag={tag}
-                                            index={index}
+                                            index={i + index * num}
                                         />
                                     );
                                 })}
@@ -73,11 +74,15 @@ export function TagItem({ tag, index }: { tag: string; index: number }) {
         { bg: "bg-teal-100", text: "text-teal-600", border: "border-teal-300" },
         { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-300" },
     ];
-    const {
-        bg: bgColor,
-        text: textColor,
-        border: borderColor,
-    } = colorMap[index % colorMap.length];
+    const color = colorMap[index % colorMap.length];
+    if (!color) {
+        console.error("Invalid color mapping:", {
+            index,
+            colorMapLength: colorMap.length,
+        });
+        return null;
+    }
+    const { bg: bgColor, text: textColor, border: borderColor } = color;
     return (
         <Link
             aria-label={tag}
