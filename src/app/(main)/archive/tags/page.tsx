@@ -1,6 +1,7 @@
 import { getAllTags } from "@/utils/getData";
 import Link from "next/link";
 import { Metadata } from "next";
+import { TagItem } from "@/components/tag";
 export const metadata: Metadata = {
     title: "Tags - Blog",
     description: "Tags - A list of all tags",
@@ -13,17 +14,9 @@ export default async function page() {
             <div className="mx-auto text-center text-3xl font-bold mb-4">
                 Tags
             </div>
-            <div className="flex flex-wrap gap-2">
-                {Tags.map((tag) => {
-                    return (
-                        <Link
-                            key={tag}
-                            href={`/archive/tags/${tag}`}
-                            className="shadow-md text-sm flex items-center justify-center font-thin h-8 px-3 bg-sky-200 rounded-md border-solid  text-sky-600 text-center hover:bg-sky-300"
-                        >
-                            {tag}
-                        </Link>
-                    );
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] gap-4">
+                {Tags.map((tag, index) => {
+                    return <TagItem key={index} tag={tag} index={index} />;
                 })}
             </div>
         </div>

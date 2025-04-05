@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Marquee from "./marquee";
+import { cn } from "@/utils/cn";
 import { getAllTags } from "@/utils/getData";
 export default async function tag() {
     const TagData: Array<string> = await getAllTags();
@@ -25,16 +26,13 @@ export default async function tag() {
                                 pauseOnHover={true}
                                 reverse={index === 1}
                             >
-                                {tags.map((tag) => {
+                                {tags.map((tag, index) => {
                                     return (
-                                        <Link
-                                            key={tag}
-                                            aria-label={tag}
-                                            href={`/archive/tags/${tag}`}
-                                            className="shadow-md text-sm flex items-center justify-center font-thin h-8 px-3 bg-sky-200 rounded-md border-solid  text-sky-600 text-center hover:bg-sky-300"
-                                        >
-                                            {tag}
-                                        </Link>
+                                        <TagItem
+                                            key={index}
+                                            tag={tag}
+                                            index={index}
+                                        />
                                     );
                                 })}
                             </Marquee>
@@ -45,5 +43,53 @@ export default async function tag() {
                 </div>
             </div>
         </div>
+    );
+}
+export function TagItem({ tag, index }: { tag: string; index: number }) {
+    const colorMap = [
+        { bg: "bg-sky-100", text: "text-sky-600", border: "border-sky-300" },
+        { bg: "bg-red-100", text: "text-red-600", border: "border-red-300" },
+        {
+            bg: "bg-yellow-100",
+            text: "text-yellow-600",
+            border: "border-yellow-300",
+        },
+        {
+            bg: "bg-green-100",
+            text: "text-green-600",
+            border: "border-green-300",
+        },
+        {
+            bg: "bg-purple-100",
+            text: "text-purple-600",
+            border: "border-purple-300",
+        },
+        { bg: "bg-pink-100", text: "text-pink-600", border: "border-pink-300" },
+        {
+            bg: "bg-orange-100",
+            text: "text-orange-600",
+            border: "border-orange-300",
+        },
+        { bg: "bg-teal-100", text: "text-teal-600", border: "border-teal-300" },
+        { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-300" },
+    ];
+    const {
+        bg: bgColor,
+        text: textColor,
+        border: borderColor,
+    } = colorMap[index % colorMap.length];
+    return (
+        <Link
+            aria-label={tag}
+            href={`/archive/tags/${tag}`}
+            className={cn(
+                "text-sm border border-solid flex items-center justify-center font-light h-8 px-3 rounded-md backdrop-blur hover:scale-105",
+                bgColor,
+                textColor,
+                borderColor
+            )}
+        >
+            {tag}
+        </Link>
     );
 }
