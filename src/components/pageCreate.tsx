@@ -1,4 +1,4 @@
-import Postcard from "@/components/postcard";
+import Postcard from "@/components/PostCard/postcard";
 import { PageContent } from "@/utils/pages";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export default async function Page({
     }
     return (
         <>
-            <div className="flex flex-col  divide-y divide-dashed md:gap-4 md:divide-none">
+            <div className="flex flex-col gap-4">
                 {pages.map((post: PageContent) => {
                     return <Postcard key={post.slug} {...post}></Postcard>;
                 })}
@@ -47,7 +47,7 @@ function generatePagination(mxPage: number, id: number) {
                 href={id === 2 ? "/" : `/page/${id - 1}`}
                 aria-label="上一页"
                 className={
-                    "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
+                    "mb-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === 1 ? " pointer-events-none" : "")
                 }
             >
@@ -82,7 +82,7 @@ function generatePagination(mxPage: number, id: number) {
                 href={`/page/${id + 1}`}
                 aria-label="下一页"
                 className={
-                    "m-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
+                    "mb-1 shadow-md overflow-hidden rounded-lg text-gray-300 bg-white w-11 h-11 Myhover flex items-center justify-center" +
                     (id === mxPage ? " pointer-events-none" : "")
                 }
             >

@@ -1,6 +1,6 @@
 import { getAllSortedPosts, getPostBySlug } from "@/utils/getData";
 import { BlogData } from "@/utils/getData";
-import { postMeta } from "@/components/postcard";
+import { postMeta } from "@/components/PostCard/postcard";
 import ContentWrapper from "@/components/contentWrapper";
 import { getPostIdToSlug, getPostSlugToId } from "@/utils/getData";
 import Footer from "@/components/footer";

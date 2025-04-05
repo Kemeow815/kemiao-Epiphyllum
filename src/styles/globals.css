@@ -27,7 +27,7 @@
         scroll-behavior: smooth;
     }
     .card-base {
-        @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md;
+        @apply rounded-[var(--radius-large)] overflow-hidden bg-[var(--card-bg)] transition shadow-md mb-1;
     }
     h1,
     h2,
