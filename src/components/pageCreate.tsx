@@ -69,7 +69,7 @@ function generatePagination(mxPage: number, id: number) {
                         href={page === 1 ? "/" : `/page/${page}`}
                         aria-label={`page ${page}`}
                         className={
-                            "m-1 h-11 w-11 rounded-lg flex bg-white items-center font-bold text-black  justify-center hover:bg-sky-300 shadow-md" +
+                            "mb-1 h-11 w-11 rounded-lg flex bg-white items-center font-bold text-black  justify-center hover:bg-sky-300 shadow-md" +
                             (page === id ? " !bg-sky-500 !text-white" : "")
                         }
                     >

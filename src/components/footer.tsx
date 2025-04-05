@@ -13,7 +13,7 @@ export default function footer() {
                     Reserved.`}
                     <span> /</span>
                     <Link
-                        className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition"
+                        className="text-sky-500 font-semibold px-1 mylink-underline"
                         target="_blank"
                         href="/sitemap.xml"
                     >
@@ -22,7 +22,7 @@ export default function footer() {
                     <br />
                     Powered by
                     <Link
-                        className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition"
+                        className="text-sky-500 font-semibold px-1 mylink-underline"
                         target="_blank"
                         href="https://zh-hans.react.dev/"
                     >
@@ -30,7 +30,7 @@ export default function footer() {
                     </Link>{" "}
                     &
                     <Link
-                        className="hover:bg-sky-300 text-sky-500 font-semibold p-1 rounded-md transition"
+                        className="text-sky-500 font-semibold px-1 mylink-underline"
                         target="_blank"
                         href="https://github.com/Masttf/Epiphyllum"
                     >

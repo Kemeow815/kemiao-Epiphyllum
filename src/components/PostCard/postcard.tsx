@@ -96,11 +96,7 @@ export function postMeta({
                 </svg>
                 <Link
                     href={`/archive/categories/${category}`}
-                    className="hover:text-sky-500 transition relative
-                    after:absolute after:left-0 after:-bottom-[2px]
-                    after:rounded-full after:transition-all after:duration-300 after:ease-in-out
-                    after:w-full after:h-[2px] after:bg-sky-300
-                    after:scale-x-0 hover:after:scale-x-100"
+                    className="hover:text-sky-500 transition mylink-underline"
                 >
                     {category}
                 </Link>
@@ -122,11 +118,8 @@ export function postMeta({
                             <Fragment key={i}>
                                 <Link
                                     href={`/archive/tags/${tag}`}
-                                    className="relative hover:text-sky-500 transition
-                                    after:absolute after:left-0 after:-bottom-[2px]
-                                    after:rounded-full after:transition-all after:duration-300 after:ease-in-out
-                                    after:w-full after:h-[2px] after:bg-sky-300
-                                    after:scale-x-0 hover:after:scale-x-100"
+                                    className="hover:text-sky-500 transition
+                                    mylink-underline"
                                 >
                                     {tag}
                                 </Link>

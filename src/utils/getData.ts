@@ -64,13 +64,9 @@ export async function getAllSortedPosts() {
         })
     );
     cacheBlogData = allPostsData.sort((a, b) => {
-        if (a.top !== b.top) {
-            return b.top - a.top;
-        } else {
-            const timeA = a.date.getTime();
-            const timeB = b.date.getTime();
-            return timeB - timeA;
-        }
+        const timeA = a.date.getTime();
+        const timeB = b.date.getTime();
+        return timeB - timeA;
     });
     return cacheBlogData;
 }
