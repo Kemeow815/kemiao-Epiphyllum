@@ -8,6 +8,7 @@ import "overlayscrollbars/styles/overlayscrollbars.css";
 import Icon from "@/components/Icon";
 import BodyScrollBar from "@/components/bodyScrollBar";
 import BackToTop from "@/components/backToTop";
+import { profileConfig } from "@/config/config";
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -24,6 +25,10 @@ export default function RootLayout({
                 name="viewport"
                 content="width=device-width, initial-scale=1"
             />
+            <meta
+                name="apple-mobile-web-app-title"
+                content={`${profileConfig.name}的个人博客`}
+            ></meta>
             <link
                 rel="icon"
                 type="image/png"
