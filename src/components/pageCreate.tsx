@@ -16,7 +16,7 @@ export default async function Page({
     }
     return (
         <>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-1 md:gap-4">
                 {pages.map((post: PageContent) => {
                     return <Postcard key={post.slug} {...post}></Postcard>;
                 })}

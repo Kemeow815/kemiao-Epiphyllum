@@ -12,11 +12,8 @@ export default function SideBar(props: Props) {
             <div className="flex flex-col">
                 <Profile></Profile>
             </div>
-
-            <div className="flex flex-col gap-4">
-                <Categories></Categories>
-                <Tag></Tag>
-            </div>
+            <Categories></Categories>
+            <Tag></Tag>
         </div>
     );
 }

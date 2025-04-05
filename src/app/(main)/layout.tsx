@@ -10,7 +10,7 @@ export default function RootLayout({
         <>
             <NavBar />
             {/* md:grid-cols-[auto_17.5rem]??? */}
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-0 md:px-4 mt-24">
+            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-2 md:px-4 mt-24">
                 <main className="col-span-2 lg:col-span-1 overflow-hidden">
                     <div>
                         {children}
