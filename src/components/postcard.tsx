@@ -17,7 +17,7 @@ export default function postcard(props: PageContent) {
                     >
                         <Image
                             src={props.image}
-                            alt="post cover"
+                            alt={`文章封面图: ${props.title}`}
                             sizes="100vw"
                             fill
                             quality={100}
@@ -82,7 +82,7 @@ export default function postcard(props: PageContent) {
                     >
                         <Image
                             src={props.image}
-                            alt="post cover"
+                            alt={`文章封面图: ${props.title}`}
                             sizes="(max-width: 1024px) 40vw, 30vw"
                             fill
                             quality={100}
