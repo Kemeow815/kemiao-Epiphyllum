@@ -6,6 +6,7 @@ export interface ProfileConfig {
     imageSrc: string;
 }
 //favicon.ico 图标直接替换/src/app文件夹中的图片即可 以favicon.ico命名
+// 使用 https://realfavicongenerator.net 生成图片替换/public/favion 文件夹
 export const profileConfig: ProfileConfig = {
     name: "Masttf",
     bio: "Acmer",
