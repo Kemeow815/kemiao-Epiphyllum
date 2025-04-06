@@ -29,6 +29,10 @@ export default function Page() {
                         />
                     ))}
                 </div>
+                <div className="mt-8 pt-8 text-lg border-t border-dashed">
+                    <p>申请友链请评论 ~</p>
+                    <p>请提供头像地址，姓名，简述，网站地址(https)</p>
+                </div>
             </div>
             <GiscusComments />
         </>

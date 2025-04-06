@@ -11,6 +11,7 @@ import Link from "next/link";
 import PageTocContent from "@/components/pageTocContent";
 import { profileConfig, WebUrl } from "@/config/config";
 import GiscusComments from "@/components/GiscusComments";
+import License from "@/components/License";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
 type Props = {
@@ -30,12 +31,12 @@ function PostWrapper({
             <main className="col-span-2 lg:col-span-1 overflow-hidden">
                 {children}
             </main>
+            <GiscusComments className="col-span-2 lg:col-span-1 block row-start-2" />
             <PostSideBar
                 slug={slug}
-                className="flex flex-col gap-4 row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"
+                className="flex flex-col gap-4 row-start-3 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"
             ></PostSideBar>
-            <GiscusComments className="col-span-2 lg:col-span-1 block row-start-3 lg:row-start-2" />
-            <div className="footer col-span-2 lg:col-span-1 onload-animation block row-span-4 lg:row-start-3">
+            <div className="footer col-span-2 lg:col-span-1 onload-animation block row-start-4 lg:row-start-3">
                 <Footer></Footer>
             </div>
         </div>
@@ -158,7 +159,13 @@ export default async function Page({
                     <ContentWrapper
                         contentHtml={post.contentHtml}
                         className="pt-2"
-                    ></ContentWrapper>
+                    />
+                    <License
+                        title={post.title}
+                        postUrl={`${WebUrl}/post/${decodeSlug}`}
+                        pubDate={post.date}
+                        className="rounded-xl mb-6"
+                    />
                 </div>
                 <div className="flex w-full font-bold mt-4 flex-col gap-4 md:flex-row md:justify-between">
                     {prevSlug != "#" && (
