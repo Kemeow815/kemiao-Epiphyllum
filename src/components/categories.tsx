@@ -11,10 +11,7 @@ export default async function categories() {
     return (
         <div className="card-base">
             <div className="text-lg font-bold flex flex-col items-center gap-1 justify-center">
-                <Link
-                    href={"/archive/categories"}
-                    className="hover:text-sky-500 mt-2"
-                >
+                <Link href={"/categories"} className="hover:text-sky-500 mt-2">
                     分类
                 </Link>
                 <div className="w-5 h-1 rounded-md bg-sky-500"></div>
@@ -34,7 +31,7 @@ export default async function categories() {
                             return (
                                 <Link
                                     key={category}
-                                    href={`/archive/categories/${category}`}
+                                    href={`/categories/${category}`}
                                     aria-label={category}
                                     className="flex w-full justify-between items-center rounded-lg text-neutral-700 Myhover px-3 py-1 transition"
                                 >

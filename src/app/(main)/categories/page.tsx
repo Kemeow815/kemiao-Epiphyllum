@@ -80,25 +80,9 @@ function CategoryCard({
     ];
     const color = colorMap[index % colorMap.length];
     const { text: textColor, border: borderColor } = color;
-    const rotateDegList = [
-        "rotate-[-6deg]",
-        "rotate-[-5deg]",
-        "rotate-[-4deg]",
-        "rotate-[-3deg]",
-        "rotate-[-2deg]",
-        "rotate-[-1deg]",
-        "rotate-[0deg]",
-        "rotate-[1deg]",
-        "rotate-[2deg]",
-        "rotate-[3deg]",
-        "rotate-[4deg]",
-        "rotate-[5deg]",
-        "rotate-[6deg]",
-    ];
-    const rotateDeg = rotateDegList[Math.floor(Math.random() * 13)];
     return (
         <Link
-            href={`/archive/categories/${category}`}
+            href={`/categories/${category}`}
             className={cn(
                 "relative overflow-hidden rounded-2xl border p-4 h-28 hover:scale-105 border-l-4",
                 borderColor
@@ -112,7 +96,7 @@ function CategoryCard({
             </div>
             <div className="absolute inset-0 opacity-40">
                 <div
-                    className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-6xl font-bold ${textColor} transform ${rotateDeg}`}
+                    className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-6xl font-bold ${textColor} transform rotate-[-6deg]`}
                 >
                     {category}
                 </div>

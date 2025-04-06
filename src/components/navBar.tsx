@@ -84,26 +84,25 @@ export default function NavBar() {
                         ))}
                     </div>
                     <div className="mx-[1rem]">
-                        {!isSearchVisible && (
-                            <div
-                                className="cursor-pointer gap-2  bg-gray-200/50 Link Myhover"
-                                onClick={handleClick}
+                        <div
+                            className="cursor-pointer gap-2  bg-gray-200/50 Link Myhover"
+                            onClick={handleClick}
+                            style={{ opacity: isSearchVisible ? 0 : 1 }}
+                        >
+                            <svg
+                                height="1em"
+                                width="1em"
+                                viewBox="0 0 512 512"
+                                className="text-[1rem]"
                             >
-                                <svg
-                                    height="1em"
-                                    width="1em"
-                                    viewBox="0 0 512 512"
-                                    className="text-[1rem]"
-                                >
-                                    <use href="#ai:fa6:search"></use>
-                                </svg>
-                                <div className="hidden md:flex">
-                                    <span>
-                                        Press <kbd>/</kbd> to search
-                                    </span>
-                                </div>
+                                <use href="#ai:fa6:search"></use>
+                            </svg>
+                            <div className="hidden md:flex">
+                                <span>
+                                    Press <kbd>/</kbd> to search
+                                </span>
                             </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             </div>

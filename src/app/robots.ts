@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: ["/archive/*", "/friends", "/about", "/page/*"],
+            disallow: ["/archive", "/about", "/page/*"],
             crawlDelay: 10,
         },
         sitemap: `${WebUrl}/sitemap.xml`,

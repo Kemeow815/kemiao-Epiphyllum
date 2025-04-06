@@ -137,7 +137,7 @@ export function postMeta({
                 </div>
                 <div className="flex flex-row flex-nowrap items-center">
                     <Link
-                        href={`/archive/categories/${category}`}
+                        href={`/categories/${category}`}
                         aria-label="分类链接"
                         className="rounded-md px-2 py-1 whitespace-nowrap Myhover block"
                     >
@@ -169,7 +169,7 @@ export function postMeta({
                                 /
                             </div>
                             <Link
-                                href={`/archive/tags/${tag}`}
+                                href={`/tags/${tag}`}
                                 aria-label="Tag链接"
                                 className="text-50 p-1 rounded-md Myhover whitespace-nowrap"
                             >

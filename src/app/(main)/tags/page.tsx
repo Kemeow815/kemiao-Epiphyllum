@@ -1,5 +1,4 @@
 import { getAllTags } from "@/utils/getData";
-import Link from "next/link";
 import { Metadata } from "next";
 import { TagItem } from "@/components/tag";
 export const metadata: Metadata = {

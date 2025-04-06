@@ -15,7 +15,7 @@ export default async function tag() {
     return (
         <div className="card-base p-2">
             <div className="text-lg font-bold flex flex-col items-center gap-1 justify-center">
-                <Link href={"/archive/tags"} className="hover:text-sky-500">
+                <Link href={"/tags"} className="hover:text-sky-500">
                     标签
                 </Link>
                 <div className="w-5 h-1 rounded-md bg-sky-500"></div>
@@ -79,7 +79,7 @@ export function TagItem({ tag, index }: { tag: string; index: number }) {
     return (
         <Link
             aria-label={tag}
-            href={`/archive/tags/${tag}`}
+            href={`/tags/${tag}`}
             className={cn(
                 "text-sm border border-solid flex items-center justify-center font-light h-8 px-3 rounded-md backdrop-blur hover:scale-105",
                 bgColor,

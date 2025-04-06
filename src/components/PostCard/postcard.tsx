@@ -109,7 +109,7 @@ function postCT({
                     <use href="#ai:material-symbols:book-2-outline-rounded"></use>
                 </svg>
                 <Link
-                    href={`/archive/categories/${category}`}
+                    href={`/categories/${category}`}
                     className="hover:text-sky-500 transition mylink-underline"
                 >
                     {category}
@@ -130,7 +130,7 @@ function postCT({
                         {tags.map((tag, i) => (
                             <Fragment key={i}>
                                 <Link
-                                    href={`/archive/tags/${tag}`}
+                                    href={`/tags/${tag}`}
                                     className="hover:text-sky-500 transition
                                     mylink-underline"
                                 >
@@ -184,7 +184,7 @@ export function postMeta({
                     <use href="#ai:material-symbols:book-2-outline-rounded"></use>
                 </svg>
                 <Link
-                    href={`/archive/categories/${category}`}
+                    href={`/categories/${category}`}
                     className="hover:text-sky-500 transition mylink-underline"
                 >
                     {category}
@@ -206,7 +206,7 @@ export function postMeta({
                         {tags.map((tag, i) => (
                             <Fragment key={i}>
                                 <Link
-                                    href={`/archive/tags/${tag}`}
+                                    href={`/tags/${tag}`}
                                     className="hover:text-sky-500 transition
                                     mylink-underline"
                                 >

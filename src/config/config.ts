@@ -62,6 +62,8 @@ export interface linkItem {
 export const linkList: linkItem[] = [
     { name: "首页", url: "/" },
     { name: "归档", url: "/archive" },
+    { name: "分类", url: "/categories" },
+    { name: "标签", url: "/tags" },
     { name: "友链", url: "/friends" },
     { name: "关于", url: "/about" },
 ];
