@@ -75,13 +75,6 @@ export function TagItem({ tag, index }: { tag: string; index: number }) {
         { bg: "bg-blue-100", text: "text-blue-600", border: "border-blue-300" },
     ];
     const color = colorMap[index % colorMap.length];
-    if (!color) {
-        console.error("Invalid color mapping:", {
-            index,
-            colorMapLength: colorMap.length,
-        });
-        return null;
-    }
     const { bg: bgColor, text: textColor, border: borderColor } = color;
     return (
         <Link

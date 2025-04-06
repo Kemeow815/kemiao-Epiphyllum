@@ -100,7 +100,7 @@ function FriendItem({
                     width={80}
                     height={80}
                     decoding="async"
-                    className="absolute -left-2 top-0 z-0 my-0 h-full w-2/3 bg-white object-cover opacity-15"
+                    className="absolute -left-2 top-0 z-0 my-0 h-full w-2/3 bg-white object-cover opacity-15 group-hover:opacity-30 transition-all duration-150 ease-in-out"
                     style={{
                         maskImage:
                             "linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",

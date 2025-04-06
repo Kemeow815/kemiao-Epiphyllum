@@ -1,8 +1,7 @@
 import { getAllCategories } from "@/utils/getData";
-import { getAllSortedPosts } from "@/utils/getData";
-import ArchiveCategory from "@/components/archiveCategory";
-import { BlogData } from "@/utils/getData";
+import Link from "next/link";
 import { Metadata } from "next";
+import { cn } from "@/utils/cn";
 export const metadata: Metadata = {
     title: "Categories - Blog",
     description: "Categories",
@@ -12,34 +11,99 @@ export const metadata: Metadata = {
 };
 export default async function page() {
     const categories = await getAllCategories();
-    const posts = await getAllSortedPosts();
-
-    const groups = new Map<string, BlogData[]>();
-    for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
-        const key = post.category;
-        if (groups.has(key)) {
-            groups.get(key)!.push(post);
-        } else {
-            groups.set(key, [post]);
-        }
-    }
-
     return (
         <div className="card-base px-9 py-6">
-            <div className="mx-auto text-center text-3xl font-bold mb-4">
+            <div className="mx-auto text-center text-3xl font-bold mb-8">
                 Categories
             </div>
-            {categories.map(({ category, count }) => {
-                return (
-                    <ArchiveCategory
-                        key={category}
-                        category={category}
-                        count={count}
-                        posts={groups.get(category)!}
-                    ></ArchiveCategory>
-                );
-            })}
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
+                {categories.map(({ category, count }, index) => {
+                    return (
+                        <CategoryCard
+                            category={category}
+                            count={count}
+                            key={index}
+                            index={index}
+                        />
+                    );
+                })}
+            </div>
         </div>
+    );
+}
+function CategoryCard({
+    category,
+    count,
+    index,
+}: {
+    category: string;
+    count: number;
+    index: number;
+}) {
+    const colorMap = [
+        {
+            text: "text-sky-600",
+            border: "border-sky-300",
+        },
+        {
+            text: "text-red-600",
+            border: "border-red-300",
+        },
+        {
+            text: "text-yellow-600",
+            border: "border-yellow-300",
+        },
+        {
+            text: "text-green-600",
+            border: "border-green-300",
+        },
+        {
+            text: "text-purple-600",
+            border: "border-purple-300",
+        },
+        {
+            text: "text-pink-600",
+            border: "border-pink-300",
+        },
+        {
+            text: "text-orange-600",
+            border: "border-orange-300",
+        },
+        {
+            text: "text-teal-600",
+            border: "border-teal-300",
+        },
+        {
+            text: "text-blue-600",
+            border: "border-blue-300",
+        },
+    ];
+    const color = colorMap[index % colorMap.length];
+    const { text: textColor, border: borderColor } = color;
+    return (
+        <Link
+            href={`/archive/categories/${category}`}
+            className={cn(
+                "relative overflow-hidden rounded-2xl border p-4 h-28 hover:scale-105 border-l-4",
+                borderColor
+            )}
+        >
+            <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-xl font-bold text-gray-800">{category}</h3>
+                <span className="text-center text-sm text-gray-500">
+                    {count} 篇文章
+                </span>
+            </div>
+            <div className="absolute inset-0 opacity-40">
+                <div
+                    className={`absolute bottom-4 right-4 text-6xl font-bold ${textColor} `}
+                    style={{
+                        transform: `rotate(${Math.random() * 12 - 6}deg)`,
+                    }}
+                >
+                    {category}
+                </div>
+            </div>
+        </Link>
     );
 }

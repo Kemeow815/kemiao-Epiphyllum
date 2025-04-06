@@ -18,6 +18,14 @@ export default function Icon() {
                 </symbol>
             </svg>
             <svg style={{ display: "none" }} aria-hidden="true">
+                <symbol id="ai:material-symbols:chevron-down-rounded">
+                    <path
+                        d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        fill="currentColor"
+                    ></path>
+                </symbol>
+            </svg>
+            <svg style={{ display: "none" }} aria-hidden="true">
                 <symbol id="ai:material-symbols:chevron-left-rounded">
                     <path
                         d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"
@@ -136,6 +144,18 @@ export default function Icon() {
                 <symbol id="icon:bookmark">
                     <path
                         d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"
+                        fill="currentColor"
+                    ></path>
+                </symbol>
+            </svg>
+            <svg
+                style={{ display: "none" }}
+                aria-hidden="true"
+                viewBox="0 0 512 512"
+            >
+                <symbol id="icon:tags">
+                    <path
+                        d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5L0 80C0 53.5 21.5 32 48 32l149.5 0c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
                         fill="currentColor"
                     ></path>
                 </symbol>

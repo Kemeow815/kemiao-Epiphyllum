@@ -29,7 +29,7 @@ export default function PostCard(props: PageContent) {
             )}
 
             <div className="p-6 relative flex-1">
-                <div className="flex flex-nowrap gap-4 items-center mb-2 text-gray-500">
+                <div className="flex flex-nowrap gap-4 items-center mb-2 text-gray-500 text-sm">
                     <div className="flex items-center">
                         <svg
                             className="mr-1 text-lg"
