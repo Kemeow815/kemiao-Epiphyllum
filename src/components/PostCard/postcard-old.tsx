@@ -28,7 +28,7 @@ export default function postcard(props: PageContent) {
             )}
 
             <div className="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative flex-1 overflow-hidden">
-                {props.top > 0 && (
+                {props.pin && (
                     <>
                         <div className="absolute h-16 w-16 z-10 bg-sky-700 -top-8 rotate-45 -left-8"></div>
                         <div className="absolute text-sm font-bold z-10 top-1 left-1 -rotate-45 text-white">
