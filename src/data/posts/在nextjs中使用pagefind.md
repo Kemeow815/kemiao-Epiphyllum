@@ -4,7 +4,7 @@ date: 2025-03-13
 description: Pagefind使用实例.
 category: Examples
 tags: [Example]
-top: 0
+pin: false
 draft: false
 image: /avatar.jpg
 ---

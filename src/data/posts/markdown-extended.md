@@ -1,10 +1,10 @@
 ---
-title: Markdown Extended Features
+title: Markdown 拓展语法
 date: 2025-03-20
-description: "Read more about Markdown features"
+description: 更多的markdown语法特性
 category: "Examples"
 tags: [Demo, Example, Markdown]
-top: 2
+pin: true
 draft: false
 image: /test.jpg
 ---

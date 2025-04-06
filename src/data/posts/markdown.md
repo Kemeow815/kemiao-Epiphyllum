@@ -1,10 +1,10 @@
 ---
-title: Markdown Example
+title: Markdown 基础语法
 date: 2025-3-20
-description: A simple example of a Markdown blog post.
+description: 一些常用的markdown语法.
 category: Examples
 tags: [Markdown, Blogging, Demo]
-top: 1
+pin: true
 draft: false
 ---
 

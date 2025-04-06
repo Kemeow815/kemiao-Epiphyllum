@@ -4,7 +4,8 @@ date: 2025-03-12
 description: 如何在文章中添加视频
 category: Examples
 tags: [Example, Video]
-top: 0
+pin: false
+draft: false
 ---
 
 支持在 markdown 内嵌 HTML 标签，下面是一个简单的例子

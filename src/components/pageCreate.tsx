@@ -17,8 +17,8 @@ export default async function Page({
     return (
         <>
             <div className="flex flex-col gap-1 md:gap-4">
-                {pages.map((post: PageContent) => {
-                    return <Postcard key={post.slug} {...post}></Postcard>;
+                {pages.map((post: PageContent, index) => {
+                    return <Postcard key={index} {...post}></Postcard>;
                 })}
             </div>
             {generatePagination(mxPage, id)}
@@ -42,7 +42,7 @@ function generatePagination(mxPage: number, id: number) {
         }
     }
     return (
-        <div className="flex flex-row gap-1 justify-center mx-auto mt-4">
+        <div className="flex flex-row gap-3 justify-center mx-auto mt-4">
             <Link
                 href={id === 2 ? "/" : `/page/${id - 1}`}
                 aria-label="上一页"

@@ -162,7 +162,7 @@ function SearchUi({ handleClick }: { handleClick: () => void }) {
                                 </button>
                             )}
                             <button
-                                className="w-7 h-7 rounded-md border-2 border-solid hover:bg-gray-200 flex justify-center items-center text-sm font-normal p-1"
+                                className="h-7 px-1 rounded-md border-2 border-solid hover:bg-gray-200 flex justify-center items-center text-sm font-normal p-1"
                                 onClick={handleClick}
                             >
                                 Esc

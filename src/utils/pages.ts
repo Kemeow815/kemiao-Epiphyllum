@@ -6,7 +6,7 @@ export interface PageContent {
     date: Date;
     description: string;
     category: string;
-    top: number;
+    pin: boolean;
     tags: string[];
     image?: string;
 }
@@ -24,7 +24,7 @@ export async function getAllPage() {
         date: post.date,
         description: post.description,
         category: post.category,
-        top: post.top,
+        pin: post.pin,
         tags: post.tags,
         image: post.image,
     }));

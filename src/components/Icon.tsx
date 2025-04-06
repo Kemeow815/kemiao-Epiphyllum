@@ -1,6 +1,6 @@
 export default function Icon() {
     return (
-        <div>
+        <div className="hidden">
             <svg style={{ display: "none" }} aria-hidden="true">
                 <symbol id="ai:material-symbols:chevron-right-rounded">
                     <path
@@ -124,6 +124,18 @@ export default function Icon() {
                 <symbol id="ai:fa6:bars">
                     <path
                         d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                        fill="currentColor"
+                    ></path>
+                </symbol>
+            </svg>
+            <svg
+                style={{ display: "none" }}
+                aria-hidden="true"
+                viewBox="0 0 384 512"
+            >
+                <symbol id="icon:bookmark">
+                    <path
+                        d="M0 48C0 21.5 21.5 0 48 0l0 48 0 393.4 130.1-92.9c8.3-6 19.6-6 27.9 0L336 441.4 336 48 48 48 48 0 336 0c26.5 0 48 21.5 48 48l0 440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488L0 48z"
                         fill="currentColor"
                     ></path>
                 </symbol>

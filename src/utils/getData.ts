@@ -16,7 +16,7 @@ export interface BlogData {
     date: Date;
     description: string;
     category: string;
-    top: number;
+    pin: boolean;
     tags: string[];
     image?: string;
 }
@@ -37,10 +37,10 @@ export async function processMarkdown(filepath: string, fileName: string) {
             title: string;
             description: string;
             category: string;
-            top: number;
             tags: string[];
             image?: string;
         }),
+        pin: matterResult.data.pin || false,
         date: new Date(matterResult.data.date),
     };
 }
@@ -64,9 +64,13 @@ export async function getAllSortedPosts() {
         })
     );
     cacheBlogData = allPostsData.sort((a, b) => {
-        const timeA = a.date.getTime();
-        const timeB = b.date.getTime();
-        return timeB - timeA;
+        if (a.pin !== b.pin) {
+            return a.pin ? -1 : 1;
+        } else {
+            const timeA = a.date.getTime();
+            const timeB = b.date.getTime();
+            return timeB - timeA;
+        }
     });
     return cacheBlogData;
 }
