@@ -3,6 +3,7 @@ import ContentWrapper from "@/components/contentWrapper";
 import path from "path";
 import { Metadata } from "next";
 import { profileConfig } from "@/config/config";
+import GiscusComments from "@/components/GiscusComments";
 export const metadata: Metadata = {
     title: "About",
     description: "About",
@@ -14,8 +15,11 @@ export default async function Page() {
         "/about/about.md"
     )) as BlogData;
     return (
-        <div className="card-base p-8" data-pagefind-ignore="all">
-            <ContentWrapper contentHtml={data.contentHtml}></ContentWrapper>
-        </div>
+        <>
+            <div className="card-base p-8" data-pagefind-ignore="all">
+                <ContentWrapper contentHtml={data.contentHtml}></ContentWrapper>
+            </div>
+            <GiscusComments />
+        </>
     );
 }

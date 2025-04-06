@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { friends } from "@/config/config";
 import { Metadata } from "next";
+import GiscusComments from "@/components/GiscusComments";
 export const metadata: Metadata = {
     title: "MyFriends",
     description: "MyFriends",
@@ -9,25 +10,28 @@ export const metadata: Metadata = {
 };
 export default function Page() {
     return (
-        <div className="card-base px-8 py-6">
-            <div className="text-3xl font-bold mx-auto text-center">
-                Friends
+        <>
+            <div className="card-base px-8 py-6">
+                <div className="text-3xl font-bold mx-auto text-center">
+                    Friends
+                </div>
+                <p className="py-8 text-lg">
+                    以下是本站的友情链接, 顺序当然是随机的啦～:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3">
+                    {friends.map((friend, index) => (
+                        <FriendItem
+                            key={index}
+                            url={friend.url}
+                            name={friend.name}
+                            avatar={friend.avatar}
+                            bio={friend.bio}
+                        />
+                    ))}
+                </div>
             </div>
-            <p className="py-8 text-lg">
-                以下是本站的友情链接, 顺序当然是随机的啦～:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3">
-                {friends.map((friend, index) => (
-                    <FriendItem
-                        key={index}
-                        url={friend.url}
-                        name={friend.name}
-                        avatar={friend.avatar}
-                        bio={friend.bio}
-                    />
-                ))}
-            </div>
-        </div>
+            <GiscusComments />
+        </>
     );
 }
 function FriendItem({

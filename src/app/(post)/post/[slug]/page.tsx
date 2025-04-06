@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PageTocContent from "@/components/pageTocContent";
 import { profileConfig, WebUrl } from "@/config/config";
+import GiscusComments from "@/components/GiscusComments";
 export const dynamicParams = false; // 禁用动态参数（纯静态生成）
 // export const revalidate = 3600; // ISR 配置（单位：秒）
 type Props = {
@@ -25,20 +26,16 @@ function PostWrapper({
 }) {
     return (
         // md:grid-cols-[auto_17.5rem]???
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[auto_17.5rem] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto] gap-4 px-0 md:px-4 mt-24">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[auto_17.5rem] grid-rows-[repeat(auto-fill,1fr)] gap-4 px-0 md:px-4 mt-24">
             <main className="col-span-2 lg:col-span-1 overflow-hidden">
-                <div>
-                    {children}
-                    <div className="footer col-span-2 onload-animation hidden lg:block">
-                        <Footer></Footer>
-                    </div>
-                </div>
+                {children}
             </main>
             <PostSideBar
                 slug={slug}
                 className="flex flex-col gap-4 row-start-2 col-span-2 lg:row-start-1 lg:col-start-2 lg:col-span-1 lg:max-w-[17.5rem] min-w-[0px]"
             ></PostSideBar>
-            <div className="footer col-span-2 onload-animation block lg:hidden">
+            <GiscusComments className="col-span-2 lg:col-span-1 block row-start-3 lg:row-start-2" />
+            <div className="footer col-span-2 lg:col-span-1 onload-animation block row-span-4 lg:row-start-3">
                 <Footer></Footer>
             </div>
         </div>
