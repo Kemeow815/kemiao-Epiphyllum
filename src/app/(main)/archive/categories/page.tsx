@@ -96,7 +96,7 @@ function CategoryCard({
             </div>
             <div className="absolute inset-0 opacity-40">
                 <div
-                    className={`absolute bottom-4 right-4 text-6xl font-bold ${textColor} `}
+                    className={`absolute bottom-4 left-auto text-6xl font-bold ${textColor} `}
                     style={{
                         transform: `rotate(${Math.random() * 12 - 6}deg)`,
                     }}
