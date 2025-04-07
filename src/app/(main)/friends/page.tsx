@@ -15,9 +15,7 @@ export default function Page() {
                 <div className="text-3xl font-bold mx-auto text-center">
                     Friends
                 </div>
-                <p className="py-8 text-lg">
-                    以下是本站的友情链接, 顺序当然是随机的啦～:
-                </p>
+                <p className="py-8 text-lg">以下是本站的友情链接:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-3">
                     {friends.map((friend, index) => (
                         <FriendItem
@@ -30,8 +28,18 @@ export default function Page() {
                     ))}
                 </div>
                 <div className="mt-8 pt-8 text-lg border-t border-dashed">
-                    <p>申请友链请评论 ~</p>
-                    <p>请提供头像地址，姓名，简述，网站地址(https)</p>
+                    <p>申请友链请先将本站添加到友链后再申请</p>
+                    <p>我的名称: Masttf</p>
+                    <p>网站地址: https://epiphyllum.masttf.fun</p>
+                    <p>描述: 退役Acmer 是个菜鸡</p>
+                    <p>头像: https://epiphyllum.masttf.fun/avatar.jpg</p>
+                </div>
+                <div className="mt-4 pt-4 text-lg border-t border-dashed">
+                    <p>申请友链格式</p>
+                    <p>名称: </p>
+                    <p>网站地址: </p>
+                    <p>描述: </p>
+                    <p>头像(https): </p>
                 </div>
             </div>
             <GiscusComments />
