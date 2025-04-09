@@ -171,7 +171,7 @@ export default async function Page({
                     {prevSlug != "#" && (
                         <Link
                             href={`/post/${prevSlug}`}
-                            className="flex w-full m-1 overflow-hidden items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
+                            className="flex w-full mb-1 overflow-hidden items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                         >
                             <svg
                                 height="1em"
@@ -189,7 +189,7 @@ export default async function Page({
                     {nextSlug != "#" && (
                         <Link
                             href={`/post/${nextSlug}`}
-                            className="flex m-1 flex-row-reverse overflow-hidden w-full items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
+                            className="flex mb-1 flex-row-reverse overflow-hidden w-full items-center px-4 gap-4 bg-white rounded-2xl shadow-md h-[3.75rem]"
                         >
                             <svg
                                 height="1em"

@@ -1,5 +1,6 @@
 export const WebName: string = "Epiphyllum";
 export const WebUrl: string = "https://epiphyllum.masttf.fun";
+export const WebStartTime: string = "2025-02-01";
 export interface ProfileConfig {
     name: string;
     bio: string;
