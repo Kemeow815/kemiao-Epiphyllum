@@ -6,17 +6,17 @@ export default function GiscusComments({ className }: { className?: string }) {
         <div className={`mt-8 ${className}`}>
             <Giscus
                 id="comments"
-                repo="Masttf/Epiphyllum"
-                repoId="R_kgDOOBU6Jg"
+                repo="Kemeow815/kemiao-Epiphyllum"
+                repoId="R_kgDOOhYW3Q"
                 category="Announcements"
-                categoryId="DIC_kwDOOBU6Js4CngaY"
-                mapping="pathname"
+                categoryId="DIC_kwDOOhYW3c4Cq5M2"
+                mapping="title"
                 strict="0"
                 term={`Welcome to ${WebName}`}
                 reactionsEnabled="1"
                 emitMetadata="0"
                 inputPosition="top"
-                theme="light"
+                theme="preferred_color_scheme"
                 lang="zh-CN"
                 loading="lazy"
             />

@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     images: {
         deviceSizes: [400, 512, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
         imageSizes: [16, 32, 48, 64, 96, 128, 200, 256, 384],
+        domains: ["masttf.fun", "cn.cravatar.com", "www.zhilu.cyou", "cdn.jsdelivr.net", "www.example.com", "i1.wp.com", "7.isyangs.cn", "s2.loli.net", "unpkg.com"],
         remotePatterns: [
             {
                 hostname: "masttf.fun",
